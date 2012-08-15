@@ -1,0 +1,42 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5.4&nbsp;Trying out the JPA middle tier</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Creating an application with EclipseRT Virgo Web Server"><link rel="up" href="ch05.html" title="5.&nbsp;The Middle Tier"><link rel="prev" href="ch05s03.html" title="5.3&nbsp;Building the JPA module"><link rel="next" href="ch05s05.html" title="5.5&nbsp;Applying best practices to the middle tier"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.4&nbsp;Trying out the JPA middle tier</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s03.html">Prev</a>&nbsp;</td><th width="60%" align="center">5.&nbsp;The Middle Tier</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s05.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="middle-tier.trying-it-out"></a>5.4&nbsp;Trying out the JPA middle tier</h2></div></div></div><p>
+		Open a Web browser and navigate to <a class="ulink" href="http://localhost:8080/greenpages" target="_top">http://localhost:8080/greenpages</a>.
+		Click the <span class="emphasis"><em>Submit</em></span> button. Unfortunately the search will not return any results 
+		as the Web bundle is still using the stub <code class="literal">Directory</code> implementation provided by the
+		<code class="literal">greenpages.app</code> module, rather than the JPA-based implementation that is provided
+		by <code class="literal">greenpages.jpa</code>. 
+		This can be confirmed by using the Equinox console or the web-based admin console to examine the services being used
+		by <code class="literal">greenpages.web</code>.
+	</p><p>
+		The service which is being used by the Web bundle can be changed at runtime without having to restart the
+		application or the Web Server. This can be achieved by changing <code class="literal">greenpages.app</code> so that it no longer
+		publishes its <code class="literal">Directory</code> implementation. As a result of this <code class="literal">Directory</code>
+		service no longer being available, the Web bundle will automatically switch to using the JPA-based
+		implementation.
+	</p><p>
+		Open the <code class="literal">osgi-context.xml</code> file in the <code class="literal">META-INF/spring</code> folder of the
+		<code class="literal">greenpages.app</code> project and comment out the publication of the directory service:
+</p><pre class="programlisting">&lt;!-- &lt;osgi:service interface="greenpages.Directory" ref="directory"/&gt; --&gt;
+</pre><p>
+	</p><p>
+		Now save the updated file which will cause the application to be updated and refreshed on the server. 
+		Switch back to the Web browser and click
+		<span class="emphasis"><em>Submit</em></span> again.
+	</p><p>
+		This time eight results should be returned. Clicking on any of the 
+		<span class="emphasis"><em>View</em></span> links will display the listing&#8217;s details. 
+		The application is now working.
+        All that remains is to apply some best practices to the middle tier.
+	</p></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s03.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch05.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">5.3&nbsp;Building the JPA module&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.5&nbsp;Applying best practices to the middle tier</td></tr></table></div></body></html>

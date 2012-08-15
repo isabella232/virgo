@@ -1,0 +1,65 @@
+<a name="Virgo_Plan"></a><h1> <span class="mw-headline"> Virgo Plan </span></h1>
+<p>The following plan is subject to change and depends on how much resource is available as the project evolves.
+</p>
+<a name="2.1.0_Release"></a><h2> <span class="mw-headline"> 2.1.0 Release </span></h2>
+<p>Theme: migration from SpringSource dm Server 2.0.x.
+</p><p>Schedule: October 2010
+</p><p>Content:
+</p>
+<ul><li> Contribute to Eclipse and address IP issues
+</li><li> Startup performance improvement (as described in <a href="http://blog.springsource.com/2010/07/08/5x-startup-performance-boost-in-virgo-milestone-m02/" class="external text" title="http://blog.springsource.com/2010/07/08/5x-startup-performance-boost-in-virgo-milestone-m02/" rel="nofollow">this blog</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=315162" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=315162" rel="nofollow">bug 315162</a> is a separate improvement)
+</li><li> Upgrade Logback to 0.9.24 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=312209" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=312209" rel="nofollow">bug 312209</a>)
+</li><li> Upgrade Tomcat to 6.0.28 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=319395" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=319395" rel="nofollow">bug 319395</a>)
+</li><li> Upgrade Spring to 3.0.4 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=314282" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=314282" rel="nofollow">bug 314282</a>)
+</li><li> Critical bug fixes
+</li></ul>
+<a name="2.5_or_3.0_Release"></a><h2> <span class="mw-headline"> 2.5 or 3.0 Release </span></h2>
+<p>Theme: Eclipse RT integration
+</p><p>Schedule: June 2011
+</p><p>Content:
+</p>
+<ul><li> Jetty support (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=321726" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=321726" rel="nofollow">bug 321726</a>)
+</li><li> Use Equinox config admin instead of that of Felix (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=310217" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=310217" rel="nofollow">bug 310217</a>)
+</li><li> Use Equinox log service instead of that of Felix (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=310218" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=310218" rel="nofollow">bug 310218</a>)
+</li><li> Use Equinox event admin instead of that of Felix (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=310219" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=310219" rel="nofollow">bug 310219</a>)
+</li><li> Critical bug fixes
+</li></ul>
+<a name="Future_Releases"></a><h2> <span class="mw-headline"> Future Releases </span></h2>
+<p>The following features are not currently in plan:
+</p>
+<ul><li> Integration server
+</li><li> Batch server
+</li><li> p2 repository in the repository chain (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=309778" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=309778" rel="nofollow">bug 309778</a>)
+</li><li> Equinox 3.6 upgrade
+</li><li> Rebase region support on OSGi RFC138
+</li><li> Upgrade from Spring DM to Gemini Blueprint (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=317943" class="external text" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=317943" rel="nofollow">bug 317943</a>)
+</li><li> Admin console administration of remote Virgo instances
+</li><li> Multiple user regions
+</li><li> Tomcat 7/servlet 3.0
+</li></ul>
+<a name="Future_Features"></a><h1> <span class="mw-headline"> Future Features </span></h1>
+<a name="Jetty_Support"></a><h2> <span class="mw-headline"> Jetty Support  </span></h2>
+<p>Note that Jetty support may be provided mostly in Virgo's sister project Gemini Web. The Tomcat-based Virgo Web Server integrates Gemini Web and a Jetty-based variant may do the same.
+</p><p>Ideally this will allow arbitrary versions of Jetty (and preferably also Tomcat) to be swapped in. This seems feasible for Jetty but perhaps not for Tomcat. For Jetty, we need to make sure we use stable APIs which will continue to work as Jetty evolves.
+</p>
+<a name="Bootstrapping_Jetty"></a><h3> <span class="mw-headline"> Bootstrapping Jetty </span></h3>
+<p>Jetty already supports <a href="/Jetty/Feature/Jetty_OSGi#Jetty_bootstrapping_in_OSGi" title="Jetty/Feature/Jetty OSGi">bootstrapping inside OSGi</a>. The Jetty bootstrapping bundle 'org.eclipse.jetty.osgi.boot' can easily be included in the list of initial artifacts automatically deployed into the user region during Virgo startup.
+</p>
+<a name="Deploying_Web_Bundles"></a><h3> <span class="mw-headline"> Deploying Web Bundles </span></h3>
+<p>Jetty already supports <a href="/Jetty/Feature/Jetty_OSGi#Deployment_of_web-applications_via_OSGi" title="Jetty/Feature/Jetty OSGi">deployment of OSGi web applications</a>.
+</p><p>After Jetty is bootstrapped in the OSGi framework, web bundles may be deployed directly to Jetty using the whiteboard pattern.
+</p><p>A ContextHandler service must be registered with appropriate service properties. Presumably the bundle registering the service is the web bundle itself, although this is not clear from the Jetty documentation above which refers to the registering bundle as a 'contributor'. It is not clear whether the contributor is a bundle which is contributing some other web bundle or whether the contributor is the web bundle itself (in which case why should it be called 'contributor'?).
+</p><p>Assuming that the contributor is the web bundle itself, Virgo will need to create a ContextHandler service each time a web bundle starts.
+</p><p>If deployment of the web application fails, the failure must be reported back on the thread which initiated deployment.  A problem with the whiteboard pattern is that errors are not easily detected. Perhaps Jetty provides some way to listen for successful or failed deployment of a particular web bundle?
+</p>
+<a name="Deploying_WAR_Files"></a><h3> <span class="mw-headline"> Deploying WAR Files </span></h3>
+<p>Jetty supports deploying WAR files by installing the WAR file as a bundle using the "war:" URL scheme. However, Virgo supports deploying WAR files via all its standard deployment mechanisms which ultimately drive the deployer API. We could either drive installation using the "war:" scheme or, for consistency with Virgo's existing support for WARs including the way errors are detected and handled, we could continue to transform WARs into web bundles using the transformation support in Gemini Web.
+</p>
+<a name="Class_Loading"></a><h3> <span class="mw-headline"> Class Loading </span></h3>
+<p>Need to ensure correct class loading and resource lookup in the single bundle case as well as the case of a web bundle inside a scoped plan.
+</p><p>Need to support class loader customisation, throw-away class loaders, etc. as in the current Virgo web support.
+</p>
+<a name="Logging"></a><h3> <span class="mw-headline"> Logging </span></h3>
+<p>Need to ensure Jetty's logs feed in to the appropriate Virgo Medic logs.
+</p><p>Also need to support per-application logging.
+</p>

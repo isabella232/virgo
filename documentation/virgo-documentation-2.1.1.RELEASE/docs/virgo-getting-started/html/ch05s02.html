@@ -1,0 +1,241 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5.2&nbsp;Creating the DataSource project</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Creating an application with EclipseRT Virgo Web Server"><link rel="up" href="ch05.html" title="5.&nbsp;The Middle Tier"><link rel="prev" href="ch05.html" title="5.&nbsp;The Middle Tier"><link rel="next" href="ch05s03.html" title="5.3&nbsp;Building the JPA module"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.2&nbsp;Creating the DataSource project</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05.html">Prev</a>&nbsp;</td><th width="60%" align="center">5.&nbsp;The Middle Tier</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s03.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="middle-tier.create-db-project"></a>5.2&nbsp;Creating the DataSource project</h2></div></div></div><p>
+		This section describes how to use
+		the bundle project creation wizard to create a new <code class="literal">Bundle Project</code>. The project&#8217;s Spring bean
+		definition files will also be created using the Spring bean configuration file creation wizard.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.create-db-project.new-bundle-project"></a>Creating a new Bundle Project</h3></div></div></div><p>
+			Create a new project by right-clicking in the <span class="emphasis"><em>Package Explorer</em></span> view and selecting 
+			<span class="guimenu">New</span> &#8594; <span class="guimenuitem">Project&#8230;</span>. In the resulting
+			dialog select <span class="guimenu">EclipseRT</span> &#8594; <span class="guimenuitem">Bundle
+			Project</span> and press <span class="emphasis"><em>Next</em></span>:
+		</p><div class="mediaobject" align="center"><img src="images/middle-tier/new-bundle-project.png" align="middle"></div><p>
+		</p><p>
+			In the <span class="emphasis"><em>New Bundle Project</em></span> dialog, name the project <code class="literal">greenpages.db</code>. 
+            Choose the create the project from an existing source location and specify a location that will place the new
+			<code class="literal">greenpages.db</code> alongside the project skeletons that were imported into the workspace
+			earlier. If the <code class="literal">start</code> directory of the GreenPages sample is being used this will
+            be <code class="literal">$GREENPAGES_HOME/start/greenpages.db</code> (and, <span class="emphasis"><em>mutatis mutandis</em></span> on Windows). 
+            Click <span class="emphasis"><em>Next</em></span>.
+		</p><div class="mediaobject" align="center"><img src="images/middle-tier/create-bundle-project.png" align="middle"></div><p>
+		</p><p>
+			In this page of the wizard, many of the <span class="emphasis"><em>Bundle Properties</em></span> are already populated. The
+			<code class="literal">Bundle-SymbolicName</code> is the name of the project. The <code class="literal">Bundle-Name</code> is
+			derived from the <code class="literal">Bundle-SymbolicName</code>. The <code class="literal">Bundle-Version</code> is
+			set, and there is no <code class="literal">Bundle-Description</code>.
+		</p><p>
+			Change the <code class="literal">Bundle-Name</code> to &#8220;<span class="quote"><code class="literal">GreenPages DataSource</code></span>&#8221; to more accurately
+			describe the bundle&#8217;s purpose. An option to &#8216;Enable Bundle Classpath Container&#8217; is already selected. It should 
+			be <span class="emphasis"><em>de</em></span>-selected, as a Maven Classpath container will be configured later.
+			Ensure that the <span class="emphasis"><em>Target Runtime</em></span>
+			is set to <span class="emphasis"><em>Virgo Web Server (Runtime) v2.1</em></span>. 
+			Click <span class="emphasis"><em>Finish</em></span>.
+		</p><div class="mediaobject" align="center"><img src="images/middle-tier/config-bundle-project.png" align="middle"></div><p>
+            The <code class="literal">greenpages.db</code> project appears in the <span class="emphasis"><em>Package Explorer</em></span> view.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.create-db-project.configuring-classpath"></a>Configuring the project&#8217;s classpath container</h3></div></div></div><p>
+			Before a Maven Classpath Container can be added to the project, a <code class="literal">pom.xml</code> file must
+			be created.
+			Create a new file in the root of the <code class="literal">greenpages.db</code> project named
+			<code class="literal">pom.xml</code> and add the following contents to it:
+</p><pre class="programlisting">&lt;<span class="hl-tag">?xml version="1.0" encoding="UTF-8"?</span>&gt;
+&lt;<span class="hl-tag">project</span>
+	<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://maven.apache.org/POM/4.0.0"</span>
+	<span class="hl-attribute">xmlns:xsi</span>=<span class="hl-value">"http://www.w3.org/2001/XMLSchema-instance"</span>
+	<span class="hl-attribute">xsi:schemaLocation</span>=<span class="hl-value">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span>&gt;
+
+	&lt;<span class="hl-tag">parent</span>&gt;
+		&lt;<span class="hl-tag">groupId</span>&gt;com.springsource.dmserver&lt;<span class="hl-tag">/groupId</span>&gt;
+		&lt;<span class="hl-tag">artifactId</span>&gt;greenpages.parent&lt;<span class="hl-tag">/artifactId</span>&gt;
+		&lt;<span class="hl-tag">version</span>&gt;2.3.0.RELEASE&lt;<span class="hl-tag">/version</span>&gt;
+		&lt;<span class="hl-tag">relativePath</span>&gt;../parent&lt;<span class="hl-tag">/relativePath</span>&gt;
+	&lt;<span class="hl-tag">/parent</span>&gt;
+
+	&lt;<span class="hl-tag">modelVersion</span>&gt;4.0.0&lt;<span class="hl-tag">/modelVersion</span>&gt;
+	&lt;<span class="hl-tag">groupId</span>&gt;com.springsource.dmserver&lt;<span class="hl-tag">/groupId</span>&gt;
+	&lt;<span class="hl-tag">artifactId</span>&gt;greenpages.db&lt;<span class="hl-tag">/artifactId</span>&gt;
+	&lt;<span class="hl-tag">name</span>&gt;greenpages.db&lt;<span class="hl-tag">/name</span>&gt;
+	&lt;<span class="hl-tag">packaging</span>&gt;jar&lt;<span class="hl-tag">/packaging</span>&gt;
+
+	&lt;<span class="hl-tag">dependencies</span>&gt;
+	&lt;<span class="hl-tag">/dependencies</span>&gt;
+
+&lt;<span class="hl-tag">/project</span>&gt;
+</pre><p>
+			Save the file.
+		</p><p>
+			A Maven Classpath Container can now be added to the project. Right-click the
+			<code class="literal">greenpages.db</code> project in the Package Explorer and select 
+			<span class="guimenu">Maven 2</span> &#8594; <span class="guimenuitem">Enable dependency management</span>.
+			Eclipse will perform some workspace building, and the <code class="literal">greenpages.db</code> project will now be marked as a Maven project.
+			(If the error <code class="literal">Cannot find artifact for parent POM</code> occurs check that the version is correct. 
+			It may differ from the one given here.)
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.create-db-project.config-src-folders"></a>Configuring the source folders</h3></div></div></div><p>
+			The last part of the setup of the project is to configure its source folders.
+			Return to the <span class="emphasis"><em>Properties</em></span> dialog of 
+			the <code class="literal">greenpages.db</code> project (from the <span class="emphasis"><em>Package Explorer</em></span> view).
+			Select <span class="emphasis"><em>Java Build Path</em></span> on the left-hand side and the <span class="emphasis"><em>Source</em></span> tab
+			on the right-hand side.
+			Remove any pre-configured source folders by selecting them and
+			clicking <span class="emphasis"><em>Remove</em></span>.
+		</p><p>
+			Now click <span class="emphasis"><em>Add folder</em></span> and then
+			<span class="emphasis"><em>Create new folder&#8230;</em></span>.
+			Specify <code class="literal">src/main/resources</code> as the folder
+			name and click <span class="emphasis"><em>Finish</em></span>, then <span class="emphasis"><em>OK</em></span> and <span class="emphasis"><em>OK</em></span> again.
+		</p><p>
+			The final change to be made is to drag the <code class="literal">META-INF</code> folder from <code class="literal">src</code>
+			to <code class="literal">src/main/resources</code>.
+			Once these changes have been made the project will appear
+			similar to the following in the <span class="emphasis"><em>Package Explorer</em></span> view:
+		</p><div class="mediaobject" align="center"><img src="images/middle-tier/db-project.png" align="middle"></div><p>
+		</p><p>
+			(It is useful to check that the Maven project just configured has the correct Java System library associated with it and that
+			the <code class="literal">MANIFEST.MF</code> file that we have just moved is correctly generated when necessary.
+			To ensure this, disable the dependency management (enabled in the previous section) and then re-enable it, saving the changes in between.
+			This step may also change the Java system libraries associated with the build (right-click on the <code class="literal">greenpages.db</code> project, under Properties, Java build path and Libraries).
+			If the Java system libraries look incorrect, simply remove them in the Libraries window and reset them.)
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.create-db-project.config-datasource"></a>Configuring the DataSource</h3></div></div></div><p>
+			The DataSource bundle&#8217;s main r&ocirc;le is to configure and create a <code class="literal">DataSource</code> object and to
+			publish this to the OSGi service registry. This will be done by creating
+			a handful of Spring beans.
+		</p><p>
+			By default, Spring DM looks for application context files in a bundle&#8217;s <code class="literal">META-INF/spring</code>
+			directory. Create a new folder named <code class="literal">spring</code> in the <code class="literal">greenpages.db</code>
+			project&#8217;s <code class="literal">META-INF</code> folder. Having created the new folder, right-click it in the
+			Package Explorer and select
+			<span class="guimenu">New </span> &#8594; <span class="guimenuitem">Spring Bean Configuration File</span>.
+			This will open the wizard for creating Spring bean configuration files.
+		</p><p>
+			In the wizard enter a <code class="literal">File name</code> of <code class="literal">module-context.xml</code> and click
+			<span class="emphasis"><em>Next</em></span>:
+			</p><div class="mediaobject" align="center"><img src="images/middle-tier/db-module-create-module-context.png" align="middle"></div><p> 
+		</p><p>
+			Add the <span class="emphasis"><em>p - http://www.springframework.org/schema/p</em></span> namespace declaration to the pre-selected
+			<span class="emphasis"><em>beans</em></span> declaration and then click <span class="emphasis"><em>Finish</em></span>.
+			</p><div class="mediaobject" align="center"><img src="images/middle-tier/db-module-namespace-declaration-configuration.png" align="middle"></div><p> 
+		</p><p>
+			Update the newly-created file (which is opened by Eclipse) to declare a bean that defines the <code class="literal">DataSource</code> 
+            object that will be used to access the GreenPages database.
+            Do this by adding the following bean declaration:
+</p><pre class="programlisting">	&lt;<span class="hl-tag">bean</span> <span class="hl-attribute">id</span>=<span class="hl-value">"dataSource"</span> <span class="hl-attribute">class</span>=<span class="hl-value">"org.apache.commons.dbcp.BasicDataSource"</span> 
+	<span class="hl-attribute">p:driverClassName</span>=<span class="hl-value">"org.h2.Driver"</span> <span class="hl-attribute">p:url</span>=<span class="hl-value">"jdbc:h2:~/greenpages-db/greenpages"</span>
+	<span class="hl-attribute">p:username</span>=<span class="hl-value">"greenpages"</span> <span class="hl-attribute">p:password</span>=<span class="hl-value">"pass"</span>
+	<span class="hl-attribute">init-method</span>=<span class="hl-value">"createDataSource"</span> <span class="hl-attribute">destroy-method</span>=<span class="hl-value">"close"</span> /&gt;
+</pre><p>
+			The new bean has introduced a dependency on Commons DBCP, which will cause an error to be reported by Eclipse.
+		</p><p>
+			This dependency must be recorded in the project&#8217;s pom file. Open the pom file for <code class="literal">greenpages.db</code> and add
+			the following dependency between the <code class="literal">&lt;dependencies&gt;</code> tags:
+</p><pre class="programlisting">        &lt;<span class="hl-tag">dependency</span>&gt;
+            &lt;<span class="hl-tag">groupId</span>&gt;org.apache.commons&lt;<span class="hl-tag">/groupId</span>&gt;
+            &lt;<span class="hl-tag">artifactId</span>&gt;com.springsource.org.apache.commons.dbcp&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">/dependency</span>&gt;
+</pre><p>
+			Save the updated pom and then switch back to the editor for <code class="literal">module-context.xml</code>.
+			Save the updated file and
+			observe that the previously reported problem is now resolved as Commons DBCP is available on the classpath.
+		</p><p>
+			Now that the <code class="literal">DataSource</code> bean is available, it can be published into the OSGi service registry.
+        </p><p>
+			Right-click the <code class="literal">spring</code> folder and select
+			<span class="guimenu">New </span> &#8594; <span class="guimenuitem">Spring Bean Configuration File</span> again. 
+			This time specify
+			a name of <code class="literal">osgi-context.xml</code>, click <span class="emphasis"><em>Next</em></span>, and add the <code class="literal">osgi</code>
+			namespace declaration 
+			(ensure that the resultant schema location string contains the URL 
+			<code class="literal">http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd</code> 
+			as 
+			<code class="literal">http://www.springframework.org/schema/osgi/spring-osgi-2.0-m1.xsd</code> 
+			will result in an obscure deployment failure due to an invalid 'cacheTarget' property). 
+			Click <span class="emphasis"><em>Finish</em></span> and then add the following to the new file to publish the
+			<code class="literal">DataSource</code> as a service:
+</p><pre class="programlisting">    &lt;<span class="hl-comment">!--
+        export the dataSource bean to the OSGi service registry under the
+        DataSource interface
+    --</span>&gt;
+    &lt;<span class="hl-tag">osgi:service</span> <span class="hl-attribute">ref</span>=<span class="hl-value">"dataSource"</span> <span class="hl-attribute">interface</span>=<span class="hl-value">"javax.sql.DataSource"</span> /&gt;
+</pre><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id=middle-tier.create-db-project.config-bundlor-template"></a>Configuring Bundlor&#8217;s manifest template</h3></div></div></div><p>
+			Bundlor uses a manifest <span class="emphasis"><em>template</em></span> to control the contents of the generated manifest.
+			Create a new file named
+			<code class="literal">template.mf</code> in the root of the <code class="literal">greenpages.db</code> project. 
+			Open the existing
+			<code class="literal">MANIFEST.MF</code> and switch to the <code class="literal">MANIFEST.MF</code> tab to view its source. Copy
+			the contents. Switch to the editor for <code class="literal">template.mf</code>, switch to the
+			<code class="literal">template.mf</code> tab and paste the contents from <code class="literal">MANIFEST.MF</code>. These entries
+			will tell Bundlor what the resulting manifest&#8217;s bundle symbolic name, bundle version, etc. should be. Save the
+			updated template.
+		</p><p>
+			Still in the <code class="literal">template.mf</code> editor switch to the <span class="emphasis"><em>Overview</em></span> tab
+			and click <span class="emphasis"><em>Update MANIFEST.MF</em></span> which is under the &#8220;<span class="quote">Bundle Actions</span>&#8221; section.
+		</p><p>
+            At this point Bundlor will scan the project to determine its
+			dependencies. It will scan both <code class="literal">module-context.xml</code> and <code class="literal">osgi-context.xml</code>
+			looking for references to classes. For each class to which it finds a reference, an import for the class&#8217;s
+			package will be added to the resulting manifest. 
+		</p><p>
+			In this case, Bundlor will generate imports for
+			both <code class="code">javax.sql</code> and <code class="code">org.apache.commons.dbcp</code>.
+			These imports may not be resolved.
+			The <code class="literal">greenpages.db</code> project needs to be associated with a Web Server instance which has the
+			Commons DBCP bundle in its repository to resolve them.
+			In any event the next step adds the <code class="literal">greenpages.db</code>
+			project to the GreenPages PAR and will result in it inheriting the PAR project&#8217;s targetted runtime 
+			configuration.
+		</p><p>
+			Double-click the <code class="literal">MANIFEST.MF</code> file in the <code class="literal">greenpages</code> project in the
+			<span class="emphasis"><em>Package Explorer</em></span> view.
+            Switch to the <code class="literal">Dependencies</code> tab and click <span class="emphasis"><em>Add&#8230;</em></span>.
+			Select <code class="literal">greenpages.db</code> and click <span class="emphasis"><em>OK</em></span>.
+			Save the updated file.
+			A problem concerning the <code class="code">org.apache.commons.dbcp</code> dependency should now be resolved 
+			(along with any other resolution errors) and (if the server is running) the
+			GreenPages application will be redeployed due to the addition of the <code class="literal">greenpages.db</code>
+			module.
+			Start the server if it is not already running and observe that this deployment fails.
+		</p><p>
+			The deployment will fail because the <code class="code">org.h2.Driver</code> class that is referenced in the
+			<code class="literal">DataSource</code> bean&#8217;s definition in <code class="literal">module-context.xml</code> is not available to
+			the bundle. 
+			(Check for the exception <code class="code">org.springframework.beans.factory.BeanCreationException</code> with 
+			text something like:
+</p><pre class="programlisting">Error creating bean with name 'dataSource'
+	defined in URL [bundleentry://68.fwk504117357/META-INF/spring/ module-context.xml]: 
+	Invocation of init method failed; 
+	nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'org.h2.Driver'
+</pre><p>
+			though the numbers might be different.)
+		</p><p>
+			There are a few cases where Bundlor will not identify a dependency on a class and, at the moment,
+			this is one of them, although this is an area of Bundlor that is being improved all the time. 
+			Thankfully, it is easy to add the required import by making a simple update to the template.
+		</p><p>
+			Open the editor for the
+			<code class="literal">template.mf</code> file in the <code class="literal">greenpages.db</code> project and add the following
+			<code class="literal">Import-Package</code> header and save the updated manifest:
+</p><pre class="programlisting">Import-Package: org.h2;version="[1.0.71,1.0.71]"
+</pre><p>
+		</p><p>
+			Saving the manifest will trigger a redeployment (or click on <span class="emphasis"><em>Update MANIFEST.MF</em></span> as before)
+			which will fail if the H2 database is not available. 
+			(Refer to the section <a class="xref" href="ch03s03.html#installing.greenpages.building.db" title="Starting and configuring the database">the section called &#8220;Starting and configuring the database&#8221;</a>
+			in <a class="xref" href="ch03.html" title="3.&nbsp;Installing and exploring GreenPages">Chapter&nbsp;3, <i>Installing and exploring GreenPages</i></a> to run and configure the database.)
+		</p><p>
+			If the database is running the GreenPages application should correctly deploy. 
+			Although the application web front-end will run, the database contents is
+			not visible, of course, because we are still running with the <span class="emphasis"><em>stub</em></span> version of the <code class="code">search</code> method on the controller.
+			The implementation of the <code class="code">Directory</code> service needs to be changed to exploit the database.</p><p>
+			(One possible cause of failure here is the username and password on the <code class="literal">dataSource</code>
+			bean defined in <code class="literal">module-context.xml</code>. Check that these are exactly correct.) 
+		</p></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch05.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">5.&nbsp;The Middle Tier&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.3&nbsp;Building the JPA module</td></tr></table></div></body></html>

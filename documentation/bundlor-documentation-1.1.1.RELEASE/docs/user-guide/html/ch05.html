@@ -1,0 +1,29 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5.&nbsp;Manifest Templates</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Bundlor User Guide"><link rel="up" href="index.html" title="Bundlor User Guide"><link rel="prev" href="ch04s03.html" title="4.3&nbsp;Apache Maven Usage"><link rel="next" href="ch05s02.html" title="5.2&nbsp;Manifest Template Format"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.&nbsp;Manifest Templates</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s02.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="manifest.template"></a>5.&nbsp;Manifest Templates</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manifest.template.introduction"></a>5.1&nbsp;Introduction</h2></div></div></div><p>
+			A manifest template is a file that Bundlor uses during the generation of OSGi-compliant manifest entries in
+			a JAR's manifest.  The format of the manifest template is the same as that of a standard Java manifest file,
+			i.e. a series of '<code class="literal">key: value</code>' pairs.
+		</p><p>
+			From this template, Bundlor recognizes a specific set of directives and uses them to generate the
+			OSGi-compliant manifest entries. Bundlor will also add any other headers that are specified in the template
+			to the generated manifest. This is typically used to specify things like the bundle's symbolic name and
+			version.
+		</p><p>
+			You can also specify property placeholders, or variables, in your manifest template that Bundlor substitutes
+			with actual values at runtime. With this feature, your manifest templates become more dynamic and useful
+			across a variety of your projects. A particularly handy use for this feature is to tell Bundlor to
+			automatically expand versions of imports based on a pattern of your choosing. See
+			<a class="xref" href="ch05s03.html" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+		</p></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3&nbsp;Apache Maven Usage&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.2&nbsp;Manifest Template Format</td></tr></table></div></body></html>

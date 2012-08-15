@@ -1,0 +1,111 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4.5&nbsp;Creating a PAR</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Creating an application with EclipseRT Virgo Web Server"><link rel="up" href="ch04.html" title="4.&nbsp;The Web Module"><link rel="prev" href="ch04s04.html" title="4.4&nbsp;Deploying a bundle"><link rel="next" href="ch04s06.html" title="4.6&nbsp;Referencing an OSGi Service"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.5&nbsp;Creating a PAR</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s04.html">Prev</a>&nbsp;</td><th width="60%" align="center">4.&nbsp;The Web Module</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04s06.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="par.project"></a>4.5&nbsp;Creating a PAR</h2></div></div></div><p>
+		At the end of the previous step, the Web Server instance was started 
+    	and the <code class="literal">greenpages.web</code> bundle deployed.
+		This bundle shows a static home page but a search value causes an error. 
+		The error appears because the URL for that search is not serviced by the controller.
+		The application logic behind the search request is not in the <code class="literal">greenpages.web</code> project but 
+		in another project called <code class="literal">greenpages.app</code>.
+		This section creates the <code class="literal">greenpages.app</code> project
+		and then combines the two projects into a PAR so as to deploy them together as a single unit.
+	</p><p>
+		While executing these instructions it is not necessary to remove bundles from the Web Server instance, 
+		nor to stop the instance.
+		As changes are made the bundle will be refreshed (or redeployed) and the server instance
+		may report errors if the changes are incomplete.
+		These may safely be ignored.
+		Alternatively, the <code class="literal">greenpages.web</code> bundle can be removed from the Web Server instance, 
+		or the server can be stopped while these changes are made.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="parent.project.importing"></a>Importing the parent project</h3></div></div></div><p>
+			All of the bundles in the GreenPages sample are Maven projects which refer to a &#8216;parent&#8217; project.
+			To allow STS to accommodate references to the parent, import this project first.
+		</p><p>
+			In the same way that the starting <code class="literal">greenpages.web</code> project was imported
+			(see <a class="xref" href="ch04s03.html" title="4.3&nbsp;The controller">Section&nbsp;4.3, &#8220;The controller&#8221;</a>)
+			import the <code class="literal">$GREENPAGES_HOME/start/parent</code> project.
+		</p><div class="mediaobject" align="center"><img src="images/web-module/import-parent-project.png" align="middle"></div><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="par.project.importing.project"></a>Importing the <code class="literal">greenpages.app</code> project</h3></div></div></div><p>
+			In this step, the <code class="literal">greenpages.app</code> project is imported which contains the business
+			interfaces (and stub implementations of these interfaces).
+		</p><p>
+			In the same way that the starting <code class="literal">greenpages.web</code> project was imported
+			(see <a class="xref" href="ch04s03.html" title="4.3&nbsp;The controller">Section&nbsp;4.3, &#8220;The controller&#8221;</a>)
+			import the <code class="literal">$GREENPAGES_HOME/start/greenpages.app</code> project.
+		</p><div class="mediaobject" align="center"><img src="images/web-module/import-greenpages-app.png" align="middle"></div><p>
+		</p><p>
+			When Eclipse finishes importing the project, go to the next step.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="par.project.add.implementation"></a>Adding the controller implementation</h3></div></div></div><p>
+			The controller implementation will depend on the <code class="interfacename">Directory</code> and
+			<code class="interfacename">Listing</code> interfaces found in the <code class="literal">greenpages.app</code> project. In
+			this step, the implementation is added.
+		</p><p>
+			Open the <code class="classname">GreenPagesController</code> class. 
+			Add the following field and methods to the class:
+</p><pre class="programlisting">@Autowired
+<span class="hl-keyword">private</span> Directory directory;
+
+@RequestMapping(<span class="hl-string">"/search.htm"</span>)
+<span class="hl-keyword">public</span> List&lt;Listing&gt; search(@RequestParam(<span class="hl-string">"query"</span>) String query) {
+  <span class="hl-keyword">return</span> <span class="hl-keyword">this</span>.directory.search(query);
+}
+
+@RequestMapping(<span class="hl-string">"/entry.htm"</span>)
+<span class="hl-keyword">public</span> Listing entry(@RequestParam(<span class="hl-string">"id"</span>) <span class="hl-keyword">int</span> id) {
+  <span class="hl-keyword">return</span> <span class="hl-keyword">this</span>.directory.findListing(id);
+}
+</pre><p>
+			Add the (<span class="emphasis"><em>Quick Fix</em></span>) suggested imports for the annotations <code class="classname">Autowired</code> 
+			and <code class="classname">RequestParam</code>, 
+			and choose the import for <code class="classname">List&lt; &gt;</code> from <code class="classname">java.util.List</code>.
+		</p><p>
+			Eclipse will not be able to suggest import statements for the
+			<code class="interfacename">Listing</code> and <code class="interfacename">Directory</code> types. This is because
+			the <code class="literal">greenpages.web</code> and <code class="literal">greenpages.app</code> projects are not linked together
+			and therefore cannot see each other&#8217;s types.
+		</p><p>
+			Proceed to the next step.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="par.project.new.par"></a>Creating a PAR project</h3></div></div></div><p>
+			In Web Server, applications consisting of multiple bundles can be packaged as part of a PAR.
+			In this step a PAR project
+			containing the <code class="literal">greenpages.web</code> and <code class="literal">greenpages.app</code> bundles is 
+			created and deployed to the server.
+		</p><p>
+			Right-click in the <span class="emphasis"><em>Package Explorer</em></span> and select <span class="guimenu">New</span> &#8594; <span class="guimenuitem">Project&#8230;</span>. In the dialog that opens select
+			<span class="guimenu">EclipseRT</span> &#8594; <span class="guimenuitem">PAR Project</span> and press
+			<span class="emphasis"><em>Next</em></span>:
+		</p><div class="mediaobject" align="center"><img src="images/web-module/new-par-project.png" align="middle"></div><p>
+		</p><p>
+			In the New PAR Project dialog, ensure the <span class="emphasis"><em>Use default location</em></span> option is unchecked,
+			name the project <code class="literal">greenpages</code>, set the location to
+			<code class="filename">$GREENPAGES_HOME/start/greenpages</code> and press <span class="emphasis"><em>Next</em></span>.
+		</p><div class="mediaobject" align="center"><img src="images/web-module/create-par-project.png" align="middle"></div><p>
+		</p><p>
+			In the next dialog, some of the PAR properties are pre-populated.
+			Change the Application Name to <code class="literal">Greenpages PAR</code> and the Version to
+			<code class="literal">2.3.0</code>, then
+			ensure that the <span class="emphasis"><em>Target Runtime</em></span>
+			is set to <span class="emphasis"><em>Virgo Web Server (Runtime) v2.1</em></span> and press <span class="emphasis"><em>Next</em></span>.
+		</p><div class="mediaobject" align="center"><img src="images/web-module/par-content.png" align="middle"></div><p>
+		</p><p>
+			In the next dialog, select the <code class="literal">greenpages.app</code> and <code class="literal">greenpages.web</code>
+			bundles so that they are contained in the PAR and press <span class="emphasis"><em>Finish</em></span>.
+			</p><div class="mediaobject" align="center"><img src="images/web-module/bundle-references.png" align="middle"></div><p>
+			The project <code class="literal">greenpages.web</code> still shows errors; these are soon to be fixed.
+		</p><p>
+			The package explorer view will now show the following:
+			</p><div class="mediaobject" align="center"><img src="images/web-module/package-explorer-par.png" align="middle"></div><p>
+		</p><p>
+			PAR project creation is complete, go to the next section.
+		</p></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s04.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04s06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.4&nbsp;Deploying a bundle&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;4.6&nbsp;Referencing an OSGi Service</td></tr></table></div></body></html>

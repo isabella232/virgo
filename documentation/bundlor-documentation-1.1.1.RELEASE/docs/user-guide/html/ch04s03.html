@@ -1,0 +1,185 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4.3&nbsp;Apache Maven Usage</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Bundlor User Guide"><link rel="up" href="ch04.html" title="4.&nbsp;Usage"><link rel="prev" href="ch04s02.html" title="4.2&nbsp;Apache ANT Usage"><link rel="next" href="ch05.html" title="5.&nbsp;Manifest Templates"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3&nbsp;Apache Maven Usage</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s02.html">Prev</a>&nbsp;</td><th width="60%" align="center">4.&nbsp;Usage</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="usage.maven"></a>4.3&nbsp;Apache Maven Usage</h2></div></div></div><p>The Maven plugin allows Bundlor to be run from inside any Maven project.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.maven.setup"></a>4.3.1&nbsp;Maven Setup</h3></div></div></div><p>
+			The following procedure shows how to set up Bundlor inside of an existing Maven <code class="literal">POM</code> file.
+		</p><div class="orderedlist"><ol type="1"><li><p>Add the Eclipse Virgo build and SpringSource Enterprise Bundle Repository to the <code class="filename">pom.xml</code> file.</p><pre class="programlisting">&lt;<span class="hl-tag">pluginRepositories</span>&gt;
+  &lt;<span class="hl-tag">pluginRepository</span>&gt;
+    &lt;<span class="hl-tag">id</span>&gt;eclipse.virgo.build.bundles.release&lt;<span class="hl-tag">/id</span>&gt;
+    &lt;<span class="hl-tag">name</span>&gt;Eclipse Virgo Build&lt;<span class="hl-tag">/name</span>&gt;
+    &lt;<span class="hl-tag">url</span>&gt;http://build.eclipse.org/rt/virgo/maven/bundles/release&lt;<span class="hl-tag">/url</span>&gt;
+  &lt;<span class="hl-tag">/pluginRepository</span>&gt;
+  &lt;<span class="hl-tag">pluginRepository</span>&gt;
+    &lt;<span class="hl-tag">id</span>&gt;com.springsource.repository.bundles.external&lt;<span class="hl-tag">/id</span>&gt;
+    &lt;<span class="hl-tag">name</span>&gt;SpringSource Enterprise Bundle Repository - External Bundle Releases&lt;<span class="hl-tag">/name</span>&gt;
+    &lt;<span class="hl-tag">url</span>&gt;http://repository.springsource.com/maven/bundles/external&lt;<span class="hl-tag">/url</span>&gt;
+  &lt;<span class="hl-tag">/pluginRepository</span>&gt;
+  ...
+&lt;<span class="hl-tag">/pluginRepositories</span>&gt;</pre></li><li><p>
+					Use the <code class="literal">bundlor</code> plugin, as shown in the following example. See
+					<a class="xref" href="ch04s03.html#usage.maven.reference" title="4.3.2&nbsp;Maven Plugin Reference">Section&nbsp;4.3.2, &#8220;Maven Plugin Reference&#8221;</a> for details about the parameters of the plugin.
+				</p><pre class="programlisting">&lt;<span class="hl-tag">build</span>&gt;
+  &lt;<span class="hl-tag">plugins</span>&gt;
+    &lt;<span class="hl-tag">plugin</span>&gt;
+      &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+      &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+      &lt;<span class="hl-tag">version</span>&gt;1.1.1.RELEASE&lt;<span class="hl-tag">/version</span>&gt;
+      &lt;<span class="hl-tag">executions</span>&gt;
+        &lt;<span class="hl-tag">execution</span>&gt;
+          &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+          &lt;<span class="hl-tag">goals</span>&gt;
+            &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+          &lt;<span class="hl-tag">/goals</span>&gt;
+        &lt;<span class="hl-tag">/execution</span>&gt;
+      &lt;<span class="hl-tag">/executions</span>&gt;
+    &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">plugin</span>&gt;
+      &lt;<span class="hl-tag">groupId</span>&gt;org.apache.maven.plugins&lt;<span class="hl-tag">/groupId</span>&gt;
+      &lt;<span class="hl-tag">artifactId</span>&gt;maven-jar-plugin&lt;<span class="hl-tag">/artifactId</span>&gt;
+      &lt;<span class="hl-tag">version</span>&gt;2.4&lt;<span class="hl-tag">/version</span>&gt;
+      &lt;<span class="hl-tag">configuration</span>&gt;
+        &lt;<span class="hl-tag">archive</span>&gt;
+          &lt;<span class="hl-tag">manifestFile</span>&gt;
+            target/classes/META-INF/MANIFEST.MF
+          &lt;<span class="hl-tag">/manifestFile</span>&gt;
+        &lt;<span class="hl-tag">/archive</span>&gt;
+      &lt;<span class="hl-tag">/configuration</span>&gt;
+    &lt;<span class="hl-tag">/plugin</span>&gt;
+    ...
+  &lt;<span class="hl-tag">/plugins</span>&gt;
+  ...
+&lt;<span class="hl-tag">/build</span>&gt;</pre></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.maven.reference"></a>4.3.2&nbsp;Maven Plugin Reference</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e596"></a>4.3.2.1&nbsp;Plugin Configuration</h4></div></div></div><p>
+				The following table lists all the elements that you can specify for the <code class="literal">bundlor</code>
+				Maven plugin.
+			</p><div class="table"><a name="d0e604"></a><p class="title"><b>Table&nbsp;4.3.&nbsp;Elements</b></p><div class="table-contents"><table summary="Elements" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Attribute</th><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Description</th><th style="border-bottom: 1.0pt solid ; ">Required</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleSymbolicName</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-SymbolicName</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.artifactId}</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleVersion</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-Version</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.version}</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">enabled</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Whether Bundlor should create a manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">true</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">failOnWarnings</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								Whether Bundlor should cause a build failure when there are warnings about the
+								resulting manifest
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">false</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">inputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the input to create a manifest for. This can either be a directory or a JAR
+								file.
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.build.outputDirectory}</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">manifestTemplatePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the manifest template. See <a class="xref" href="ch05.html" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${basedir}/template.mf</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">OSGiProfilePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the OSGi profile.  See <a class="xref" href="ch06.html" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">outputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								<p>
+									The path to write the manifest to. This can either be a directory, a JAR file, or
+									not specified.
+								</p>
+								<p>
+									If a directory is specified, the manifest will be written to
+									<code class="literal">${directory}/META-INF/MANIFEST.MF</code>.
+								</p>
+								<p>
+									If a JAR file is specified, the manifest will be written as the manifest for that
+									JAR file.
+								</p>
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.build.outputDirectory}</code></td></tr><tr><td style="border-right: 1.0pt solid ; ">propertiesPath</td><td style="border-right: 1.0pt solid ; ">
+								The path to a properties file used for substitution.  See
+								<a class="xref" href="ch05s03.html" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+							</td><td style="">No</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e718"></a>4.3.2.2&nbsp;Inline Manifest Template</h4></div></div></div><p>
+				Manifest templates can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;manifestTemplate/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">execution</span>&gt;
+  &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+  &lt;<span class="hl-tag">goals</span>&gt;
+    &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+  &lt;<span class="hl-tag">/goals</span>&gt;
+  &lt;<span class="hl-tag">configuration</span>&gt;
+    &lt;<span class="hl-tag">manifestTemplate</span>&gt;
+Bundle-ManifestVersion: 2
+Bundle-Name: Bundlor Core
+Bundle-SymbolicName: org.eclipse.virgo.bundlor
+Bundle-Version: 0
+    &lt;<span class="hl-tag">/manifestTemplate</span>&gt;
+  &lt;<span class="hl-tag">/configuration</span>&gt;
+&lt;<span class="hl-tag">/execution</span>&gt;</pre><p>See <a class="xref" href="ch05.html" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e732"></a>4.3.2.3&nbsp;Inline OSGi Profile</h4></div></div></div><p>
+				OSGi profiles can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;OSGiProfile/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">execution</span>&gt;
+  &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+  &lt;<span class="hl-tag">goals</span>&gt;
+    &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+  &lt;<span class="hl-tag">/goals</span>&gt;
+  &lt;<span class="hl-tag">configuration</span>&gt;
+    &lt;<span class="hl-tag">OSGiProfile</span>&gt;
+org.OSGi.framework.system.packages = \
+ org.eclipse.virgo.osgi.extensions.equinox.hooks,\
+ javax.accessibility,\
+ javax.activation,\
+ javax.activation;version="1.1.1",\
+ javax.activity,\
+ javax.annotation,\
+...
+
+org.OSGi.framework.bootdelegation = \
+ org.eclipse.virgo.kernel.authentication,\
+ com.sun.*,\
+ javax.xml.*,\
+...
+    &lt;<span class="hl-tag">/OSGiProfile</span>&gt;
+  &lt;<span class="hl-tag">/configuration</span>&gt;
+&lt;<span class="hl-tag">/execution</span>&gt;</pre><p>See <a class="xref" href="ch06.html" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e746"></a>4.3.2.4&nbsp;Inline Property Values</h4></div></div></div><p>
+				Property substitution values can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;properties/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">project</span>&gt;
+  ...
+  &lt;<span class="hl-tag">properties</span>&gt;
+    &lt;<span class="hl-tag">bundle.name</span>&gt;${project.name}&lt;<span class="hl-tag">/bundle.name</span>&gt;
+    &lt;<span class="hl-tag">bundle.version</span>&gt;2.0.0.RELEASE&lt;<span class="hl-tag">/bundle.version</span>&gt;
+  &lt;<span class="hl-tag">/properties</span>&gt;
+  ...
+&lt;<span class="hl-tag">/project</span>&gt;</pre><p>See <a class="xref" href="ch05s03.html" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.maven.example"></a>4.3.3&nbsp;Maven Plugin Examples</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e763"></a>4.3.3.1&nbsp;Creating a manifest</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">project</span>&gt;
+...
+  &lt;<span class="hl-tag">build</span>&gt;
+    &lt;<span class="hl-tag">plugins</span>&gt;
+      &lt;<span class="hl-tag">plugin</span>&gt;
+        &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+        &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">executions</span>&gt;
+          &lt;<span class="hl-tag">execution</span>&gt;
+            &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+            &lt;<span class="hl-tag">goals</span>&gt;
+              &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+            &lt;<span class="hl-tag">/goals</span>&gt;
+          &lt;<span class="hl-tag">/execution</span>&gt;
+        &lt;<span class="hl-tag">/executions</span>&gt;
+      &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">/plugins</span>&gt;
+  &lt;<span class="hl-tag">/build</span>&gt;
+...
+&lt;<span class="hl-tag">/project</span>&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e768"></a>4.3.3.2&nbsp;Creating a manifest with placeholder replacement</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">project</span>&gt;
+...
+  &lt;<span class="hl-tag">properties</span>&gt;
+    &lt;<span class="hl-tag">bundle.name</span>&gt;${project.name}&lt;<span class="hl-tag">/bundle.name</span>&gt;
+    &lt;<span class="hl-tag">bundle.version</span>&gt;2.0.0.RELEASE&lt;<span class="hl-tag">/bundle.version</span>&gt;
+  &lt;<span class="hl-tag">/properties</span>&gt;
+...
+  &lt;<span class="hl-tag">build</span>&gt;
+    &lt;<span class="hl-tag">plugins</span>&gt;
+      &lt;<span class="hl-tag">plugin</span>&gt;
+        &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+        &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">executions</span>&gt;
+          &lt;<span class="hl-tag">execution</span>&gt;
+            &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+            &lt;<span class="hl-tag">goals</span>&gt;
+              &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+            &lt;<span class="hl-tag">/goals</span>&gt;
+          &lt;<span class="hl-tag">/execution</span>&gt;
+        &lt;<span class="hl-tag">/executions</span>&gt;
+      &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">/plugins</span>&gt;
+  &lt;<span class="hl-tag">/build</span>&gt;
+...
+&lt;<span class="hl-tag">/project</span>&gt;</pre></div></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s02.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.2&nbsp;Apache ANT Usage&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.&nbsp;Manifest Templates</td></tr></table></div></body></html>

@@ -1,0 +1,257 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5.3&nbsp;Building the JPA module</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Creating an application with EclipseRT Virgo Web Server"><link rel="up" href="ch05.html" title="5.&nbsp;The Middle Tier"><link rel="prev" href="ch05s02.html" title="5.2&nbsp;Creating the DataSource project"><link rel="next" href="ch05s04.html" title="5.4&nbsp;Trying out the JPA middle tier"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.3&nbsp;Building the JPA module</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s02.html">Prev</a>&nbsp;</td><th width="60%" align="center">5.&nbsp;The Middle Tier</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s04.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="middle-tier.building-jpa-module"></a>5.3&nbsp;Building the JPA module</h2></div></div></div><p>
+		In this section the JPA module in GreenPages is created, building upon an existing skeleton. 
+        JPA and its metadata are configured, and a JPA-based Directory service implementation
+		is published which is then consumed by the application&#8217;s Web bundle.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.building-jpa-module.completing-jpadirectory"></a>Completing the JPA-based Directory implementation</h3></div></div></div><p>
+			The <code class="literal">greenpages.jpa</code> starter project provides the beginnings of a JPA-based implementation of
+			<code class="literal">Directory</code> named <code class="literal">JpaDirectory</code>. Import the <code class="literal">greenpages.jpa</code> project 
+			from the <code class="literal">$GREENPAGES_HOME/start</code> directory.
+		</p><p>
+			Open the <code class="code">JpaDirectory.java</code> source file 
+			in the <code class="literal">greenpages.jpa</code> package of <code class="literal">greenpages.jpa</code> project (under <code class="code">src/main/java</code>).
+		</p><p>
+			The source file
+			contains a Java Persistence Query Language (JPQL) search query that will be used to retrieve 
+			listings from the database, and empty
+			implementations of the <code class="literal">search</code> and <code class="literal">findListing</code> methods.
+		</p><p>
+			First add an <code class="literal">EntityManager</code> to it. 
+			Before the new field
+			can be added, <code class="literal">EntityManager</code> must be available on the classpath. 
+			Open the pom for 
+			<code class="literal">greenpages.jpa</code> and add the following dependency:
+</p><pre class="programlisting">        &lt;<span class="hl-tag">dependency</span>&gt;
+            &lt;<span class="hl-tag">groupId</span>&gt;javax.persistence&lt;<span class="hl-tag">/groupId</span>&gt;
+            &lt;<span class="hl-tag">artifactId</span>&gt;com.springsource.javax.persistence&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">/dependency</span>&gt;
+</pre><p>
+		</p><p>
+			Now return to <code class="literal">JpaDirectory</code> and add the following field to the class along with an
+			import for <code class="literal">javax.persistence.EntityManager</code> (which should be suggested by Eclipse):
+</p><pre class="programlisting">    <span class="hl-keyword">private</span> EntityManager em;
+</pre><p>
+		</p><p>
+			This <code class="literal">EntityManager</code> can now be used to implement the <code class="literal">search</code> and
+			<code class="literal">findListing</code> methods. Update the implementations of these two methods to match the
+			following implementations and then save the updated class:
+</p><pre class="programlisting">   <span class="hl-keyword">public</span> Listing findListing(<span class="hl-keyword">int</span> id) {
+        <span class="hl-keyword">return</span> em.find(JpaListing.<span class="hl-keyword">class</span>, id);
+    }
+
+    @SuppressWarnings(<span class="hl-string">"unchecked"</span>)
+    <span class="hl-keyword">public</span> List&lt;Listing&gt; search(String term) {
+        <span class="hl-keyword">return</span> em.createQuery(SEARCH_QUERY).setParameter(<span class="hl-string">"term"</span>,
+                <span class="hl-string">"%"</span> + term.toUpperCase() + <span class="hl-string">"%"</span>).getResultList();
+    }
+</pre><p>
+			(Warnings from Eclipse should now be absent.)
+		</p><p>
+			The application context now needs to be updated to create <code class="literal">JpaDirectory</code> and to create
+			an <code class="literal">EntityManager</code> that can be injected into <code class="literal">JpaDirectory</code>.
+		</p><p>
+			Open
+			<code class="literal">module-context.xml</code> in the <code class="literal">META-INF/spring</code> folder of the
+			<code class="literal">greenpages.jpa</code>. Add the following beans that will create <code class="literal">JpaDirectory</code>
+			and an <code class="literal">EntityManager</code>, enable load-time weaving that is required by JPA, and enable
+			annotation-based configuration that will allow the <code class="literal">EntityManager</code> to be injected into
+			<code class="literal">JpaDirectory</code>:
+</p><pre class="programlisting">    &lt;<span class="hl-comment">!--
+        Activates a load-time weaver for the context. Any bean within the
+        context that implements LoadTimeWeaverAware (such as
+        LocalContainerEntityManagerFactoryBean) will receive a reference to
+        the autodetected load-time weaver.
+    --</span>&gt;
+    &lt;<span class="hl-tag">context:load-time-weaver</span> <span class="hl-attribute">aspectj-weaving</span>=<span class="hl-value">"on"</span> /&gt;
+
+    &lt;<span class="hl-comment">!-- JPA EntityManagerFactory --</span>&gt;
+    &lt;<span class="hl-tag">bean</span> <span class="hl-attribute">id</span>=<span class="hl-value">"entityManagerFactory"</span>
+        <span class="hl-attribute">class</span>=<span class="hl-value">"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"</span>
+        <span class="hl-attribute">p:dataSource-ref</span>=<span class="hl-value">"dataSource"</span>&gt;
+        &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"jpaVendorAdapter"</span>&gt;
+            &lt;<span class="hl-tag">bean</span> <span class="hl-attribute">id</span>=<span class="hl-value">"jpaVendorAdapter"</span>
+                <span class="hl-attribute">class</span>=<span class="hl-value">"org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter"</span>
+                <span class="hl-attribute">p:databasePlatform</span>=<span class="hl-value">"org.eclipse.persistence.platform.database.HSQLPlatform"</span>
+                <span class="hl-attribute">p:showSql</span>=<span class="hl-value">"true"</span> /&gt;
+        &lt;<span class="hl-tag">/property</span>&gt;
+    &lt;<span class="hl-tag">/bean</span>&gt;
+
+    &lt;<span class="hl-comment">!--
+        Activates various annotations to be detected in bean classes: Spring's
+        @Required and @Autowired, as well as JSR 250's @PostConstruct,
+        @PreDestroy and @Resource (if available) and JPA's @PersistenceContext
+        and @PersistenceUnit (if available).
+    --</span>&gt;
+    &lt;<span class="hl-tag">context:annotation-config</span> /&gt;
+
+    &lt;<span class="hl-tag">bean</span> <span class="hl-attribute">id</span>=<span class="hl-value">"directory"</span> <span class="hl-attribute">class</span>=<span class="hl-value">"greenpages.jpa.JpaDirectory"</span> /&gt;
+</pre><p>
+		</p><p>
+			The addition of the new beans to the context has introduced a new dependency upon Spring&#8217;s ORM support and upon
+			EclipseLink and its JPA implementation. Add the following dependencies to the pom file for
+			<code class="literal">greenpages.jpa</code> and save it:
+</p><pre class="programlisting">        &lt;<span class="hl-tag">dependency</span>&gt;
+            &lt;<span class="hl-tag">groupId</span>&gt;org.springframework&lt;<span class="hl-tag">/groupId</span>&gt;
+            &lt;<span class="hl-tag">artifactId</span>&gt;org.springframework.spring-library&lt;<span class="hl-tag">/artifactId</span>&gt;
+            &lt;<span class="hl-tag">type</span>&gt;libd&lt;<span class="hl-tag">/type</span>&gt;
+        &lt;<span class="hl-tag">/dependency</span>&gt;
+        &lt;<span class="hl-tag">dependency</span>&gt;
+            &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.persistence&lt;<span class="hl-tag">/groupId</span>&gt;
+            &lt;<span class="hl-tag">artifactId</span>&gt;com.springsource.org.eclipse.persistence&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">/dependency</span>&gt;
+        &lt;<span class="hl-tag">dependency</span>&gt;
+            &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.persistence&lt;<span class="hl-tag">/groupId</span>&gt;
+            &lt;<span class="hl-tag">artifactId</span>&gt;com.springsource.org.eclipse.persistence.jpa&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">/dependency</span>&gt;
+</pre><p>
+		</p><p>
+			Now switch back to <code class="literal">module-context.xml</code> for <code class="literal">greenpages.jpa</code> and observe
+			that the errors relating to Spring&#8217;s ORM types have now been resolved. 
+			Save <code class="literal">module-context.xml</code>.
+		</p><p>
+			The application context now contains a factory that will create an <code class="literal">EntityManager</code> and is
+			configured for annotation-based configuration. 
+			The last step in completing <code class="literal">JpaDirectory</code>
+			is to annotate the <code class="literal">EntityManager</code> field so that Spring will inject the
+			<code class="literal">EntityManager</code> created by the factory into the field.
+		</p><p>
+			Open <code class="literal">JpaDirectory.java</code> again and add an annotation <code class="literal">@PersistenceContext</code> to the
+			<code class="literal">EntityManager</code> field. 
+</p><pre class="programlisting">@PersistenceContext
+<span class="hl-keyword">private</span> EntityManager em;
+</pre><p>
+			Eclipse will suggest an import for
+			<code class="literal">javax.persistence.PersistenceContext</code>; accept this and save the file.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.building-jpa-module.providing-jpa-metadata"></a>Providing the JPA metadata</h3></div></div></div><p>
+			JPA uses a file named <code class="literal">META-INF/persistence.xml</code> to describe persistence units.
+			<code class="literal">persistence.xml</code> refers to a second file, typically named
+			<code class="literal">META-INF/orm.xml</code>, to define entity mappings. 
+			In the case of GreenPages the
+			<code class="literal">persistence.xml</code> file specifies a single persistence unit that points to the
+			<code class="literal">greenpages.JpaListing</code> class. 
+			The specified mapping file
+			(<code class="literal">META-INF/orm.xml</code>) tells the JPA implementation how to map
+			<code class="literal">JpaListing</code> to the <code class="literal">LISTING</code> database table described above.
+			(For more information on JPA consult the Documentation section in the appendix.)
+		</p><p>
+			Create a new file named <code class="literal">persistence.xml</code> in the <code class="literal">META-INF</code> folder of
+			the <code class="literal">greenpages.jpa</code> project. Add the following contents to the new file and then save it:
+</p><pre class="programlisting">&lt;<span class="hl-tag">?xml version="1.0" encoding="UTF-8" ?</span>&gt;
+&lt;<span class="hl-tag">persistence</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://java.sun.com/xml/ns/persistence"</span>
+    <span class="hl-attribute">xmlns:xsi</span>=<span class="hl-value">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="hl-attribute">xsi:schemaLocation</span>=<span class="hl-value">"http://java.sun.com/xml/ns/persistence 
+                        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"</span>
+    <span class="hl-attribute">version</span>=<span class="hl-value">"1.0"</span>&gt;
+
+    &lt;<span class="hl-tag">persistence-unit</span> <span class="hl-attribute">name</span>=<span class="hl-value">"GreenPages"</span> <span class="hl-attribute">transaction-type</span>=<span class="hl-value">"RESOURCE_LOCAL"</span>&gt;
+        &lt;<span class="hl-tag">class</span>&gt;greenpages.jpa.JpaListing&lt;<span class="hl-tag">/class</span>&gt;
+    &lt;<span class="hl-tag">/persistence-unit</span>&gt;
+
+&lt;<span class="hl-tag">/persistence</span>&gt;
+</pre><p>
+		</p><p>
+			Now create a new file named <code class="literal">orm.xml</code> also in the <code class="literal">META-INF</code> folder
+			alongside <code class="literal">persistence.xml</code>. Add the following contents to the new file and then save it:
+</p><pre class="programlisting">&lt;<span class="hl-tag">?xml version="1.0" encoding="UTF-8" ?</span>&gt;
+&lt;<span class="hl-tag">entity-mappings</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://java.sun.com/xml/ns/persistence/orm"</span>
+    <span class="hl-attribute">xmlns:xsi</span>=<span class="hl-value">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="hl-attribute">xsi:schemaLocation</span>=<span class="hl-value">"http://java.sun.com/xml/ns/persistence/orm 
+                        http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"</span>
+    <span class="hl-attribute">version</span>=<span class="hl-value">"1.0"</span>&gt;
+    &lt;<span class="hl-tag">package</span>&gt;greenpages.jpa&lt;<span class="hl-tag">/package</span>&gt;
+    &lt;<span class="hl-tag">entity</span> <span class="hl-attribute">class</span>=<span class="hl-value">"greenpages.jpa.JpaListing"</span> <span class="hl-attribute">name</span>=<span class="hl-value">"Listing"</span>&gt;
+        &lt;<span class="hl-tag">table</span> <span class="hl-attribute">name</span>=<span class="hl-value">"LISTING"</span> /&gt;
+        &lt;<span class="hl-tag">attributes</span>&gt;
+            &lt;<span class="hl-tag">id</span> <span class="hl-attribute">name</span>=<span class="hl-value">"listingNumber"</span>&gt;
+                &lt;<span class="hl-tag">column</span> <span class="hl-attribute">name</span>=<span class="hl-value">"LISTING_NUMBER"</span> /&gt;
+                &lt;<span class="hl-tag">generated-value</span> <span class="hl-attribute">strategy</span>=<span class="hl-value">"TABLE"</span> /&gt;
+            &lt;<span class="hl-tag">/id</span>&gt;
+            &lt;<span class="hl-tag">basic</span> <span class="hl-attribute">name</span>=<span class="hl-value">"firstName"</span>&gt;
+                &lt;<span class="hl-tag">column</span> <span class="hl-attribute">name</span>=<span class="hl-value">"FIRST_NAME"</span> /&gt;
+            &lt;<span class="hl-tag">/basic</span>&gt;
+            &lt;<span class="hl-tag">basic</span> <span class="hl-attribute">name</span>=<span class="hl-value">"lastName"</span>&gt;
+                &lt;<span class="hl-tag">column</span> <span class="hl-attribute">name</span>=<span class="hl-value">"LAST_NAME"</span> /&gt;
+            &lt;<span class="hl-tag">/basic</span>&gt;
+            &lt;<span class="hl-tag">basic</span> <span class="hl-attribute">name</span>=<span class="hl-value">"emailAddress"</span>&gt;
+                &lt;<span class="hl-tag">column</span> <span class="hl-attribute">name</span>=<span class="hl-value">"EMAIL_ADDRESS"</span> /&gt;
+            &lt;<span class="hl-tag">/basic</span>&gt;
+        &lt;<span class="hl-tag">/attributes</span>&gt;
+    &lt;<span class="hl-tag">/entity</span>&gt;
+&lt;<span class="hl-tag">/entity-mappings</span>&gt;
+</pre><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.building-jpa-module.consuming-datasource"></a>Consuming the DataSource from the service registry</h3></div></div></div><p>
+			The <code class="literal">entityManagerFactory</code> bean that was added earlier depends upon a bean named
+			<code class="literal">dataSource</code> which it will use to connect the <code class="literal">EntityManager</code> 
+			to the GreenPages database. 
+			The <code class="literal">greenpages.db</code> module already publishes a
+			<code class="literal">DataSource</code> to the service registry. 
+			<code class="literal">greenpages.jpa</code> must now be
+			updated to consume this.
+		</p><p>
+			Open <code class="literal">osgi-context.xml</code> in the <code class="literal">META-INF/spring</code> folder of the
+			<code class="literal">greenpages.jpa</code> project and add the following:
+</p><pre class="programlisting">    &lt;<span class="hl-comment">!-- import the DataSource from OSGi --</span>&gt;
+    &lt;<span class="hl-tag">osgi:reference</span> <span class="hl-attribute">id</span>=<span class="hl-value">"dataSource"</span> <span class="hl-attribute">interface</span>=<span class="hl-value">"javax.sql.DataSource"</span> /&gt;
+</pre><p>
+		</p><p>
+			This will result in a bean being created in the application context that is named <code class="literal">dataSource</code>.
+			The bean will be of type <code class="literal">javax.sql.DataSource</code> and will be backed by a service found in the
+			OSGi service registry that implements the <code class="literal">javax.sql.DataSource</code> interface.
+			(Some warnings concerning the <code class="literal">dataSource</code> bean will now disappear.)
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.building-jpa-module.publishing-directory"></a>Publishing the Directory implementation to the service registry</h3></div></div></div><p>
+			To make the JPA-based <code class="literal">Directory</code> implementation available to GreenPages&#8217;
+			Web module it must be &#8220;<span class="quote">published</span>&#8221; to the OSGi service registry.
+		</p><p>
+			Open <code class="literal">osgi-context.xml</code> in the <code class="literal">META-INF/spring</code> folder of the
+			<code class="literal">greenpages.jpa</code> project, add the following and then save the updated file:
+</p><pre class="programlisting">    &lt;<span class="hl-comment">!-- export the directory bean to OSGi under the Directory interface --</span>&gt;
+    &lt;<span class="hl-tag">osgi:service</span> <span class="hl-attribute">ref</span>=<span class="hl-value">"directory"</span> <span class="hl-attribute">interface</span>=<span class="hl-value">"greenpages.Directory"</span> /&gt;
+</pre><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="middle-tier.building-jpa-module.generating-manifest"></a>Generating greenpages.jpa&#8217;s manifest using Bundlor</h3></div></div></div><p>
+			Open the <code class="literal">template.mf</code> file in the root of the <code class="literal">greenpages.jpa</code>
+			project and switch to the <code class="literal">template.mf</code> tab. Add the following entries to the template
+			and save it.
+</p><pre class="programlisting">Import-Bundle: com.springsource.org.eclipse.persistence;version="[1.0.0,1.0.0]",
+ com.springsource.org.eclipse.persistence.jpa;version="[1.0.0,1.0.0]"
+Import-Package: org.springframework.context.weaving;version="[3.0,3.1)",
+ org.springframework.transaction.aspectj;version="[3.0,3.1)"
+Excluded-Exports: greenpages.jpa
+</pre><p>
+		</p><p>
+			The <code class="literal">Excluded-Exports</code> header tells Bundlor that the
+			<code class="literal">greenpages.jpa</code> should not be exported from the <code class="literal">greenpages.jpa</code>
+			bundle.
+		</p><p>
+			The <code class="literal">Import-Package</code> entries for
+			<code class="literal">org.springframework.context.weaving</code> and
+			<code class="literal">org.springframework.transaction.aspectj</code> are needed as Bundlor cannot, yet, 
+			detect that these packages are required.
+		</p><p>
+			Lastly, the <code class="literal">Import-Bundle</code> entries for EclipseLink and its JPA implementation
+			are needed as Bundlor cannot, yet, detect that EclipseLink is the JPA implementation that is
+			being used by GreenPages.
+		</p><p>
+			Switch to the <span class="emphasis"><em>Overview</em></span> tab and click <span class="emphasis"><em>Update MANIFEST.MF</em></span>.
+			As with <code class="literal">greenpages.db</code> before, this update may result in some errors being
+			reported in the manifest as the project is not associated with a targetted runtime. Double-click the
+			<code class="literal">MANIFEST.MF</code> file in the <code class="literal">greenpages</code> project in the Package Explorer.
+			Switch to the <span class="emphasis"><em>Dependencies</em></span> tab and click <span class="emphasis"><em>Add&#8230;</em></span>. Select
+			<code class="literal">greenpages.jpa</code> and click <span class="emphasis"><em>OK</em></span>. Save the updated file. The
+			problems in the manifest should now be resolved and the GreenPages application should be redeployed
+			due to the addition of the <code class="literal">greenpages.jpa</code> module. This redeployment should succeed
+			and it&#8217;s now time to try the application again.
+		</p><p>
+		(A possible action if this fails is to Update (Maven) Dependencies on the project right-click menu in the Maven sub-menu.)
+		</p></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s02.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch05.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">5.2&nbsp;Creating the DataSource project&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.4&nbsp;Trying out the JPA middle tier</td></tr></table></div></body></html>

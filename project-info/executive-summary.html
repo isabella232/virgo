@@ -1,0 +1,59 @@
+<p>
+			The Virgo Web Server from EclipseRT is a completely module-based Java application server
+			that is designed to run enterprise Java applications and Spring-powered applications
+			with a high degree of flexibility and reliability. It offers a simple yet comprehensive
+			platform to develop, deploy, and service enterprise Java applications. 
+		</p>
+		<p>
+			The Virgo kernel supports the core concepts of Virgo and is not biased towards the web
+			server, thus enabling other types of server to be created. The kernel can also be used
+			stand-alone as a rich OSGi application platform. A server runtime can easily be constructed
+			by deploying suitable bundles on top of the kernel.
+		</p>
+		<p>
+			Virgo features:
+			<ul>
+				<li>
+					admin console - deploy and manage artifacts, examine diagnostic dumps,
+					and examine bundle wiring, either in the live system or from a
+					resolution failure
+				</li>
+				<li>
+					Equinox console extension - manage Virgo and deployed artifacts
+				</li>
+				<li>
+					plans - define the artifacts that comprise an application, optionally
+					making the application atomic to tie the artifact lifecycles together,
+					and scoped to isolate the application from other applications
+				</li>
+				<li>
+					provisioning - automatically supply the dependencies of an application including
+					bundles, plans, plan archives (PARs), and configurations, from both local
+					and remote repositories
+				</li>
+				<li>
+					web container - supports vanilla WAR files, with all their dependencies in
+					<tt>WEB-INF/lib</tt>, and Web Application Bundles, that import their dependencies
+					via OSGi manifest metadata, via the embedded Tomcat-based reference implementation
+					of the OSGi Web	Container specification, configured using the standard Tomcat
+					<tt>server.xml</tt>
+				</li>
+				<li>
+					user region - isolates the kernel from user-installed applications and enables
+					admins to focus on application artifacts and their dependencies without seeing
+					those of the kernel as well
+				</li>
+				<li>
+					Spring 3 - Virgo packages Spring 3.0 final, but can easily be configured to
+					use a different version of Spring
+				</li>
+				<li>
+					hot deployment - deploy artifacts to Virgo by copying them into the <tt>pickup</tt> directory,
+					either in archive or exploded form, as an alternative to deploying via the admin console
+				</li>
+				<li>
+					logging - via embedded LogBack, configured in
+					<tt>config/serviceability.xml</tt>, with a rich set of appenders available out of the box
+				</li>
+			</ul>
+		</p>
