@@ -58,8 +58,8 @@
 	# To define additional CSS or other pre-body headers
 	$App->AddExtraHtmlHeader('<link media="screen" rel="stylesheet" type="text/css" href="/virgo/resources/local.css"/>');
 	
-	$App->AddExtraHtmlHeader('<script type="text/javascript" src="/virgo/resources/mootools-1.2.4-core-yc.js"></script>');
-	$App->AddExtraHtmlHeader('<script type="text/javascript" src="/virgo/resources/mootools-1.2.4.4-more.js"></script>');
+	$App->AddExtraHtmlHeader('<script type="text/javascript" src="/virgo/resources/jquery-1.7.2.min.js"></script>');
+	$App->AddExtraHtmlHeader('<script type="text/javascript" src="/virgo/resources/jquery-ui-1.8.18.min.js"></script>');
 	
 	
 	# To enable occasional Eclipse Foundation Promotion banners on your pages (EclipseCon, etc)

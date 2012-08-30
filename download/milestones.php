@@ -27,10 +27,10 @@
 	ob_start();
 ?>
 
-	<script type="text/javascript">
-            window.addEvent('domready', function() {
-                    new Accordion('h4.toggle', 'div.accordion', {initialDisplayFx: false});
-            });
+	<script>
+		$(function() {
+			$( "#accordion" ).accordion();
+		});
 	</script>
 
 <div id="midcolumn">
@@ -53,35 +53,36 @@
 	    </ul>
 	</p>
 	
-	<?
-	$first = true;
-	$tomcat = true;
-	$snaps = true;
-	foreach ($virgoVersions as $version){
-		echo "<h4 class='toggle'>$version";
-		if ($first) {
-			echo " - Latest</h4>";
-		} else {
-			echo "</h4>";
+	<div id='accordion'>
+		<?
+		$first = true;
+		$tomcat = true;
+		$snaps = true;
+		foreach ($virgoVersions as $version){
+			echo "<h4><a href='#'>$version";
+			if ($first) {
+				echo " - Latest</a></h4>";
+			} else {
+				echo "</a></h4>";
+			}
+			
+			echo "<div>";
+			echo "	<ul>";
+			echo "		<li><a href='http://www.eclipse.org/virgo/download/release-notes/$version.php' target='_self'>View Release Notes</a></li>";
+			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VTS/$version/virgo-tomcat-server-$version.zip' target='_self'>Download</a></li>";
+	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VJS/$version/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
+			echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VK/$version/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/$version/virgo-nano-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano Full</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/$version/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VS/$version/snaps-$version.zip' target='_self'>Download</a></li>";
+			echo "    	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VD/$version/virgo-documentation-$version.zip'>Download</a>";
+			echo "		<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/$version' target='_self'>http://download.eclipse.org/virgo/updatesite/$version</a></li>";
+			echo "	</ul>";
+			echo "</div>";
+			$first = false;
 		}
-		
-		echo "<div class='accordion'>";
-		echo "	<ul>";
-		echo "		<li><a href='http://www.eclipse.org/virgo/download/release-notes/$version.php' target='_self'>View Release Notes</a></li>";
-		echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VTS/$version/virgo-tomcat-server-$version.zip' target='_self'>Download</a></li>";
-    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VJS/$version/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
-		echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VK/$version/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
-		echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/$version/virgo-nano-$version.zip' target='_self'>Download</a></li>";
-		echo "		<li><strong>Virgo Nano Full</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/$version/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
-		echo "		<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VS/$version/snaps-$version.zip' target='_self'>Download</a></li>";
-		echo "    	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VD/$version/virgo-documentation-$version.zip'>Download</a>";
-		echo "		<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/$version' target='_self'>http://download.eclipse.org/virgo/updatesite/$version</a></li>";
-		echo "	</ul>";
-		echo "</div>";
-		$first = false;
-	}
-	?>
-
+		?>
+	</div>
     <h2>Virgo IDE Tooling Milestones</h2>
         <p>
             Virgo IDE tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
