@@ -35,7 +35,8 @@
 <div id="midcolumn">
 	<h2>Virgo Releases</h2>
 	<p>
-		Sample applications can be found on the <a href="http://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a> 
+		Sample applications can be found on the <a href="http://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are 
+		provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a> 
 		unless otherwise specified.
 	</p>
 

@@ -45,13 +45,14 @@
 	</p>
 
 <!-- 	<p>
-	    You can also browse the latest milestone documentation online.
+	    	You can also browse the latest milestone documentation online.
+	    </p>
 	    <ul>
 	    	<li>User Guide ( <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RC1/docs/virgo-user-guide/html/index.html">HTML</a> | <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RC1/docs/virgo-user-guide/htmlsingle/virgo-user-guide.html">HTML Single</a> )</li>
 	    	<li>Programmer Guide ( <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RC1/docs/virgo-programmer-guide/html/index.html">HTML</a> | <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RC1/docs/virgo-programmer-guide/htmlsingle/virgo-programmer-guide.html">HTML Single</a> )</li>
 			<li>Snaps Guide ( <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RC1/docs/snaps-guide/html/index.html">HTML</a> | <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RC1/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
 	    </ul>
-	</p> -->
+	 -->
 	
 	<div id='accordion'>
 		<?
