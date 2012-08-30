@@ -37,7 +37,7 @@
 			<tr>
 				<th></th>
 				<th class="packaging-content zebra"><a href="http://www.eclipse.org/virgo/deliverables#nano-deliverable">Nano</a></th>
-				<th class="packaging-content"><a href="http://www.eclipse.org/virgo/deliverables#nano-full-deliverable">Nano "Full"</a></th>
+				<th class="packaging-content"><a href="http://www.eclipse.org/virgo/deliverables#nano-full-deliverable">Nano "Web"</a></th>
 				<th class="packaging-content zebra"><a href="http://www.eclipse.org/virgo/deliverables#kernel-deliverable">Kernel</a></th>
 				<th class="packaging-content"><a href="http://www.eclipse.org/virgo/deliverables#jetty-server-deliverable">Jetty Server</a></th>
 				<th class="packaging-content zebra"><a href="http://www.eclipse.org/virgo/deliverables#tomcat-server-deliverable">Server for Apache Tomcat</a></th>
@@ -201,16 +201,16 @@
 			</tr>
 			<tr>
 				<td>Resolution failure diagnostics</td>
-				<td class="packaging-content zebra"></td>
-				<td class="packaging-content"></td>
+				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/><sup>2</sup></td>
+				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/><sup>2</sup></td>
 				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
 				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
 				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
 			</tr>
 			<tr>
 				<td>Dumps for offline analysis</td>
-				<td class="packaging-content zebra"></td>
-				<td class="packaging-content"></td>
+				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/><sup>3</sup></td>
+				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/><sup>3</sup></td>
 				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
 				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
 				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
@@ -218,6 +218,8 @@
 			<tr><td align=left colspan=6>
 					<ol>
 						<li>Kernel region only</li>
+						<li>p2 resolution diagnostics only</li>
+						<li>Dump subset for offline analysis</li>
 					</ol>
 				</td></tr>
 			</tbody>
