@@ -53,7 +53,7 @@
 		    Users of earlier releases of Virgo, of SpringSource dm Server, or of the "slices" framework should refer to the <a href="http://wiki.eclipse.org/Virgo/Community#Migration_Notes">migration notes</a> on the wiki.
 		</p>
 		
-/*		<h2>Milestone Documentation</h2>
+<!-- 		<h2>Milestone Documentation</h2>
 		<p>
 			The documentation for the latest milestone of Virgo can be downloaded from <a href="http://www.eclipse.org/virgo/download/" target="_self">here</a> or it is browseable online below:
 			
@@ -66,7 +66,7 @@
 				
 				<li>Tooling Guide ( <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 			</ul>
-		</p>*/
+		</p> -->
 
 	</div>
 

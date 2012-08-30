@@ -29,7 +29,7 @@
 
 	<script>
 		$(function() {
-			$( "#accordion" ).accordion();
+			$( "#accordion" ).accordion({ collapsible: true, autoHeight: false });
 		});
 	</script>
 
@@ -82,45 +82,45 @@
 			$first = false;
 		}
 		?>
-	</div>
-    <h2>Virgo IDE Tooling Milestones</h2>
-        <p>
-            Virgo IDE tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
-        </p>
-    
-    <h2>Virgo Bundlor Milestones</h2>
-        <p>
-            Note that Bundlor milestones are available from the aggregated tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
-        </p>
-    <?
-    $bundlorVersions = array("1.1.0.M05", "1.1.0.M04", "1.1.0.M03", "1.1.0.M02", "1.1.0.M01");
-    $first = true;
-    $update = true;
-	foreach ($bundlorVersions as $version){
 	
-		if($version == '1.1.0.M03'){
-			$update = false;
-		}
-		echo "<h4 class='toggle'>$version";
-		if ($first) {
-			echo " - Latest</h4>";
-		} else {
-			echo "</h4>";
-		}
+	    <h2>Virgo IDE Tooling Milestones</h2>
+	        <p>
+	            Virgo IDE tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
+	        </p>
+	    
+	    <h2>Virgo Bundlor Milestones</h2>
+	        <p>
+	            Note that Bundlor milestones are available from the aggregated tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
+	        </p>
+	    <?
+	    $bundlorVersions = array("1.1.0.M05", "1.1.0.M04", "1.1.0.M03", "1.1.0.M02", "1.1.0.M01");
+	    $first = true;
+	    $update = true;
+		foreach ($bundlorVersions as $version){
 		
-		echo "<div class='accordion'>";
-		echo "	<ul>";
-		echo "		<li><a href='http://www.eclipse.org/virgo/download/release-notes/bundlor/$version.php' target='_self'>View Release Notes</a></li>";
-		if($update){
-			echo "<li>Update site - 'http://download.eclipse.org/virgo/milestone/BNDLR/$version/updatesite'</li>";
+			if($version == '1.1.0.M03'){
+				$update = false;
+			}
+			echo "<h4><a href='#'>$version";
+			if ($first) {
+				echo " - Latest</a></h4>";
+			} else {
+				echo "</a></h4>";
+			}
+			
+			echo "<div>";
+			echo "	<ul>";
+			echo "		<li><a href='http://www.eclipse.org/virgo/download/release-notes/bundlor/$version.php' target='_self'>View Release Notes</a></li>";
+			if($update){
+				echo "<li>Update site - 'http://download.eclipse.org/virgo/milestone/BNDLR/$version/updatesite'</li>";
+			}
+			echo "		<li><strong>Virgo Bundlor</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/BNDLR/$version/bundlor-$version.zip' target='_self'>Download</a></li>";
+			echo "	</ul>";
+			echo "</div>";
+			$first = false;
 		}
-		echo "		<li><strong>Virgo Bundlor</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/BNDLR/$version/bundlor-$version.zip' target='_self'>Download</a></li>";
-		echo "	</ul>";
-		echo "</div>";
-		$first = false;
-	}
-	?>
-
+		?>
+	</div>
 </div>
 
 <?
