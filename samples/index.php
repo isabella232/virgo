@@ -28,7 +28,7 @@
 
 	<script>
 		$(function() {
-			$( "#accordion" ).accordion({ collapsible: true, autoHeight: false });
+			$( "#accordion" ).accordion({ collapsible: true, header: 'h4', autoHeight: false });
 		});
 	</script>
 
