@@ -46,7 +46,7 @@ The milestone also adds a number of enhancements such as:
 <ul>
 	<li>New Admin Console for Virgo Kernel and Virgo Server For Apache Tomcat</li>
 	<li>Bulk hot deployment of initial pickup artifacts in Virgo Nano</li>
-	<li>All Virgo distributions' p2 profiles are now published with a custom Java Server Profile, with that the offline p2 resolution exactly matches the runtime content</li>
+	<li>All Virgo distributions' p2 profiles are now published with a custom Java Server Profile, with that the p2 resolution exactly matches the runtime content</li>
 </ul>
 </p>
 
