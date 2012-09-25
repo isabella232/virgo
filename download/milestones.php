@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Downloads";
 	$pageAuthor		= "Glyn Normington";
 		
-	$virgoVersions = array("3.5.0.RC1");
+	$virgoVersions = array("3.6.0.M01");
 	ob_start();
 ?>
 
@@ -70,11 +70,11 @@
 			echo "<div>";
 			echo "	<ul>";
 			echo "		<li><a href='http://www.eclipse.org/virgo/download/release-notes/$version.php' target='_self'>View Release Notes</a></li>";
-			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VTS/$version/virgo-tomcat-server-$version.zip' target='_self'>Download</a></li>";
-	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VJS/$version/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
-			echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VK/$version/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
-			echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/$version/virgo-nano-$version.zip' target='_self'>Download</a></li>";
-			echo "		<li><strong>Virgo Nano Full</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/$version/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-tomcat-server-$version.zip' target='_self'>Download</a></li>";
+	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
+			echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-nano-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano Full</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
 			echo "		<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VS/$version/snaps-$version.zip' target='_self'>Download</a></li>";
 			echo "    	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VD/$version/virgo-documentation-$version.zip'>Download</a>";
 			echo "		<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/$version' target='_self'>http://download.eclipse.org/virgo/updatesite/$version</a></li>";
