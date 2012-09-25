@@ -49,9 +49,6 @@ The milestone also adds a number of enhancements such as:
 	<li>All Virgo distributions' p2 profiles are now published with a custom Java Server Profile, with that the offline p2 resolution exactly matches the runtime content</li>
 </ul>
 </p>
-<p>
-But before exploring the details, some thanks are due.
-</p>
 
 <h4>Enhancements and Fixes</h4>
 <p>A full list of bugs and enhancements included in this release is available <a href="https://bugs.eclipse.org/bugs/buglist.cgi?priority=P1&priority=P2&priority=P3&priority=P4&priority=P5&list_id=3018676&bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_severity=enhancement&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED&resolution=NOT_ECLIPSE&classification=RT&query_format=advanced&bug_status=RESOLVED&bug_status=CLOSED&version=unspecified&version=2.1.0.M01&version=2.1.0.M02-incubation&version=2.1.0.M03-incubation&version=2.1.0.M04-incubation&version=2.1.0.M05-incubation&version=2.1.0.M06-incubation&version=2.1.0.RC1&version=2.1.0.RC1-incubation&version=2.1.0.RELEASE&version=2.2.0.M01&version=3.0.0.M01&version=3.0.0.M02&version=3.0.0.M03&version=2.1.1.RELEASE&version=3.0.0.M04&version=2.3.0.RELEASE&version=3.0.0.M05&version=3.0.0.M06&version=3.0.0.RC1&version=3.0.0.RC2&version=3.0.0.RELEASE&version=3.0.1.RELEASE&version=1.1.0.M02&version=3.0.2.RELEASE&version=3.1.0.M01&version=3.5.0.M02&version=3.5.0.M03&version=3.0.3.RELEASE&version=3.5.0.M04&version=1.1.0.RELEASE&version=2.5.0.RELEASE&version=3.5.0.RELEASE&component=bundlor&component=documentation&component=jetty&component=runtime&component=samples&component=snaps&component=tooling&component=unknown&component=virgo-build&component=web-admin&product=Virgo&target_milestone=3.6.0.M01" target="_self">here</a>.</p>
