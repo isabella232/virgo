@@ -135,6 +135,7 @@
 			<ul>
 			    <li><a href="http://www.codewax.org">Chris Frost</a></li>
 			    <li><a href="http://eclipsesource.com/blogs/2010/10/28/running-rap-on-virgo/">Florian Waibel</a></li>
+			    <li><a href="http://devshards.blogspot.it/search/label/Virgo"></a>GianMaria Romanato</li>
 				<li><a href="http://underlap.blogspot.com">Glyn Normington</a></li>
 				<li><a href="http://eclipsedriven.blogspot.com/2011/06/how-to-create-felix-gogo-commands-with.html">Hendy Irawan</a></li>
 				<li><a href="http://hsiliev.blogspot.com/">Hristo Iliev</a></li>
