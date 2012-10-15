@@ -161,7 +161,7 @@
 			<h6>Virgo Powered</h6>
 			<ul>
 			    <li><a href="http://www.eclipse.org/virgo/references/cmegroup.php">CME Group</li>
-			    <li><a href="http://www.eclipse.org/forums/index.php/mv/msg/398243/939875/#msg_939875">Croatian Telecom</li>
+			    <li><a href="http://bigblog.tportal.hr/btin#29857">Croatian Telecom</li>
 			    <li><a href="http://underlap.blogspot.com/2011/10/how-infor-ion-uses-virgo.html">Infor ION</a></li>
 				<li><a href="http://github.com/PouzinSociety/tinos">TINOS research project</a></li>
 				<li><a href="http://underlap.blogspot.co.uk/2012/10/virgo-in-vsphere.html">VMware vSphere</a></li>
