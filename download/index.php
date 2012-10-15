@@ -104,6 +104,8 @@
 	<p>
 		Users are encouraged to use releases or milestones wherever possible. But if a more recent development build is required, for example to test a bug fix, then one of the
 		<a href="https://hudson.eclipse.org/hudson/view/Virgo/job/virgo.packaging.snapshot/ws/build-packaging/target/artifacts/">zip files</a> produced by the Hudson packaging job may be downloaded.
+	</p>
+	<p>
 		Caveats:
 		<ul>
 	    	<li>Note that development builds may be less stable than official releases or milestones. For example, the code may be in the middle of a major refactoring.</li>
