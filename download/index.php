@@ -111,6 +111,7 @@
 	    	<li>Note that development builds may be less stable than official releases or milestones. For example, the code may be in the middle of a major refactoring.</li>
 	    	<li>If the Hudson packaging job fails, development builds may be unavailable. Also, existing development builds may be deleted at any time without notice.</li>
 	    	<li>Users should never raise bugs found when using these builds, but should re-test on a milestone.</li>
+	    	<li>Obviously these builds must never be used in production.</li>
 	    </ul> 
 	</p>
 </div>
