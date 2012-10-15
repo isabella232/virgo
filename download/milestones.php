@@ -84,6 +84,11 @@
 		}
 		?>
 	
+	    	<h3>Development Builds</h3>
+	        	<p>
+					Development builds are also available for <a href="http://www.eclipse.org/virgo/download/development-builds.php">limited use</a>. 
+				</p>
+
 	    <h2>Virgo IDE Tooling Milestones</h2>
 	        <p>
 	            Virgo IDE tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
