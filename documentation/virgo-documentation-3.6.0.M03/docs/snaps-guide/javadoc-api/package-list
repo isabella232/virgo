@@ -1,0 +1,5 @@
+org.eclipse.virgo.snaps
+org.eclipse.virgo.snaps.core
+org.eclipse.virgo.snaps.core.internal.webapp.config
+org.eclipse.virgo.snaps.core.internal.webapp.container
+org.eclipse.virgo.snaps.core.internal.webapp.url
