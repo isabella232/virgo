@@ -1,0 +1,119 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4.2&nbsp;Apache ANT Usage</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Bundlor User Guide"><link rel="up" href="ch04.html" title="4.&nbsp;Usage"><link rel="prev" href="ch04.html" title="4.&nbsp;Usage"><link rel="next" href="ch04s03.html" title="4.3&nbsp;Apache Maven Usage"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.2&nbsp;Apache ANT Usage</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04.html">Prev</a>&nbsp;</td><th width="60%" align="center">4.&nbsp;Usage</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04s03.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="usage.ant"></a>4.2&nbsp;Apache ANT Usage</h2></div></div></div><p>
+		The ANT task allows you to run Bundlor from inside any ANT based build system
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.ant.setup"></a>4.2.1&nbsp;ANT Setup</h3></div></div></div><p>The following procedure shows how to set up Bundlor inside of an existing ANT build file</p><div class="orderedlist"><ol type="1"><li><p>Define a <code class="literal">bundlor</code> namespace</p><pre class="programlisting">&lt;<span class="hl-tag">project</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundlor-sample-ant"</span>
+    <span class="hl-attribute">xmlns:bundlor</span>=<span class="hl-value">"antlib:org.eclipse.virgo.bundlor.ant"</span>&gt;</pre></li><li><p>Import the <code class="literal">bundlor</code> task into your build</p><pre class="programlisting">&lt;<span class="hl-tag">target</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundlor.init"</span>&gt;
+  &lt;<span class="hl-tag">ivy:cachepath</span> <span class="hl-attribute">resolveId</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">pathid</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">organisation</span>=<span class="hl-value">"org.eclipse.virgo.bundlor"</span>
+                 <span class="hl-attribute">module</span>=<span class="hl-value">"org.eclipse.virgo.bundlor.ant"</span> <span class="hl-attribute">revision</span>=<span class="hl-value">"1.1.2.RELEASE"</span> <span class="hl-attribute">conf</span>=<span class="hl-value">"ant"</span> <span class="hl-attribute">inline</span>=<span class="hl-value">"true"</span>
+                 <span class="hl-attribute">type</span>=<span class="hl-value">"jar"</span> <span class="hl-attribute">log</span>=<span class="hl-value">"download-only"</span>/&gt;
+  &lt;<span class="hl-tag">taskdef</span> <span class="hl-attribute">resource</span>=<span class="hl-value">"org/eclipse/virgo/bundlor/ant/antlib.xml"</span> <span class="hl-attribute">uri</span>=<span class="hl-value">"antlib:org.eclipse.virgo.bundlor.ant"</span>
+           <span class="hl-attribute">classpathref</span>=<span class="hl-value">"bundlor.classpath"</span>/&gt;
+&lt;<span class="hl-tag">/target</span>&gt;</pre><p>
+					This example uses a very simplistic method for building the <code class="literal">bundlor</code> task
+					classpath. It is possible to use a dependency manager such as Ivy to better manage the classpath of
+					Bundlor.
+				</p></li><li><p>
+					Use the <code class="literal">bundlor</code> task, as shown in the following example. See
+					<a class="xref" href="ch04s02.html#usage.ant.reference" title="4.2.2&nbsp;ANT Task Reference">Section&nbsp;4.2.2, &#8220;ANT Task Reference&#8221;</a> for details about the parameters of the task.
+				</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>
+    <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+    <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span> &gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"name"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"${ant.project.name}"</span> /&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.ant.reference"></a>4.2.2&nbsp;ANT Task Reference</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e383"></a>4.2.2.1&nbsp;Task Attributes</h4></div></div></div><p>
+				The following table lists all the attributes that you can specify for the <code class="literal">bundlor</code>
+				ANT task.
+			</p><div class="table"><a name="d0e391"></a><p class="title"><b>Table&nbsp;4.2.&nbsp;Attributes</b></p><div class="table-contents"><table summary="Attributes" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Attribute</th><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Description</th><th style="border-bottom: 1.0pt solid ; ">Required</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleSymbolicName</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-SymbolicName</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleVersion</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-Version</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">enabled</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Whether Bundlor should create a manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">true</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">failOnWarnings</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								Whether Bundlor should cause a build failure when there are warnings about the
+								resulting manifest
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">false</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">inputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the input to create a manifest for. This can either be a directory or a JAR
+								file.
+							</td><td style="border-bottom: 1.0pt solid ; ">Yes</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">manifestTemplatePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the manifest template. See <a class="xref" href="ch05.html" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">OSGiProfilePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the OSGi profile.  See <a class="xref" href="ch06.html" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">outputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								<p>
+									The path to write the manifest to. This can either be a directory, a JAR file, or
+									not specified.
+								</p>
+								<p>
+									If a directory is specified, the manifest will be written to
+									<code class="literal">${directory}/META-INF/MANIFEST.MF</code>.
+								</p>
+								<p>
+									If a JAR file is specified, the manifest will be written as the manifest for that
+									JAR file.
+								</p>
+								<p>
+									If nothing is specified, the manifest will be written to
+									<code class="literal">System.out</code>.
+								</p>
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">System.out</code></td></tr><tr><td style="border-right: 1.0pt solid ; ">propertiesPath</td><td style="border-right: 1.0pt solid ; ">
+								The path to a properties file used for substitution.  See
+								<a class="xref" href="ch05s03.html" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+							</td><td style="">No</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e503"></a>4.2.2.2&nbsp;Inline Manifest Template</h4></div></div></div><p>
+				Manifest templates can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;manifestTemplate/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>&gt;
+  &lt;<span class="hl-tag">manifestTemplate</span>&gt;
+Bundle-ManifestVersion: 2
+Bundle-Name: Bundlor Core
+Bundle-SymbolicName: org.eclipse.virgo.bundlor
+Bundle-Version: 0
+  &lt;<span class="hl-tag">/manifestTemplate</span>&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre><p>See <a class="xref" href="ch05.html" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e517"></a>4.2.2.3&nbsp;Inline OSGi Profile</h4></div></div></div><p>
+				OSGi profiles can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;OSGiProfile/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>&gt;
+  &lt;<span class="hl-tag">OSGiProfile</span>&gt;
+org.OSGi.framework.system.packages = \
+ org.eclipse.virgo.osgi.extensions.equinox.hooks,\
+ javax.accessibility,\
+ javax.activation,\
+ javax.activation;version="1.1.1",\
+ javax.activity,\
+ javax.annotation,\
+...
+
+org.OSGi.framework.bootdelegation = \
+ org.eclipse.virgo.kernel.authentication,\
+ com.sun.*,\
+ javax.xml.*,\
+...
+  &lt;<span class="hl-tag">/OSGiProfile</span>&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre><p>See <a class="xref" href="ch06.html" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e531"></a>4.2.2.4&nbsp;Inline Property Values</h4></div></div></div><p>
+				Property substitution values can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;property/&gt;</code> and <code class="literal">&lt;propertySet/&gt;</code> elements.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.name"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"Kernel test bundle"</span>/&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.version"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>/&gt;
+  &lt;<span class="hl-tag">propertyset</span>&gt;
+    &lt;<span class="hl-tag">propertyref</span> <span class="hl-attribute">builtin</span>=<span class="hl-value">"all"</span>/&gt;
+  &lt;<span class="hl-tag">/propertyset</span>&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre><p>See <a class="xref" href="ch05s03.html" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.ant.example"></a>4.2.3&nbsp;ANT Task Examples</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e551"></a>4.2.3.1&nbsp;Creating a manifest</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>
+   <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+   <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+   <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+   <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span>/&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e556"></a>4.2.3.2&nbsp;Creating a manifest with placeholder replacement</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>
+    <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/target/classes"</span>
+    <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+    <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span>&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.name"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"Kernel test bundle"</span>/&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.version"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>/&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre></div></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.&nbsp;Usage&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;4.3&nbsp;Apache Maven Usage</td></tr></table></div></body></html>

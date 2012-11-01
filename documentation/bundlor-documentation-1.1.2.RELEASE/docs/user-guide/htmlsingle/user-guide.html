@@ -1,0 +1,1048 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Bundlor User Guide</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Bundlor User Guide
+		</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Ben</span> <span class="surname">Hale</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Glyn</span> <span class="surname">Normington</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Juliet</span> <span class="surname">Shackell</span></h3></div></div></div><div><div class="mediaobject" align="right"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0"><tr><td align="right" valign="bottom"><img src="images/virgo-logo-large.png" align="right"></td></tr></table></div></div><div><span class="productname">Eclipse Virgo Bundlor<br></span></div><div><p class="releaseinfo">1.1.2.RELEASE</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#copyright">Copyright</a></span></dt><dt><span class="preface"><a href="#license">License</a></span></dt><dt><span class="chapter"><a href="#introduction">1. Introduction to Bundlor</a></span></dt><dd><dl><dt><span class="section"><a href="#introduction.about">1.1. About Bundlor</a></span></dt></dl></dd><dt><span class="chapter"><a href="#getting">2. Getting Bundlor</a></span></dt><dd><dl><dt><span class="section"><a href="#getting.zip">2.1. Getting the Bundlor ZIP</a></span></dt><dt><span class="section"><a href="#getting.ivy">2.2. Getting Bundlor with Ivy</a></span></dt><dt><span class="section"><a href="#getting.maven">2.3. Getting Bundlor with Maven</a></span></dt></dl></dd><dt><span class="chapter"><a href="#quickstart">3. Quickstart</a></span></dt><dd><dl><dt><span class="section"><a href="#quickstart.command.line">3.1. Command Line Quickstart</a></span></dt><dt><span class="section"><a href="#quickstart.ant">3.2. Apache ANT Quickstart</a></span></dt><dt><span class="section"><a href="#quickstart.maven">3.3. Apache Maven Quickstart</a></span></dt></dl></dd><dt><span class="chapter"><a href="#usage">4. Usage</a></span></dt><dd><dl><dt><span class="section"><a href="#usage.command.line">4.1. Command-Line Usage</a></span></dt><dt><span class="section"><a href="#usage.ant">4.2. Apache ANT Usage</a></span></dt><dt><span class="section"><a href="#usage.maven">4.3. Apache Maven Usage</a></span></dt></dl></dd><dt><span class="chapter"><a href="#manifest.template">5. Manifest Templates</a></span></dt><dd><dl><dt><span class="section"><a href="#manifest.template.introduction">5.1. Introduction</a></span></dt><dt><span class="section"><a href="#manifest.template.format">5.2. Manifest Template Format</a></span></dt><dt><span class="section"><a href="#manifest.template.property">5.3. Specifying property placeholders</a></span></dt><dt><span class="section"><a href="#manifest.template.version.expansion">5.4. Specifying automatic version expansion of imported packages based on a pattern</a></span></dt><dt><span class="section"><a href="#manifest.template.example">5.5. Example Bundlor Manifest Template</a></span></dt></dl></dd><dt><span class="chapter"><a href="#OSGi.profile">6. OSGi Profiles and Bundlor</a></span></dt><dd><dl><dt><span class="section"><a href="#OSGi-profiles.about">6.1. Overview of OSGi profiles</a></span></dt><dt><span class="section"><a href="#OSGi-profiles.using">6.2. Using OSGi profiles with Bundlor</a></span></dt></dl></dd><dt><span class="chapter"><a href="#detecting">7. Detecting Manifest Requirements</a></span></dt><dd><dl><dt><span class="section"><a href="#detecting.java">7.1. Java Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.spring">7.2. Spring Context Configuration Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.blueprint">7.3. Blueprint Service Configuration Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.webapplication">7.4. Web Application File Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.bundleclasspath">7.5. Bundle-Classpath File Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.jpa">7.6. JPA Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.eclipselink">7.7. EclipseLink Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.hibernate">7.8. Hibernate Mapping File Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.jsp">7.9. JSP File Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.log4j">7.10. Log4J Configuration Detection Criteria</a></span></dt><dt><span class="section"><a href="#detecting.staticresources">7.11. Static Resource Detection Criteria</a></span></dt></dl></dd><dt><span class="chapter"><a href="#warning">8. Detecting Manifest Issues</a></span></dt><dd><dl><dt><span class="section"><a href="#warning.importversionrange">8.1. Import Version Range Warning Criteria</a></span></dt><dt><span class="section"><a href="#warning.exportimport">8.2. Import of Exported Packages Warning Criteria</a></span></dt><dt><span class="section"><a href="#warning.signedjar">8.3. Signed JAR Warning Criteria</a></span></dt><dt><span class="section"><a href="#warning.versionedimports">8.4. Versioned Imports Warning Criteria</a></span></dt><dt><span class="section"><a href="#warning.versionedexports">8.5. Versioned Exports Warning Criteria</a></span></dt><dt><span class="section"><a href="#warning.bundlesymbolicname">8.6. Bundle-SymbolicName Warning Criteria</a></span></dt><dt><span class="section"><a href="#warning.manifestversion">8.7. Manifest-Version Warning Criteria</a></span></dt></dl></dd></dl></div><div class="preface" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="copyright"></a>Copyright</h2></div></div></div><p>
+		Copyright 2008-2012, VMware Inc.
+	</p><p>
+		Licensed Under the terms and conditions of the Eclipse Public License Version 1.0 ("EPL").  
+		A copy of the EPL is available at <a class="ulink" href="http://www.eclipse.org/legal/epl-v10.html" target="_top">http://www.eclipse.org/legal/epl-v10.html</a>.
+	</p></div><div class="preface" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="license"></a>License</h2></div></div></div><pre class="programlisting">
+						Eclipse Public License - v 1.0
+
+	 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE
+	PUBLIC LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR
+	DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS
+	AGREEMENT.
+
+	  1. DEFINITIONS  
+
+	 "Contribution" means: 
+
+	 a) in the case of the initial Contributor, the initial
+	code and documentation distributed under this Agreement, and 
+	 b) in the case of each subsequent Contributor: 
+	 i) changes to the Program, and 
+	 ii) additions to the Program; 
+	 where such changes and/or additions to the Program
+	originate from and are distributed by that particular Contributor. A
+	Contribution 'originates' from a Contributor if it was added to the
+	Program by such Contributor itself or anyone acting on such
+	Contributor's behalf. Contributions do not include additions to the
+	Program which: (i) are separate modules of software distributed in
+	conjunction with the Program under their own license agreement, and (ii)
+	are not derivative works of the Program. 
+
+	 "Contributor" means any person or entity that distributes
+	the Program. 
+
+	 "Licensed Patents" mean patent claims licensable by a
+	Contributor which are necessarily infringed by the use or sale of its
+	Contribution alone or when combined with the Program. 
+
+	 "Program" means the Contributions distributed in accordance
+	with this Agreement. 
+
+	 "Recipient" means anyone who receives the Program under
+	this Agreement, including all Contributors. 
+
+	  2. GRANT OF RIGHTS  
+
+	 a) Subject to the terms of this Agreement, each
+	Contributor hereby grants Recipient a non-exclusive, worldwide,
+	royalty-free copyright license to reproduce, prepare derivative works
+	of, publicly display, publicly perform, distribute and sublicense the
+	Contribution of such Contributor, if any, and such derivative works, in
+	source code and object code form. 
+
+	 b) Subject to the terms of this Agreement, each
+	Contributor hereby grants Recipient a non-exclusive, worldwide,
+	royalty-free patent license under Licensed Patents to make, use, sell,
+	offer to sell, import and otherwise transfer the Contribution of such
+	Contributor, if any, in source code and object code form. This patent
+	license shall apply to the combination of the Contribution and the
+	Program if, at the time the Contribution is added by the Contributor,
+	such addition of the Contribution causes such combination to be covered
+	by the Licensed Patents. The patent license shall not apply to any other
+	combinations which include the Contribution. No hardware per se is
+	licensed hereunder. 
+
+	 c) Recipient understands that although each Contributor
+	grants the licenses to its Contributions set forth herein, no assurances
+	are provided by any Contributor that the Program does not infringe the
+	patent or other intellectual property rights of any other entity. Each
+	Contributor disclaims any liability to Recipient for claims brought by
+	any other entity based on infringement of intellectual property rights
+	or otherwise. As a condition to exercising the rights and licenses
+	granted hereunder, each Recipient hereby assumes sole responsibility to
+	secure any other intellectual property rights needed, if any. For
+	example, if a third party patent license is required to allow Recipient
+	to distribute the Program, it is Recipient's responsibility to acquire
+	that license before distributing the Program. 
+
+	 d) Each Contributor represents that to its knowledge it
+	has sufficient copyright rights in its Contribution, if any, to grant
+	the copyright license set forth in this Agreement. 
+
+	  3. REQUIREMENTS  
+
+	 A Contributor may choose to distribute the Program in object code
+	form under its own license agreement, provided that: 
+
+	 a) it complies with the terms and conditions of this
+	Agreement; and 
+
+	 b) its license agreement: 
+
+	 i) effectively disclaims on behalf of all Contributors
+	all warranties and conditions, express and implied, including warranties
+	or conditions of title and non-infringement, and implied warranties or
+	conditions of merchantability and fitness for a particular purpose; 
+
+	 ii) effectively excludes on behalf of all Contributors
+	all liability for damages, including direct, indirect, special,
+	incidental and consequential damages, such as lost profits; 
+
+	 iii) states that any provisions which differ from this
+	Agreement are offered by that Contributor alone and not by any other
+	party; and 
+
+	 iv) states that source code for the Program is available
+	from such Contributor, and informs licensees how to obtain it in a
+	reasonable manner on or through a medium customarily used for software
+	exchange. 
+
+	 When the Program is made available in source code form: 
+
+	 a) it must be made available under this Agreement; and 
+
+	 b) a copy of this Agreement must be included with each
+	copy of the Program. 
+
+	 Contributors may not remove or alter any copyright notices contained
+	within the Program. 
+
+	 Each Contributor must identify itself as the originator of its
+	Contribution, if any, in a manner that reasonably allows subsequent
+	Recipients to identify the originator of the Contribution. 
+
+	  4. COMMERCIAL DISTRIBUTION  
+
+	 Commercial distributors of software may accept certain
+	responsibilities with respect to end users, business partners and the
+	like. While this license is intended to facilitate the commercial use of
+	the Program, the Contributor who includes the Program in a commercial
+	product offering should do so in a manner which does not create
+	potential liability for other Contributors. Therefore, if a Contributor
+	includes the Program in a commercial product offering, such Contributor
+	("Commercial Contributor") hereby agrees to defend and
+	indemnify every other Contributor ("Indemnified Contributor")
+	against any losses, damages and costs (collectively "Losses")
+	arising from claims, lawsuits and other legal actions brought by a third
+	party against the Indemnified Contributor to the extent caused by the
+	acts or omissions of such Commercial Contributor in connection with its
+	distribution of the Program in a commercial product offering. The
+	obligations in this section do not apply to any claims or Losses
+	relating to any actual or alleged intellectual property infringement. In
+	order to qualify, an Indemnified Contributor must: a) promptly notify
+	the Commercial Contributor in writing of such claim, and b) allow the
+	Commercial Contributor to control, and cooperate with the Commercial
+	Contributor in, the defense and any related settlement negotiations. The
+	Indemnified Contributor may participate in any such claim at its own
+	expense. 
+
+	 For example, a Contributor might include the Program in a commercial
+	product offering, Product X. That Contributor is then a Commercial
+	Contributor. If that Commercial Contributor then makes performance
+	claims, or offers warranties related to Product X, those performance
+	claims and warranties are such Commercial Contributor's responsibility
+	alone. Under this section, the Commercial Contributor would have to
+	defend claims against the other Contributors related to those
+	performance claims and warranties, and if a court requires any other
+	Contributor to pay any damages as a result, the Commercial Contributor
+	must pay those damages. 
+
+	  5. NO WARRANTY  
+
+	 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS
+	PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+	OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION,
+	ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY
+	OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely
+	responsible for determining the appropriateness of using and
+	distributing the Program and assumes all risks associated with its
+	exercise of rights under this Agreement , including but not limited to
+	the risks and costs of program errors, compliance with applicable laws,
+	damage to or loss of data, programs or equipment, and unavailability or
+	interruption of operations. 
+
+	  6. DISCLAIMER OF LIABILITY  
+
+	 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT
+	NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT,
+	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING
+	WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF
+	LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+	NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR
+	DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED
+	HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+	  7. GENERAL  
+
+	 If any provision of this Agreement is invalid or unenforceable under
+	applicable law, it shall not affect the validity or enforceability of
+	the remainder of the terms of this Agreement, and without further action
+	by the parties hereto, such provision shall be reformed to the minimum
+	extent necessary to make such provision valid and enforceable. 
+
+	 If Recipient institutes patent litigation against any entity
+	(including a cross-claim or counterclaim in a lawsuit) alleging that the
+	Program itself (excluding combinations of the Program with other
+	software or hardware) infringes such Recipient's patent(s), then such
+	Recipient's rights granted under Section 2(b) shall terminate as of the
+	date such litigation is filed. 
+
+	 All Recipient's rights under this Agreement shall terminate if it
+	fails to comply with any of the material terms or conditions of this
+	Agreement and does not cure such failure in a reasonable period of time
+	after becoming aware of such noncompliance. If all Recipient's rights
+	under this Agreement terminate, Recipient agrees to cease use and
+	distribution of the Program as soon as reasonably practicable. However,
+	Recipient's obligations under this Agreement and any licenses granted by
+	Recipient relating to the Program shall continue and survive. 
+
+	 Everyone is permitted to copy and distribute copies of this
+	Agreement, but in order to avoid inconsistency the Agreement is
+	copyrighted and may only be modified in the following manner. The
+	Agreement Steward reserves the right to publish new versions (including
+	revisions) of this Agreement from time to time. No one other than the
+	Agreement Steward has the right to modify this Agreement. The Eclipse
+	Foundation is the initial Agreement Steward. The Eclipse Foundation may
+	assign the responsibility to serve as the Agreement Steward to a
+	suitable separate entity. Each new version of the Agreement will be
+	given a distinguishing version number. The Program (including
+	Contributions) may always be distributed subject to the version of the
+	Agreement under which it was received. In addition, after a new version
+	of the Agreement is published, Contributor may elect to distribute the
+	Program (including its Contributions) under the new version. Except as
+	expressly stated in Sections 2(a) and 2(b) above, Recipient receives no
+	rights or licenses to the intellectual property of any Contributor under
+	this Agreement, whether expressly, by implication, estoppel or
+	otherwise. All rights in the Program not expressly granted under this
+	Agreement are reserved. 
+
+	 This Agreement is governed by the laws of the State of New York and
+	the intellectual property laws of the United States of America. No party
+	to this Agreement will bring a legal action under this Agreement more
+	than one year after the cause of action arose. Each party waives its
+	rights to a jury trial in any resulting litigation. 
+
+
+
+</pre></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="introduction"></a>1.&nbsp;Introduction to Bundlor</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="introduction.about"></a>1.1&nbsp;About Bundlor</h2></div></div></div><p>
+			With the increasing focus on OSGi in Enterprise Java, there has been increasing focus on creating OSGi
+			bundles for deployment.
+			When a development team is creating their own bundles, bundlor simplifies the creation and maintenance of
+			the OSGi metadata of each bundle.
+		</p><p>
+			Bundlor also helps in the use of third-party enterprise libraries, many of which are not packaged as OSGi bundles.
+			In this case, developers must add OSGi metadata to the library before use.
+		</p><p>
+			Bundlor helps in both these scenarios. It can be very hard for developers to keep track of the
+			dependencies needed by a JAR file. Bundlor is a tool that automates the detection
+			of dependencies and the creation of OSGi manifest directives for JARs after their creation. Bundlor takes as
+			input a JAR and a template consisting of a superset of the standard OSGi manifest headers. Bundlor analyses
+			the source code and support files contained in the JAR, applies the template to the results, and generates a
+			manifest.
+		</p><p>
+			The use of Bundlor can take different forms, from an Apache ANT task and an Apache Maven plugin, to
+			simple command line execution.
+		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="getting"></a>2.&nbsp;Getting Bundlor</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="getting.zip"></a>2.1&nbsp;Getting the Bundlor ZIP</h2></div></div></div><p>Eclipse Virgo Bundlor is distributed as a ZIP file.</p><div class="orderedlist"><ol type="1"><li><p>Download the ZIP file from the Virgo download page.</p><p>
+				The Virgo download page is located at
+				<a class="ulink" href="http://www.eclipse.org/virgo/download/" target="_top">http://www.eclipse.org/virgo/download/</a>.
+			</p></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="getting.ivy"></a>2.2&nbsp;Getting Bundlor with Ivy</h2></div></div></div><p>Eclipse Virgo Bundlor can be obtained from an Ivy repository.</p><div class="orderedlist"><ol type="1"><li><p>
+				Add the Virgo resolver to the <code class="literal">ivysettings.xml</code>
+				file
+			</p><pre class="programlisting">&lt;<span class="hl-tag">url</span> <span class="hl-attribute">name</span>=<span class="hl-value">"eclipse.virgo.build.read.resolver"</span>&gt;
+  &lt;<span class="hl-tag">ivy</span> <span class="hl-attribute">pattern</span>=<span class="hl-value">"http://build.eclipse.org/rt/virgo/ivy/bundles/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"</span>/&gt;
+  &lt;<span class="hl-tag">artifact</span> <span class="hl-attribute">pattern</span>=<span class="hl-value">"http://build.eclipse.org/rt/virgo/ivy/bundles/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"</span>/&gt;
+&lt;<span class="hl-tag">/url</span>&gt;</pre></li><li><p>Download the Eclipse Virgo Bundlor dependency in the <code class="literal">build.xml</code> file</p><pre class="programlisting">&lt;<span class="hl-tag">ivy:cachepath</span> <span class="hl-attribute">resolveId</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">pathid</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">organisation</span>=<span class="hl-value">"org.eclipse.virgo.bundlor"</span>
+    <span class="hl-attribute">module</span>=<span class="hl-value">"org.eclipse.virgo.bundlor.ant"</span> <span class="hl-attribute">revision</span>=<span class="hl-value">"1.1.2.RELEASE"</span> <span class="hl-attribute">conf</span>=<span class="hl-value">"ant"</span> <span class="hl-attribute">inline</span>=<span class="hl-value">"true"</span>
+    <span class="hl-attribute">type</span>=<span class="hl-value">"jar"</span> <span class="hl-attribute">log</span>=<span class="hl-value">"download-only"</span>/&gt;</pre></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="getting.maven"></a>2.3&nbsp;Getting Bundlor with Maven</h2></div></div></div><p>Eclipse Virgo Bundlor can be obtained from a Maven repository.</p><div class="orderedlist"><ol type="1"><li><p>
+				Add the Eclipse Virgo build and SpringSource Enterprise Bundle Repository resolvers to the <code class="literal">pom.xml</code> file
+			</p><pre class="programlisting">&lt;<span class="hl-tag">repository</span>&gt;
+  &lt;<span class="hl-tag">id</span>&gt;eclipse.virgo.build.bundles.release&lt;<span class="hl-tag">/id</span>&gt;
+  &lt;<span class="hl-tag">name</span>&gt;Eclipse Virgo Build&lt;<span class="hl-tag">/name</span>&gt;
+  &lt;<span class="hl-tag">url</span>&gt;http://build.eclipse.org/rt/virgo/maven/bundles/release&lt;<span class="hl-tag">/url</span>&gt;
+&lt;<span class="hl-tag">/repository</span>&gt;
+&lt;<span class="hl-tag">repository</span>&gt;
+  &lt;<span class="hl-tag">id</span>&gt;com.springsource.repository.bundles.external&lt;<span class="hl-tag">/id</span>&gt;
+  &lt;<span class="hl-tag">name</span>&gt;SpringSource Enterprise Bundle Repository - External Bundle Releases&lt;<span class="hl-tag">/name</span>&gt;
+  &lt;<span class="hl-tag">url</span>&gt;http://repository.springsource.com/maven/bundles/external&lt;<span class="hl-tag">/url</span>&gt;
+&lt;<span class="hl-tag">/repository</span>&gt;</pre></li><li><p>
+				Add a dependency to the <code class="literal">pom.xml</code> file
+			</p><pre class="programlisting">&lt;<span class="hl-tag">dependencies</span>&gt;
+  &lt;<span class="hl-tag">dependency</span>&gt;
+    &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+	&lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+	&lt;<span class="hl-tag">version</span>&gt;1.1.2.RELEASE&lt;<span class="hl-tag">/version</span>&gt;
+	&lt;<span class="hl-tag">scope</span>&gt;compile&lt;<span class="hl-tag">/scope</span>&gt;
+  &lt;<span class="hl-tag">/dependency</span>&gt;
+&lt;<span class="hl-tag">/dependencies</span>&gt;</pre></li></ol></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="quickstart"></a>3.&nbsp;Quickstart</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="quickstart.command.line"></a>3.1&nbsp;Command Line Quickstart</h2></div></div></div><p>The command line client allows Bundlor to be run from the command line.</p><div class="orderedlist"><ol type="1"><li><p>
+				Change directory to the <code class="literal">$BUNDLOR_HOME/bin</code> directory where <code class="literal">$BUNDLOR_HOME</code>
+				is a directory into which the bundlor ZIP file distribution has been unzipped.
+			</p></li><li><p>
+				Run <code class="literal">bundlor.sh</code> or <code class="literal">bundlor.bat</code> scripts. See
+				<a class="xref" href="#usage.command.line" title="4.1&nbsp;Command-Line Usage">Section&nbsp;4.1, &#8220;Command-Line Usage&#8221;</a> for details.
+			</p></li></ol></div><pre class="programlisting">% ./bundlor.sh \
+-i ./org.springframework.integration.jar \
+-m ./template.mf \
+-o ./target/org.springframework.integration.jar
+
+Transformed bundle written to ./target/org.springframework.integration.jar
+%</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="quickstart.ant"></a>3.2&nbsp;Apache ANT Quickstart</h2></div></div></div><p>The ANT task allows Bundlor to be run from inside any ANT based build system.</p><div class="orderedlist"><ol type="1"><li><p>Define a <code class="literal">bundlor</code> namespace</p><pre class="programlisting">&lt;<span class="hl-tag">project</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundlor-sample-ant"</span>
+    <span class="hl-attribute">xmlns:bundlor</span>=<span class="hl-value">"antlib:org.eclipse.virgo.bundlor.ant"</span>&gt;</pre></li><li><p>Import the <code class="literal">bundlor</code> task into your build</p><pre class="programlisting">&lt;<span class="hl-tag">target</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundlor.init"</span>&gt;
+  &lt;<span class="hl-tag">ivy:cachepath</span> <span class="hl-attribute">resolveId</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">pathid</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">organisation</span>=<span class="hl-value">"org.eclipse.virgo.bundlor"</span>
+                 <span class="hl-attribute">module</span>=<span class="hl-value">"org.eclipse.virgo.bundlor.ant"</span> <span class="hl-attribute">revision</span>=<span class="hl-value">"1.1.2.RELEASE"</span> <span class="hl-attribute">conf</span>=<span class="hl-value">"ant"</span> <span class="hl-attribute">inline</span>=<span class="hl-value">"true"</span>
+                 <span class="hl-attribute">type</span>=<span class="hl-value">"jar"</span> <span class="hl-attribute">log</span>=<span class="hl-value">"download-only"</span>/&gt;
+  &lt;<span class="hl-tag">taskdef</span> <span class="hl-attribute">resource</span>=<span class="hl-value">"org/eclipse/virgo/bundlor/ant/antlib.xml"</span> <span class="hl-attribute">uri</span>=<span class="hl-value">"antlib:org.eclipse.virgo.bundlor.ant"</span>
+           <span class="hl-attribute">classpathref</span>=<span class="hl-value">"bundlor.classpath"</span>/&gt;
+&lt;<span class="hl-tag">/target</span>&gt;</pre></li><li><p>
+				Use the <code class="literal">bundlor</code> task. See <a class="xref" href="#usage.ant" title="4.2&nbsp;Apache ANT Usage">Section&nbsp;4.2, &#8220;Apache ANT Usage&#8221;</a> for details about the
+				parameters of the task.
+			</p><pre class="programlisting">
+&lt;<span class="hl-tag">bundlor:bundlor</span>
+    <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+    <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span>/&gt;
+    		</pre></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="quickstart.maven"></a>3.3&nbsp;Apache Maven Quickstart</h2></div></div></div><p>The Maven plugin allows Bundlor to be run from inside any Maven project.</p><div class="orderedlist"><ol type="1"><li><p>Add the Eclipse Virgo build and SpringSource Enterprise Bundle Repository to the <code class="filename">pom.xml</code> file</p><pre class="programlisting">&lt;<span class="hl-tag">pluginRepositories</span>&gt;
+  &lt;<span class="hl-tag">pluginRepository</span>&gt;
+    &lt;<span class="hl-tag">id</span>&gt;eclipse.virgo.build.bundles.release&lt;<span class="hl-tag">/id</span>&gt;
+    &lt;<span class="hl-tag">name</span>&gt;Eclipse Virgo Build&lt;<span class="hl-tag">/name</span>&gt;
+    &lt;<span class="hl-tag">url</span>&gt;http://build.eclipse.org/rt/virgo/maven/bundles/release&lt;<span class="hl-tag">/url</span>&gt;
+  &lt;<span class="hl-tag">/pluginRepository</span>&gt;
+  &lt;<span class="hl-tag">pluginRepository</span>&gt;
+    &lt;<span class="hl-tag">id</span>&gt;com.springsource.repository.bundles.external&lt;<span class="hl-tag">/id</span>&gt;
+    &lt;<span class="hl-tag">name</span>&gt;SpringSource Enterprise Bundle Repository - External Bundle Releases&lt;<span class="hl-tag">/name</span>&gt;
+    &lt;<span class="hl-tag">url</span>&gt;http://repository.springsource.com/maven/bundles/external&lt;<span class="hl-tag">/url</span>&gt;
+  &lt;<span class="hl-tag">/pluginRepository</span>&gt;
+  ...
+&lt;<span class="hl-tag">/pluginRepositories</span>&gt;</pre></li><li><p>
+				Use the <code class="literal">bundlor</code> plugin in the <code class="filename">pom.xml</code> file. See
+				<a class="xref" href="#usage.maven" title="4.3&nbsp;Apache Maven Usage">Section&nbsp;4.3, &#8220;Apache Maven Usage&#8221;</a> for details about the parameters of the plugin.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">build</span>&gt;
+  &lt;<span class="hl-tag">plugins</span>&gt;
+    &lt;<span class="hl-tag">plugin</span>&gt;
+      &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+      &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+      &lt;<span class="hl-tag">version</span>&gt;1.1.2.RELEASE&lt;<span class="hl-tag">/version</span>&gt;
+      &lt;<span class="hl-tag">executions</span>&gt;
+        &lt;<span class="hl-tag">execution</span>&gt;
+          &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+          &lt;<span class="hl-tag">goals</span>&gt;
+            &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+          &lt;<span class="hl-tag">/goals</span>&gt;
+        &lt;<span class="hl-tag">/execution</span>&gt;
+      &lt;<span class="hl-tag">/executions</span>&gt;
+    &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">plugin</span>&gt;
+      &lt;<span class="hl-tag">groupId</span>&gt;org.apache.maven.plugins&lt;<span class="hl-tag">/groupId</span>&gt;
+      &lt;<span class="hl-tag">artifactId</span>&gt;maven-jar-plugin&lt;<span class="hl-tag">/artifactId</span>&gt;
+      &lt;<span class="hl-tag">version</span>&gt;2.4&lt;<span class="hl-tag">/version</span>&gt;
+      &lt;<span class="hl-tag">configuration</span>&gt;
+        &lt;<span class="hl-tag">archive</span>&gt;
+          &lt;<span class="hl-tag">manifestFile</span>&gt;
+            target/classes/META-INF/MANIFEST.MF
+          &lt;<span class="hl-tag">/manifestFile</span>&gt;
+        &lt;<span class="hl-tag">/archive</span>&gt;
+      &lt;<span class="hl-tag">/configuration</span>&gt;
+    &lt;<span class="hl-tag">/plugin</span>&gt;
+    ...
+  &lt;<span class="hl-tag">/plugins</span>&gt;
+  ...
+&lt;<span class="hl-tag">/build</span>&gt;</pre></li></ol></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="usage"></a>4.&nbsp;Usage</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="usage.command.line"></a>4.1&nbsp;Command-Line Usage</h2></div></div></div><p>The command line client allows Bundlor to be run from the command line of any platform</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.command.line.syntax"></a>4.1.1&nbsp;Command Syntax</h3></div></div></div><p>To use Bundlor run the following for UNIX and Windows respectively.</p><pre class="programlisting">$BUNDLOR_HOME/bin/bundlor.sh [options] </pre><pre class="programlisting">%BUNDLOR_HOME%\bin\bundlor.bat [options] </pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.command.line.reference"></a>4.1.2&nbsp;Command Line Reference</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e233"></a>4.1.2.1&nbsp;Command Line Parameters</h4></div></div></div><p>
+				The following table lists all the parameters that you can specify for the <code class="literal">bundlor</code>
+				command line client.
+			</p><div class="table"><a name="d0e241"></a><p class="title"><b>Table&nbsp;4.1.&nbsp;Attributes</b></p><div class="table-contents"><table summary="Attributes" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Attribute</th><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Description</th><th style="border-bottom: 1.0pt solid ; ">Required</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">-f</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								Whether Bundlor should cause a build failure when there are warnings about the
+								resulting manifest
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">false</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">-i &lt;path&gt;</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the input to create a manifest for. This can either be a directory or a JAR
+								file.
+							</td><td style="border-bottom: 1.0pt solid ; ">Yes</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">-m &lt;path&gt;</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the manifest template. See <a class="xref" href="#manifest.template" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">-p &lt;path&gt;</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the OSGi profile.  See <a class="xref" href="#OSGi.profile" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">-o &lt;path&gt;</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								<p>
+									The path to write the manifest to. This can either be a directory, a JAR file, or
+									not specified.
+								</p>
+								<p>
+									If a directory is specified, the manifest will be written to
+									<code class="literal">${directory}/META-INF/MANIFEST.MF</code>.
+								</p>
+								<p>
+									If a JAR file is specified, the manifest will be written as the manifest for that
+									JAR file.
+								</p>
+								<p>
+									If nothing is specified, the manifest will be written to
+									<code class="literal">System.out</code>.
+								</p>
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">System.out</code></td></tr><tr><td style="border-right: 1.0pt solid ; ">-r &lt;path&gt;</td><td style="border-right: 1.0pt solid ; ">
+								The path to a properties file used for substitution.  See
+								<a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+							</td><td style="">No</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e324"></a>4.1.2.2&nbsp;Command Line Property Values</h4></div></div></div><p>
+				Property substitution values can be optionally specified on the command line instead of as an external file
+				using the <code class="literal">-Dproperty=value</code> parameter.
+			</p><pre class="programlisting">% ./bundlor.sh \
+-i ./org.springframework.integration.jar \
+-m ./template.mf \
+-o ./target/org.springframework.integration.jar \
+-Dname="Spring Integration"
+
+Transformed bundle written to ./target/org.springframework.integration.jar
+%</pre><p>See <a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.</p></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="usage.ant"></a>4.2&nbsp;Apache ANT Usage</h2></div></div></div><p>
+		The ANT task allows you to run Bundlor from inside any ANT based build system
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.ant.setup"></a>4.2.1&nbsp;ANT Setup</h3></div></div></div><p>The following procedure shows how to set up Bundlor inside of an existing ANT build file</p><div class="orderedlist"><ol type="1"><li><p>Define a <code class="literal">bundlor</code> namespace</p><pre class="programlisting">&lt;<span class="hl-tag">project</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundlor-sample-ant"</span>
+    <span class="hl-attribute">xmlns:bundlor</span>=<span class="hl-value">"antlib:org.eclipse.virgo.bundlor.ant"</span>&gt;</pre></li><li><p>Import the <code class="literal">bundlor</code> task into your build</p><pre class="programlisting">&lt;<span class="hl-tag">target</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundlor.init"</span>&gt;
+  &lt;<span class="hl-tag">ivy:cachepath</span> <span class="hl-attribute">resolveId</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">pathid</span>=<span class="hl-value">"bundlor.classpath"</span> <span class="hl-attribute">organisation</span>=<span class="hl-value">"org.eclipse.virgo.bundlor"</span>
+                 <span class="hl-attribute">module</span>=<span class="hl-value">"org.eclipse.virgo.bundlor.ant"</span> <span class="hl-attribute">revision</span>=<span class="hl-value">"1.1.2.RELEASE"</span> <span class="hl-attribute">conf</span>=<span class="hl-value">"ant"</span> <span class="hl-attribute">inline</span>=<span class="hl-value">"true"</span>
+                 <span class="hl-attribute">type</span>=<span class="hl-value">"jar"</span> <span class="hl-attribute">log</span>=<span class="hl-value">"download-only"</span>/&gt;
+  &lt;<span class="hl-tag">taskdef</span> <span class="hl-attribute">resource</span>=<span class="hl-value">"org/eclipse/virgo/bundlor/ant/antlib.xml"</span> <span class="hl-attribute">uri</span>=<span class="hl-value">"antlib:org.eclipse.virgo.bundlor.ant"</span>
+           <span class="hl-attribute">classpathref</span>=<span class="hl-value">"bundlor.classpath"</span>/&gt;
+&lt;<span class="hl-tag">/target</span>&gt;</pre><p>
+					This example uses a very simplistic method for building the <code class="literal">bundlor</code> task
+					classpath. It is possible to use a dependency manager such as Ivy to better manage the classpath of
+					Bundlor.
+				</p></li><li><p>
+					Use the <code class="literal">bundlor</code> task, as shown in the following example. See
+					<a class="xref" href="#usage.ant.reference" title="4.2.2&nbsp;ANT Task Reference">Section&nbsp;4.2.2, &#8220;ANT Task Reference&#8221;</a> for details about the parameters of the task.
+				</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>
+    <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+    <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span> &gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"name"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"${ant.project.name}"</span> /&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.ant.reference"></a>4.2.2&nbsp;ANT Task Reference</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e383"></a>4.2.2.1&nbsp;Task Attributes</h4></div></div></div><p>
+				The following table lists all the attributes that you can specify for the <code class="literal">bundlor</code>
+				ANT task.
+			</p><div class="table"><a name="d0e391"></a><p class="title"><b>Table&nbsp;4.2.&nbsp;Attributes</b></p><div class="table-contents"><table summary="Attributes" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Attribute</th><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Description</th><th style="border-bottom: 1.0pt solid ; ">Required</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleSymbolicName</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-SymbolicName</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleVersion</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-Version</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">enabled</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Whether Bundlor should create a manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">true</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">failOnWarnings</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								Whether Bundlor should cause a build failure when there are warnings about the
+								resulting manifest
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">false</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">inputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the input to create a manifest for. This can either be a directory or a JAR
+								file.
+							</td><td style="border-bottom: 1.0pt solid ; ">Yes</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">manifestTemplatePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the manifest template. See <a class="xref" href="#manifest.template" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">OSGiProfilePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the OSGi profile.  See <a class="xref" href="#OSGi.profile" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">outputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								<p>
+									The path to write the manifest to. This can either be a directory, a JAR file, or
+									not specified.
+								</p>
+								<p>
+									If a directory is specified, the manifest will be written to
+									<code class="literal">${directory}/META-INF/MANIFEST.MF</code>.
+								</p>
+								<p>
+									If a JAR file is specified, the manifest will be written as the manifest for that
+									JAR file.
+								</p>
+								<p>
+									If nothing is specified, the manifest will be written to
+									<code class="literal">System.out</code>.
+								</p>
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">System.out</code></td></tr><tr><td style="border-right: 1.0pt solid ; ">propertiesPath</td><td style="border-right: 1.0pt solid ; ">
+								The path to a properties file used for substitution.  See
+								<a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+							</td><td style="">No</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e503"></a>4.2.2.2&nbsp;Inline Manifest Template</h4></div></div></div><p>
+				Manifest templates can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;manifestTemplate/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>&gt;
+  &lt;<span class="hl-tag">manifestTemplate</span>&gt;
+Bundle-ManifestVersion: 2
+Bundle-Name: Bundlor Core
+Bundle-SymbolicName: org.eclipse.virgo.bundlor
+Bundle-Version: 0
+  &lt;<span class="hl-tag">/manifestTemplate</span>&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre><p>See <a class="xref" href="#manifest.template" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e517"></a>4.2.2.3&nbsp;Inline OSGi Profile</h4></div></div></div><p>
+				OSGi profiles can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;OSGiProfile/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>&gt;
+  &lt;<span class="hl-tag">OSGiProfile</span>&gt;
+org.OSGi.framework.system.packages = \
+ org.eclipse.virgo.osgi.extensions.equinox.hooks,\
+ javax.accessibility,\
+ javax.activation,\
+ javax.activation;version="1.1.1",\
+ javax.activity,\
+ javax.annotation,\
+...
+
+org.OSGi.framework.bootdelegation = \
+ org.eclipse.virgo.kernel.authentication,\
+ com.sun.*,\
+ javax.xml.*,\
+...
+  &lt;<span class="hl-tag">/OSGiProfile</span>&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre><p>See <a class="xref" href="#OSGi.profile" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e531"></a>4.2.2.4&nbsp;Inline Property Values</h4></div></div></div><p>
+				Property substitution values can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;property/&gt;</code> and <code class="literal">&lt;propertySet/&gt;</code> elements.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.name"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"Kernel test bundle"</span>/&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.version"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>/&gt;
+  &lt;<span class="hl-tag">propertyset</span>&gt;
+    &lt;<span class="hl-tag">propertyref</span> <span class="hl-attribute">builtin</span>=<span class="hl-value">"all"</span>/&gt;
+  &lt;<span class="hl-tag">/propertyset</span>&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre><p>See <a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.ant.example"></a>4.2.3&nbsp;ANT Task Examples</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e551"></a>4.2.3.1&nbsp;Creating a manifest</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>
+   <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+   <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+   <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+   <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span>/&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e556"></a>4.2.3.2&nbsp;Creating a manifest with placeholder replacement</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">bundlor:bundlor</span>
+    <span class="hl-attribute">inputPath</span>=<span class="hl-value">"${basedir}/target/classes"</span>
+    <span class="hl-attribute">outputPath</span>=<span class="hl-value">"${basedir}/target/target/classes"</span>
+    <span class="hl-attribute">bundleVersion</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>
+    <span class="hl-attribute">manifestTemplatePath</span>=<span class="hl-value">"${basedir}/template.mf"</span>&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.name"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"Kernel test bundle"</span>/&gt;
+  &lt;<span class="hl-tag">property</span> <span class="hl-attribute">name</span>=<span class="hl-value">"bundle.version"</span> <span class="hl-attribute">value</span>=<span class="hl-value">"1.0.2.BUILD-${timestamp}"</span>/&gt;
+&lt;<span class="hl-tag">/bundlor:bundlor</span>&gt;</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="usage.maven"></a>4.3&nbsp;Apache Maven Usage</h2></div></div></div><p>The Maven plugin allows Bundlor to be run from inside any Maven project.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.maven.setup"></a>4.3.1&nbsp;Maven Setup</h3></div></div></div><p>
+			The following procedure shows how to set up Bundlor inside of an existing Maven <code class="literal">POM</code> file.
+		</p><div class="orderedlist"><ol type="1"><li><p>Add the Eclipse Virgo build and SpringSource Enterprise Bundle Repository to the <code class="filename">pom.xml</code> file.</p><pre class="programlisting">&lt;<span class="hl-tag">pluginRepositories</span>&gt;
+  &lt;<span class="hl-tag">pluginRepository</span>&gt;
+    &lt;<span class="hl-tag">id</span>&gt;eclipse.virgo.build.bundles.release&lt;<span class="hl-tag">/id</span>&gt;
+    &lt;<span class="hl-tag">name</span>&gt;Eclipse Virgo Build&lt;<span class="hl-tag">/name</span>&gt;
+    &lt;<span class="hl-tag">url</span>&gt;http://build.eclipse.org/rt/virgo/maven/bundles/release&lt;<span class="hl-tag">/url</span>&gt;
+  &lt;<span class="hl-tag">/pluginRepository</span>&gt;
+  &lt;<span class="hl-tag">pluginRepository</span>&gt;
+    &lt;<span class="hl-tag">id</span>&gt;com.springsource.repository.bundles.external&lt;<span class="hl-tag">/id</span>&gt;
+    &lt;<span class="hl-tag">name</span>&gt;SpringSource Enterprise Bundle Repository - External Bundle Releases&lt;<span class="hl-tag">/name</span>&gt;
+    &lt;<span class="hl-tag">url</span>&gt;http://repository.springsource.com/maven/bundles/external&lt;<span class="hl-tag">/url</span>&gt;
+  &lt;<span class="hl-tag">/pluginRepository</span>&gt;
+  ...
+&lt;<span class="hl-tag">/pluginRepositories</span>&gt;</pre></li><li><p>
+					Use the <code class="literal">bundlor</code> plugin, as shown in the following example. See
+					<a class="xref" href="#usage.maven.reference" title="4.3.2&nbsp;Maven Plugin Reference">Section&nbsp;4.3.2, &#8220;Maven Plugin Reference&#8221;</a> for details about the parameters of the plugin.
+				</p><pre class="programlisting">&lt;<span class="hl-tag">build</span>&gt;
+  &lt;<span class="hl-tag">plugins</span>&gt;
+    &lt;<span class="hl-tag">plugin</span>&gt;
+      &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+      &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+      &lt;<span class="hl-tag">version</span>&gt;1.1.2.RELEASE&lt;<span class="hl-tag">/version</span>&gt;
+      &lt;<span class="hl-tag">executions</span>&gt;
+        &lt;<span class="hl-tag">execution</span>&gt;
+          &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+          &lt;<span class="hl-tag">goals</span>&gt;
+            &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+          &lt;<span class="hl-tag">/goals</span>&gt;
+        &lt;<span class="hl-tag">/execution</span>&gt;
+      &lt;<span class="hl-tag">/executions</span>&gt;
+    &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">plugin</span>&gt;
+      &lt;<span class="hl-tag">groupId</span>&gt;org.apache.maven.plugins&lt;<span class="hl-tag">/groupId</span>&gt;
+      &lt;<span class="hl-tag">artifactId</span>&gt;maven-jar-plugin&lt;<span class="hl-tag">/artifactId</span>&gt;
+      &lt;<span class="hl-tag">version</span>&gt;2.4&lt;<span class="hl-tag">/version</span>&gt;
+      &lt;<span class="hl-tag">configuration</span>&gt;
+        &lt;<span class="hl-tag">archive</span>&gt;
+          &lt;<span class="hl-tag">manifestFile</span>&gt;
+            target/classes/META-INF/MANIFEST.MF
+          &lt;<span class="hl-tag">/manifestFile</span>&gt;
+        &lt;<span class="hl-tag">/archive</span>&gt;
+      &lt;<span class="hl-tag">/configuration</span>&gt;
+    &lt;<span class="hl-tag">/plugin</span>&gt;
+    ...
+  &lt;<span class="hl-tag">/plugins</span>&gt;
+  ...
+&lt;<span class="hl-tag">/build</span>&gt;</pre></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.maven.reference"></a>4.3.2&nbsp;Maven Plugin Reference</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e596"></a>4.3.2.1&nbsp;Plugin Configuration</h4></div></div></div><p>
+				The following table lists all the elements that you can specify for the <code class="literal">bundlor</code>
+				Maven plugin.
+			</p><div class="table"><a name="d0e604"></a><p class="title"><b>Table&nbsp;4.3.&nbsp;Elements</b></p><div class="table-contents"><table summary="Elements" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Attribute</th><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Description</th><th style="border-bottom: 1.0pt solid ; ">Required</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleSymbolicName</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-SymbolicName</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.artifactId}</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">bundleVersion</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">The OSGi <code class="literal">Bundle-Version</code> for the resulting manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.version}</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">enabled</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Whether Bundlor should create a manifest</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">true</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">failOnWarnings</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								Whether Bundlor should cause a build failure when there are warnings about the
+								resulting manifest
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">false</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">inputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the input to create a manifest for. This can either be a directory or a JAR
+								file.
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.build.outputDirectory}</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">manifestTemplate</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								An inline manifest template. See <a class="xref" href="#inline.manifest.template" title="4.3.2.2&nbsp;Inline Manifest Template">Section&nbsp;4.3.2.2, &#8220;Inline Manifest Template&#8221;</a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">manifestTemplatePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the manifest template. See <a class="xref" href="#manifest.template" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${basedir}/template.mf</code></td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">OSGiProfilePath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								The path to the OSGi profile.  See <a class="xref" href="#OSGi.profile" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.
+							</td><td style="border-bottom: 1.0pt solid ; ">No</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">outputPath</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+								<p>
+									The path to write the manifest to. This can either be a directory, a JAR file, or
+									not specified.
+								</p>
+								<p>
+									If a directory is specified, the manifest will be written to
+									<code class="literal">${directory}/META-INF/MANIFEST.MF</code>.
+								</p>
+								<p>
+									If a JAR file is specified, the manifest will be written as the manifest for that
+									JAR file.
+								</p>
+							</td><td style="border-bottom: 1.0pt solid ; ">No - defaults to <code class="literal">${project.build.outputDirectory}</code></td></tr><tr><td style="border-right: 1.0pt solid ; ">propertiesPath</td><td style="border-right: 1.0pt solid ; ">
+								The path to a properties file used for substitution.  See
+								<a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+							</td><td style="">No</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="inline.manifest.template"></a>4.3.2.2&nbsp;Inline Manifest Template</h4></div></div></div><p>
+				Manifest templates can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;manifestTemplate/&gt;</code> element.
+				For example:
+			</p><pre class="programlisting">&lt;<span class="hl-tag">execution</span>&gt;
+  &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+  &lt;<span class="hl-tag">goals</span>&gt;
+    &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+  &lt;<span class="hl-tag">/goals</span>&gt;
+  &lt;<span class="hl-tag">configuration</span>&gt;
+    &lt;<span class="hl-tag">manifestTemplate</span>&gt;
+Bundle-ManifestVersion: 2
+Bundle-Name: Bundlor Core
+Bundle-SymbolicName: org.eclipse.virgo.bundlor
+Bundle-Version: 0
+    &lt;<span class="hl-tag">/manifestTemplate</span>&gt;
+  &lt;<span class="hl-tag">/configuration</span>&gt;
+&lt;<span class="hl-tag">/execution</span>&gt;</pre><p>See <a class="xref" href="#manifest.template" title="5.&nbsp;Manifest Templates">Chapter&nbsp;5, <i>Manifest Templates</i></a> for details.</p><p>
+				If a <code class="literal">&lt;manifestTemplate/&gt;</code> element is specified,
+				any <code class="literal">&lt;manifestTemplatePath/&gt;</code> element is ignored.
+			</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e749"></a>4.3.2.3&nbsp;Inline OSGi Profile</h4></div></div></div><p>
+				OSGi profiles can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;OSGiProfile/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">execution</span>&gt;
+  &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+  &lt;<span class="hl-tag">goals</span>&gt;
+    &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+  &lt;<span class="hl-tag">/goals</span>&gt;
+  &lt;<span class="hl-tag">configuration</span>&gt;
+    &lt;<span class="hl-tag">OSGiProfile</span>&gt;
+org.OSGi.framework.system.packages = \
+ org.eclipse.virgo.osgi.extensions.equinox.hooks,\
+ javax.accessibility,\
+ javax.activation,\
+ javax.activation;version="1.1.1",\
+ javax.activity,\
+ javax.annotation,\
+...
+
+org.OSGi.framework.bootdelegation = \
+ org.eclipse.virgo.kernel.authentication,\
+ com.sun.*,\
+ javax.xml.*,\
+...
+    &lt;<span class="hl-tag">/OSGiProfile</span>&gt;
+  &lt;<span class="hl-tag">/configuration</span>&gt;
+&lt;<span class="hl-tag">/execution</span>&gt;</pre><p>See <a class="xref" href="#OSGi.profile" title="6.&nbsp;OSGi Profiles and Bundlor">Chapter&nbsp;6, <i>OSGi Profiles and Bundlor</i></a> for details.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e763"></a>4.3.2.4&nbsp;Inline Property Values</h4></div></div></div><p>
+				Property substitution values can be optionally specified inline instead of as an external file using the
+				<code class="literal">&lt;properties/&gt;</code> element.
+			</p><pre class="programlisting">&lt;<span class="hl-tag">project</span>&gt;
+  ...
+  &lt;<span class="hl-tag">properties</span>&gt;
+    &lt;<span class="hl-tag">bundle.name</span>&gt;${project.name}&lt;<span class="hl-tag">/bundle.name</span>&gt;
+    &lt;<span class="hl-tag">bundle.version</span>&gt;2.0.0.RELEASE&lt;<span class="hl-tag">/bundle.version</span>&gt;
+  &lt;<span class="hl-tag">/properties</span>&gt;
+  ...
+&lt;<span class="hl-tag">/project</span>&gt;</pre><p>See <a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="usage.maven.example"></a>4.3.3&nbsp;Maven Plugin Examples</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e780"></a>4.3.3.1&nbsp;Creating a manifest</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">project</span>&gt;
+...
+  &lt;<span class="hl-tag">build</span>&gt;
+    &lt;<span class="hl-tag">plugins</span>&gt;
+      &lt;<span class="hl-tag">plugin</span>&gt;
+        &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+        &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">executions</span>&gt;
+          &lt;<span class="hl-tag">execution</span>&gt;
+            &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+            &lt;<span class="hl-tag">goals</span>&gt;
+              &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+            &lt;<span class="hl-tag">/goals</span>&gt;
+          &lt;<span class="hl-tag">/execution</span>&gt;
+        &lt;<span class="hl-tag">/executions</span>&gt;
+      &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">/plugins</span>&gt;
+  &lt;<span class="hl-tag">/build</span>&gt;
+...
+&lt;<span class="hl-tag">/project</span>&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e785"></a>4.3.3.2&nbsp;Creating a manifest with placeholder replacement</h4></div></div></div><pre class="programlisting">&lt;<span class="hl-tag">project</span>&gt;
+...
+  &lt;<span class="hl-tag">properties</span>&gt;
+    &lt;<span class="hl-tag">bundle.name</span>&gt;${project.name}&lt;<span class="hl-tag">/bundle.name</span>&gt;
+    &lt;<span class="hl-tag">bundle.version</span>&gt;2.0.0.RELEASE&lt;<span class="hl-tag">/bundle.version</span>&gt;
+  &lt;<span class="hl-tag">/properties</span>&gt;
+...
+  &lt;<span class="hl-tag">build</span>&gt;
+    &lt;<span class="hl-tag">plugins</span>&gt;
+      &lt;<span class="hl-tag">plugin</span>&gt;
+        &lt;<span class="hl-tag">groupId</span>&gt;org.eclipse.virgo.bundlor&lt;<span class="hl-tag">/groupId</span>&gt;
+        &lt;<span class="hl-tag">artifactId</span>&gt;org.eclipse.virgo.bundlor.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+        &lt;<span class="hl-tag">executions</span>&gt;
+          &lt;<span class="hl-tag">execution</span>&gt;
+            &lt;<span class="hl-tag">id</span>&gt;bundlor&lt;<span class="hl-tag">/id</span>&gt;
+            &lt;<span class="hl-tag">goals</span>&gt;
+              &lt;<span class="hl-tag">goal</span>&gt;bundlor&lt;<span class="hl-tag">/goal</span>&gt;
+            &lt;<span class="hl-tag">/goals</span>&gt;
+          &lt;<span class="hl-tag">/execution</span>&gt;
+        &lt;<span class="hl-tag">/executions</span>&gt;
+      &lt;<span class="hl-tag">/plugin</span>&gt;
+    &lt;<span class="hl-tag">/plugins</span>&gt;
+  &lt;<span class="hl-tag">/build</span>&gt;
+...
+&lt;<span class="hl-tag">/project</span>&gt;</pre></div></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="manifest.template"></a>5.&nbsp;Manifest Templates</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manifest.template.introduction"></a>5.1&nbsp;Introduction</h2></div></div></div><p>
+			A manifest template is a file that Bundlor uses during the generation of OSGi-compliant manifest entries in
+			a JAR's manifest.  The format of the manifest template is the same as that of a standard Java manifest file,
+			i.e. a series of '<code class="literal">key: value</code>' pairs.
+		</p><p>
+			From this template, Bundlor recognizes a specific set of directives and uses them to generate the
+			OSGi-compliant manifest entries. Bundlor will also add any other headers that are specified in the template
+			to the generated manifest. This is typically used to specify things like the bundle's symbolic name and
+			version.
+		</p><p>
+			You can also specify property placeholders, or variables, in your manifest template that Bundlor substitutes
+			with actual values at runtime. With this feature, your manifest templates become more dynamic and useful
+			across a variety of your projects. A particularly handy use for this feature is to tell Bundlor to
+			automatically expand versions of imports based on a pattern of your choosing. See
+			<a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a> for details.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manifest.template.format"></a>5.2&nbsp;Manifest Template Format</h2></div></div></div><p>
+			The following table lists the headers you can add to the manifest template, in addition to the standard
+			manifest headers.
+		</p><div class="table"><a name="d0e812"></a><p class="title"><b>Table&nbsp;5.1.&nbsp;Headers for Manifest Template</b></p><div class="table-contents"><table summary="Headers for Manifest Template" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Header</th><th style="border-bottom: 1.0pt solid ; ">Description</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; "><code class="literal">Excluded-Exports</code></td><td style="border-bottom: 1.0pt solid ; ">
+							A comma-separated list of packages that must not be added to the manifest's
+							<code class="literal">Export-Package</code> header. This is useful for preventing implementation
+							packages from being exported.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; "><code class="literal">Excluded-Imports</code></td><td style="border-bottom: 1.0pt solid ; ">
+							By default, Bundlor adds imports for every package that Bundlor determines is referenced by
+							the code or for special files in the jar. Use this header to specify a comma-separated list
+							of packages for which imports Bundlor will <span class="emphasis"><em>not</em></span> generate.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; "><code class="literal">Export-Template</code></td><td style="border-bottom: 1.0pt solid ; ">
+							By default, Bundlor versions all exported packages at the specified
+							<code class="literal">Bundle-Version</code>. Use this header to specify that individual exported
+							packages be exported at different versions. For example,
+							<code class="literal">Export-Template com.foo.*;version="1.5"</code> results in Bundlor versioning any
+							<code class="literal">Export-Package</code> entries for <code class="literal">com.foo</code> or its subpackages
+							at <code class="literal">1.5</code>.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; "><code class="literal">Ignored-Existing-Headers</code></td><td style="border-bottom: 1.0pt solid ; ">
+							If the JAR for which you are generating a manifest already contains an OSGi-compliant
+							manifest, use this template header to list headers in the original manifest which Bundlor
+							should ignore.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; "><code class="literal">Import-Template</code></td><td style="border-bottom: 1.0pt solid ; ">
+							Use this header to augment package imports that Bundlor generates via bytecode and special
+							file analysis. Typically you use the header to version the import and, in some cases, to
+							mark them as optional. When you use this header to version the import, you can optionally
+							specify a version expansion pattern so that Bundlor sets the version to a range rather than
+							a single version. To use the header, set its value to a comma-separated list of package
+							names and attributes.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; "><code class="literal">Version-Patterns</code></td><td style="">
+							Use this header to declare one or more version expansion patterns and give each one a name.
+							You can then use these named patterns in the <code class="literal">Import-Template</code> header if
+							you want to specify an expansion pattern for the <code class="literal">version</code> of an imported
+							package. This feature is described in detail later in this section. 
+						</td></tr></tbody></table></div></div><br class="table-break"><p>
+			A wilcard '<code class="literal">*</code>' at the end of the package name is supported to match multiple packages. For
+			example, the header <code class="literal">Import-Template: com.foo;version=[1.0,2.0);resolution:=optional,com.bar.*;version="[1.5,1.6)"</code>
+			will cause any import generated for the <code class="literal">com.foo</code> package to be versioned at 1.0
+			(inclusive) to 2.0 (exclusive) and to be considered optional, and for any import of
+			<code class="literal">com.bar</code> or its sub-packages to be versioned at 1.5 (inclusive) to 1.6 (exclusive).
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manifest.template.property"></a>5.3&nbsp;Specifying property placeholders</h2></div></div></div><p>
+			To specify a property placeholder in your manifest template, use the form
+			<code class="literal">${property.name}</code>, where <code class="literal">property.name</code> refers to the name of the
+			property placeholder. The method in which the manifest template actually gets the value of the property
+			placeholder at runtime depends on the Bundlor front end you use (command line, ANT, or Maven); the details
+			are described later.
+		</p><p>
+			The following example shows how to use a property placeholder for the <code class="literal">Bundle-Name</code>
+			manifest header rather than a literal.
+		</p><pre class="programlisting">Bundle-Name: ${bundle.name}</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manifest.template.version.expansion"></a>5.4&nbsp;Specifying automatic version expansion of imported packages based on a pattern</h2></div></div></div><p>
+			When you use the <code class="literal">Import-Template</code> template header to augment package imports that Bundlor
+			generates in the manifest file, you use the <code class="literal">version</code> attribute to specify a
+			version range of the imported package.
+		</p><pre class="programlisting">Import-Template: 
+ org.eclipse.virgo.kernel.*;version="[1.2.0, 2.0.0)"
+ org.apache.commons.logging;version="[1.1.1, 2.0.0)"</pre><p>
+			The preceding example specifies that Bundlor should import the <code class="literal">org.eclipse.virgo.kernel.*</code>
+			packages in the range <code class="literal">[1.2.0, 2.0.0)</code> and the <code class="literal">org.apache.commons.logging</code>
+			package in the range <code class="literal">[1.1.1, 2.0.0)</code> in the generated manifest file. This works just fine for many
+			use cases, but sometimes the use of literal versions in this manner can be restrictive.
+		</p><p>
+			In order to make the manifest template more dynamic and useful, you can specify that Bundlor automatically
+			expand the package version into a version range using an expansion pattern of your choosing. The pattern
+			uses as a base a property placeholder that you define (as described in
+			<a class="xref" href="#manifest.template.property" title="5.3&nbsp;Specifying property placeholders">Section&nbsp;5.3, &#8220;Specifying property placeholders&#8221;</a>) and set to a valid OSGi version number. Then, based on the
+			expansion pattern you specify, Bundlor generates a version range using the 4 parts of an OSGi version:
+			major, minor, micro, and qualifier.
+		</p><p>
+			The way to tell Bundlor to automatically expand a package import version is to specify the property
+			placeholder to the right of the <code class="literal">version</code> directive of the package in the
+			<code class="literal">Import-Template</code> header, and then within the property placeholder, specify the pattern for
+			both sides of the version range.  The following manifest template snippet shows how to use this feature; the
+			example is described in detail after the table.
+		</p><pre class="programlisting">Import-Template: 
+ org.eclipse.virgo.kernel.*;version="${org.eclipse.virgo.kernel:[=.=.=.=, +1.0.0)}",
+ org.apache.commons.logging.*;version="${org.apache.commons.logging:[=.=.=.=, =.=.+1)}"</pre><p>The following table lists the symbols you can use in the expansion pattern.</p><div class="table"><a name="d0e961"></a><p class="title"><b>Table&nbsp;5.2.&nbsp;Expansion Pattern Symbols</b></p><div class="table-contents"><table summary="Expansion Pattern Symbols" style="border-collapse: collapse;border-top: 1.0pt solid ; border-bottom: 1.0pt solid ; border-left: 1.0pt solid ; border-right: 1.0pt solid ; "><colgroup><col><col><col></colgroup><thead><tr><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Symbol</th><th style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Description</th><th style="border-bottom: 1.0pt solid ; ">Location Allowed</th></tr></thead><tbody><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">=</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">Use the same value from the variable.</td><td style="border-bottom: 1.0pt solid ; ">
+							Valid only in the first three segments (major, minor, micro) of the version pattern.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">[+/-]n</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+							Adjust the value from the variable by this amount. For example, <code class="literal">+1</code> means
+							to add 1 to the value from the variable.
+						</td><td style="border-bottom: 1.0pt solid ; ">
+							Valid only in the first three segments (major, minor, micro) of the version pattern.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">n</td><td style="border-right: 1.0pt solid ; border-bottom: 1.0pt solid ; ">
+							Substitute this value for the one in the variable. Typically you only use this for putting
+							in a <code class="literal">0</code>.
+						</td><td style="border-bottom: 1.0pt solid ; ">
+							Valid only in the first three segments (major, minor, micro) of the version pattern.
+						</td></tr><tr><td style="border-right: 1.0pt solid ; ">Any legal qualifier value</td><td style="border-right: 1.0pt solid ; ">Substitute this value for the one in the variable.</td><td style="">Valid only in the fourth (qualifier) segment of the version pattern.</td></tr></tbody></table></div></div><br class="table-break"><p>
+			Based on the descriptions of the symbols, we can now understand how the examples above work. First assume
+			that you have set the property <code class="literal">${org.eclipse.virgo.kernel}</code> to the value
+			<code class="literal">1.2.0</code>. Based on the expansion pattern, Bundlor sets the version range of the imported
+			<code class="literal">org.eclipse.virgo.kernel.*</code> packages to <code class="literal">[1.2.0, 2.0.0)</code>. The pattern in
+			this case first specifies that the beginning of the version range stay exactly the same as the value of the
+			property. The pattern then specifies that at the end of the version range, the major part of the version
+			should be one integer larger than what the property is originally set to (<code class="literal">1</code>); the pattern
+			then specifies that the minor and micro segments of the version both be set to <code class="literal">0</code>.
+		</p><p>
+			Similarly, assume that you set the <code class="literal">${org.apache.commons.logging}</code> property to
+			<code class="literal">1.4.0</code>.  Bundlor generates a version range of <code class="literal">[1.4.0, 1.4.1)</code>. Again,
+			the beginning of the range is exactly the same as the property value. The pattern specifies that, in the end
+			of the range, only the micro segment of the version increase by one; the major and minor segments stay the
+			same.
+		</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="manifest.template.format.version.naming"></a>5.4.1&nbsp;Re-using version patterns</h3></div></div></div><p>
+				If you use the same version expansion pattern for several imports, you can name the pattern using the
+				<code class="literal">Version-Patterns</code> header in the manifest template, and then use this name in the
+				particular import of <code class="literal">Import-Template</code>.
+			</p><p>
+				Use the form <code class="literal"><span class="emphasis"><em>pattern.name</em></span>;pattern="<span class="emphasis"><em>pattern</em></span>"</code>
+				to specify a named pattern, where <code class="literal">pattern.name</code> is the name of the pattern and
+				<code class="literal">pattern</code> is the pattern, such as <code class="literal">[=.=.=.=, +1.0.0)</code>.
+			</p><pre class="programlisting">Version-Patterns:
+ apache;pattern="[=.=.=.=, +1.0.0)",
+ hibernate;pattern="[=.=.=.=, =.=.+1)"</pre><p>
+				The preceding example shows two named patterns: <code class="literal">apache</code> and
+				<code class="literal">hibernate</code>. The <code class="literal">apache</code> pattern specifies a version range from the
+				one provided in the property up to but not including the next major version. The
+				<code class="literal">hibernate</code> pattern specifies a version range of the one provided up to but not
+				including the next micro version.
+			</p><p>
+				To use a named pattern, simply substitute it in the <code class="literal">Import-Template</code> header in the
+				place where you would put the in-line pattern.
+			</p><pre class="programlisting">Import-Template:
+ org.apache.commons.codec.*;version="${org.apache.commons.codec:apache}",
+ org.apache.commons.logging.*;version="${org.apache.commons.logging:apache}",
+ org.hibernate.*;version="${org.hibernate:hibernate}"
+ org.myorg.*;version="${org.myorg:[]=.=.=.=, =.+1.0.=)}"</pre><p>
+				In the example, the <code class="literal">apache</code> named pattern is used twice, for the two
+				<code class="literal">org.apache</code> imports, and the <code class="literal">hibernate</code> pattern is used once. Also
+				note that you can also include an import whose version is specified with an in-line pattern.
+			</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manifest.template.example"></a>5.5&nbsp;Example Bundlor Manifest Template</h2></div></div></div><p>
+			The following shows a simple example of a Bundlor manifest template file, with a description after the
+			sample.
+		</p><pre class="programlisting">
+<span class="bold"><strong>Bundle-ManifestVersion</strong></span>: 2
+<span class="bold"><strong>Bundle-SymbolicName</strong></span>: org.springframework.binding
+Bundle-Name: ${bundle.name}
+Import-Package: 
+ ognl;version="[2.6.9, 3.0.0)";resolution:=optional,
+ org.jboss.el;version="[2.0.0, 3.0.0)";resolution:=optional
+Import-Template: 
+ org.springframework.*;version="[2.5.4.A, 3.0.0)",
+ org.apache.commons.logging;version="[1.1.1, 2.0.0)",
+ javax.el;version="[2.1.0, 3.0.0)";resolution:=optional,
+ ognl;version="[2.6.9, 3.0.0)";resolution:=optional,
+ org.jboss.el;version="[2.0.0, 3.0.0)";resolution:=optional
+		</pre><p>
+			The headers marked in bold are required in all manifest templates unless the jar already contains a manifest
+			with those headers.
+		</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">Bundle-ManifestVersion</code>: This should always be 2</li><li><code class="literal">Bundle-SymbolicName</code>: specifies a unique name for the bundle of
+				<code class="literal">org.springframework.binding</code></li><li><code class="literal">Bundle-Name</code>: specifies a human-readable name for the bundle. The example shows how to
+				use a property placeholder <code class="literal">${bundle.name}</code>, which at runtime Bundlor will substitute
+				with an actual value, such as <code class="literal">Spring Binding</code>.
+			</li><li><code class="literal">Import-Package</code>: hard-codes two packages that will be imported (
+				<code class="literal">ognl</code> and <code class="literal">org.jboss.el</code> in the generated manifest. Bundlor isn't
+				infallible; this lets you add imports that it misses.
+			</li><li><code class="literal">Import-Template</code>: specifies the versions for the package imports that Bundlor
+				generates, marking <code class="literal">javax.el</code>, <code class="literal">ognl</code>, and
+				<code class="literal">org.jboss.el</code> optional.
+			</li></ul></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="OSGi.profile"></a>6.&nbsp;OSGi Profiles and Bundlor</h2></div></div></div><p>
+		When managing and transforming bundles it
+		can become difficult to remember which packages are boot delegated, which are exported from the system bundle,
+		and which are from other bundles in your system. This information is important because you typically do not want
+		to import packages into your own application that are boot delegated, you want to import system bundle packages
+		at version <code class="literal">0</code>, and you want to define custom imports for all the rest of the bundles. Trying
+		to keep track of which packages are in each of these categories can be error prone; similarly, defining template
+		entries for them in your manifest template can be time-consuming and tedious.
+	</p><p>
+		To solve this problem, you can specify that Bundlor take an
+		<a class="link" href="#OSGi-profiles.about" title="6.1&nbsp;Overview of OSGi profiles">OSGi profile</a> as input and automatically add template entries for boot
+		delegated packages and system bundles. These import entries would ignore boot-delegated packages and set the
+		version of system bundles to <code class="literal">version="0"</code>. This feature is available for all Bundlor front
+		ends: command-line, ANT and Maven.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="OSGi-profiles.about"></a>6.1&nbsp;Overview of OSGi profiles</h2></div></div></div><p>
+			An OSGi profile defines the packages that a particular OSGi runtime (such as Virgo) exports from the
+			system bundle and the packages that it delegates to the boot class loader. An OSGi profile isn't an actual
+			file; rather, it is two properties that are well known to an OSGi runtime. However, when you pass these
+			properties to Bundlor, you pass them as a file, as described in the next section. The properties that make
+			up an OSGi profile are as follows.
+		</p><div class="itemizedlist"><ul type="disc"><li>
+				The <code class="literal">org.OSGi.framework.system.packages</code> property defines the packages exported from
+				the system bundle.
+			</li><li>
+				The <code class="literal">org.OSGi.framework.bootdelegation</code> property defines the packages that are boot
+				delegated.
+			</li></ul></div><p>
+			If you are using Virgo as your OSGi runtime, see the file
+			<code class="literal">$VIRGO_HOME/configuration/java6-server.profile</code> for its OSGi profile, where
+			<code class="literal">$VIRGO_HOME</code> refers to the main installation directory of Virgo. If you are using
+			another OSGi runtime, such as Equinox, then see their documentation for their OSGi profile.
+		</p><p>
+			For additional information about the syntax of the values of these properties, see 
+			the <a class="ulink" href="http://www.OSGi.org/Specifications/HomePage" target="_top">OSGi Core specification</a>.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="OSGi-profiles.using"></a>6.2&nbsp;Using OSGi profiles with Bundlor</h2></div></div></div><p>
+			The first step in using OSGi profiles with Bundlor is to create a file that contains a textual
+			representation of the two properties that make up an OSGi profile:
+			<code class="literal">org.OSGi.framework.system.packages</code> and
+			<code class="literal">org.OSGi.framework.bootdelegation</code>. What you include in this file is up to you, but
+			typically you start with the OSGi profile of the OSGi runtime you are using, and then customize it to fit
+			your environment.
+		</p><p>
+			If you are using Virgo as your OSGi runtime, you can start by copying the section of the file
+			<code class="literal">$VIRGO_HOME/configuration/java6-server.profile</code> that refers to the two properties and pasting it
+			into your text file. If you are using another runtime, consult their documentation.
+		</p><p>
+			The following snippet shows a partial OSGi profile for Virgo; for clarity only a few packages are shown.
+			The example shows the format in which you should create your own OSGi profile file.
+		</p><pre class="programlisting">org.OSGi.framework.system.packages = \
+ org.eclipse.virgo.osgi.extensions.equinox.hooks,\
+ javax.accessibility,\
+ javax.activation,\
+ javax.activation;version="1.1.1",\
+ javax.activity,\
+ javax.annotation,\
+...
+
+org.OSGi.framework.bootdelegation = \
+ org.eclipse.virgo.kernel.authentication,\
+ com.sun.*,\
+ javax.xml.*,\
+...</pre><p>
+			Once you've created your OSGi profile file, the method of passing it to Bundlor depends on the front end you
+			are using to generate a manifest. For detailed information about using the various front ends, see
+			<a class="xref" href="#usage" title="4.&nbsp;Usage">Chapter&nbsp;4, <i>Usage</i></a>.
+		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="detecting"></a>7.&nbsp;Detecting Manifest Requirements</h2></div></div></div><p>
+		Bundlor's main function is to scan an existing JAR file and determine its runtime dependencies. With this
+		information it can then generate the OSGi-compliant manifest headers needed for proper runtime operation. This
+		analysis is comprised of looking for class references and class names in Java classes and certain well-known
+		file types.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.java"></a>7.1&nbsp;Java Detection Criteria</h2></div></div></div><p>
+		Bundlor scans any Java class it can find in the artifact created by the underlying build system. This means
+		that if a build process has custom behavior (i.e. weaving with AspectJ or <code class="literal">jarjar</code>ing),
+		Bundlor will be able to see and analyze the changes made by that process as long as the changes are in the
+		artifact created by the build system.
+	</p><p>
+		There are a number of places in a Java class that another Java type can be referenced from. Bundlor detects
+		these references and adds manifest requirements for them.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1246"></a>7.1.1&nbsp;Export Package</h3></div></div></div><p>
+			Bundlor exports any package that contains a class.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1251"></a>7.1.2&nbsp;Import Package</h3></div></div></div><p>
+			The following is a list of the places that Bundlor will search for type names
+			</p><div class="itemizedlist"><ul type="disc"><li>Declared Type Superclass Types</li><li>Declared Type Implemented Interfaces Types</li><li>Declared Type Annotation Types</li><li>Declared Field Types</li><li>Declared Field Values Types</li><li>Declared Method Argument Types</li><li>Declared Method Return Types</li><li>Declared Method Exception Types</li><li>Declared Method Annotation Types</li><li>Reference To Field Owner Type</li><li>Reference To Field Type</li><li>Declared Local Variable Type</li><li>Reference to Method Declaring Type</li><li>Reference to Method Return Type</li><li>Reference to Method Argument Types</li><li>Allocation of Array Type</li><li>Declared Parameter Annotation Types</li><li>Caught Exception Type</li><li>Instantiated Type</li><li>Cast Target Type</li><li>Instanceof Type</li><li>Declared Constant Type</li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.spring"></a>7.2&nbsp;Spring Context Configuration Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for Spring context configuration files. If it detects this file type, it scans the file for a
+		number of values that contain class names.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1307"></a>7.2.1&nbsp;Spring Context Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//beans:bean/@class</code></li><li><code class="literal">//aop:declare-parents/@implement-interface</code></li><li><code class="literal">//aop:declare-parents/@default-impl</code></li><li><code class="literal">//context:load-time-weaver/@weaver-class</code></li><li><code class="literal">//context:component-scan/@name-generator</code></li><li><code class="literal">//context:component-scan/@scope-resolver</code></li><li><code class="literal">//jee:jndi-lookup/@expected-type</code></li><li><code class="literal">//jee:jndi-lookup/@proxy-interface</code></li><li><code class="literal">//jee:remote-slsb/@home-interface</code></li><li><code class="literal">//jee:remote-slsb/@business-interface</code></li><li><code class="literal">//jee:local-slsb/@business-interface</code></li><li><code class="literal">//jms:listener-container/@container-class</code></li><li><code class="literal">//lang:jruby/@script-interfaces</code></li><li><code class="literal">//lang:bsh/@script-interfaces</code></li><li><code class="literal">//oxm:class-to-be-bound/@name</code></li><li><code class="literal">//oxm:jibx-marshaller/@target-class</code></li><li><code class="literal">//osgi:reference/@interface</code></li><li><code class="literal">//osgi:service/@interface</code></li><li><code class="literal">//util:list/@list-class</code></li><li><code class="literal">//util:map/@map-class</code></li><li><code class="literal">//util:set/@set-class</code></li><li><code class="literal">//webflow:flow-builder/@class</code></li><li><code class="literal">//webflow:attribute/@type</code></li><li><code class="literal">//osgi:service/osgi:interfaces/beans:value</code></li><li><code class="literal">//osgi:reference/osgi:interfaces/beans:value</code></li><li><code class="literal">//context:component-scan/@base-package</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.blueprint"></a>7.3&nbsp;Blueprint Service Configuration Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for Blueprint Service configuration files. If it detects this file type, it scans the file for a
+		number of values that contain class names.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1397"></a>7.3.1&nbsp;Blueprint Configuration Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//bp:bean/bp:argument/@type</code></li><li><code class="literal">//bp:bean/@class</code></li><li><code class="literal">//bp:service/@interface</code></li><li><code class="literal">//bp:reference/@interface</code></li><li><code class="literal">//bp:reference-list/@interface</code></li><li><code class="literal">//bp:map/@key-type</code></li><li><code class="literal">//bp:map/@value-type</code></li><li><code class="literal">//bp:list/@value-type</code></li><li><code class="literal">//bp:set/@value-type</code></li><li><code class="literal">//bp:array/@value-type</code></li><li><code class="literal">//bp:interfaces/bp:value</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.webapplication"></a>7.4&nbsp;Web Application File Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for the Servlet <code class="literal">web.xml</code> file located in the <code class="literal">WEB-INF</code>
+		directory.  If it detects this file, it scans the file for a number of values that contain class names.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1448"></a>7.4.1&nbsp;<code class="literal">web.xml</code> Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//context-param/param-values</code></li><li><code class="literal">//filter/filter-classs</code></li><li><code class="literal">//filter/init-param/param-values</code></li><li><code class="literal">//listener/listener-classs</code></li><li><code class="literal">//servlet/servlet-classs</code></li><li><code class="literal">//servlet/init-param/param-values</code></li><li><code class="literal">//error-page/exception-types</code></li><li><code class="literal">//env-entry/env-entry-types</code></li><li><code class="literal">//ejb-ref/homes</code></li><li><code class="literal">//ejb-ref/remotes</code></li><li><code class="literal">//ejb-local-ref/local-homes</code></li><li><code class="literal">//ejb-local-ref/locals</code></li><li><code class="literal">//service-ref/service-interfaces</code></li><li><code class="literal">//resource-ref/res-types</code></li><li><code class="literal">//resource-env-ref/resource-env-ref-types</code></li><li><code class="literal">//message-destination-ref/message-destination-type</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.bundleclasspath"></a>7.5&nbsp;<code class="literal">Bundle-Classpath</code> File Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for JAR files located anywhere in the bundle.  If it detects this file, it runs the entire set of
+		analyzers against it. The imports and exports of the JAR file are added to the bundle's manifest and the
+		JAR file is placed on the bundle's <code class="literal">Bundle-Classpath</code>.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.jpa"></a>7.6&nbsp;JPA Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for the JPA <code class="literal">persistence.xml</code> and <code class="literal">orm.xml</code> files located in the
+		<code class="literal">META-INF</code> directory. If it detects this file it scans the file for a number of values that
+		contain class names and package names. If the class name is unqualified (i.e. has no '<code class="literal">.</code>' in
+		it), the classname is prepended with the content of the <code class="literal">entity-mapping</code> tag's
+		<code class="literal">package</code> element.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1538"></a>7.6.1&nbsp;<code class="literal">persistence.xml</code> Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//persistence-unit/provider</code></li><li><code class="literal">//persistence-unit/class</code></li></ul></div><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1553"></a>7.6.2&nbsp;<code class="literal">orm.xml</code> Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//element-collection/@target-class</code></li><li><code class="literal">//embeddable/@class</code></li><li><code class="literal">//entity/@class</code></li><li><code class="literal">//entity-listener/@class</code></li><li><code class="literal">//entity-result/@entity-class</code></li><li><code class="literal">//id-class/@class</code></li><li><code class="literal">//many-to-many/@target-entity</code></li><li><code class="literal">//many-to-one/@target-entity</code></li><li><code class="literal">//map-key-class/@class</code></li><li><code class="literal">//mapped-superclass/@class</code></li><li><code class="literal">//named-native-query/@result-class</code></li><li><code class="literal">//one-to-many/@target-entity</code></li><li><code class="literal">//one-to-one/@target-entity</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.eclipselink"></a>7.7&nbsp;EclipseLink Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for the EclipseLink <code class="literal">eclipselink-orm.xml</code> files located in the
+		<code class="literal">META-INF</code> directory. If it detects this file it scans the file for a number of values that
+		contain class names and package names. If the class name is unqualified (i.e. has no '<code class="literal">.</code>' in
+		it), the classname is prepended with the content of the <code class="literal">entity-mapping</code> tag's
+		<code class="literal">package</code> element.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1621"></a>7.7.1&nbsp;<code class="literal">eclipselink-orm.xml</code> Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//cache-interceptor/@class</code></li><li><code class="literal">//converter/@class</code></li><li><code class="literal">//copy-policy/@class</code></li><li><code class="literal">//customizer/@class</code></li><li><code class="literal">//discriminator-class/@value</code></li><li><code class="literal">//id-class/@class</code></li><li><code class="literal">//element-collection/@target-class</code></li><li><code class="literal">//entity/@class</code></li><li><code class="literal">//entity-listener/@class</code></li><li><code class="literal">//entity-result/@entity-class</code></li><li><code class="literal">//embeddable/@class</code></li><li><code class="literal">//many-to-many/@target-entity</code></li><li><code class="literal">//many-to-one/@target-entity</code></li><li><code class="literal">//map-key-class/@class</code></li><li><code class="literal">//mapped-superclass/@class</code></li><li><code class="literal">//named-native-query/@result-class</code></li><li><code class="literal">//named-stored-procedure-query/@result-class</code></li><li><code class="literal">//object-type-converter/@data-type</code></li><li><code class="literal">//object-type-converter/@object-type</code></li><li><code class="literal">//one-to-many/@target-entity</code></li><li><code class="literal">//one-to-one/@target-entity</code></li><li><code class="literal">//property/@value-type</code></li><li><code class="literal">//query-redirectors/@all-queries</code></li><li><code class="literal">//query-redirectors/@read-all</code></li><li><code class="literal">//query-redirectors/@read-object</code></li><li><code class="literal">//query-redirectors/@report</code></li><li><code class="literal">//query-redirectors/@update</code></li><li><code class="literal">//query-redirectors/@insert</code></li><li><code class="literal">//query-redirectors/@delete</code></li><li><code class="literal">//read-transformer/@transformer-class</code></li><li><code class="literal">//stored-procedure-parameter/@type</code></li><li><code class="literal">//struct-converter/@converter</code></li><li><code class="literal">//type-converter/@data-type</code></li><li><code class="literal">//type-converter/@object-type</code></li><li><code class="literal">//variable-one-to-one/@target-interface</code></li><li><code class="literal">//write-transformer/@transformer-class</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.hibernate"></a>7.8&nbsp;Hibernate Mapping File Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for any file that ends with a <code class="literal">.hbm</code> extension. If it detects one of these files
+		it scans the file for a number of attributes that can contain class names. If the class name is unqualified
+		(i.e. has no '<code class="literal">.</code>' in it), the classname is prepended with the content of the
+		<code class="literal">hibernate-mapping</code> tag's <code class="literal">package</code> attribute. Many of the attributes that can
+		contain class names can also contain Hibernate keywords corresponding to Hibernate-known types. When these are
+		detected, no manifest requirements are added.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1755"></a>7.8.1&nbsp;Hibernate Attributes</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of attributes searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//class/@name</code></li><li><code class="literal">//id/@type</code></li><li><code class="literal">//generator/@class</code></li><li><code class="literal">//composite-id/@class</code></li><li><code class="literal">//discriminator/@type</code></li><li><code class="literal">//property/@type</code></li><li><code class="literal">//many-to-one/@class</code></li><li><code class="literal">//one-to-one/@class</code></li><li><code class="literal">//one-to-many/@class</code></li><li><code class="literal">//many-to-many/@class</code></li><li><code class="literal">//version/@type</code></li><li><code class="literal">//component/@class</code></li><li><code class="literal">//dynamic-component/@class</code></li><li><code class="literal">//subclass/@name</code></li><li><code class="literal">//joined-subclass/@name</code></li><li><code class="literal">//union-subclass/@name</code></li><li><code class="literal">//import/@class</code></li></ul></div><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1813"></a>7.8.2&nbsp;Hibernate Keywords</h3></div></div></div><p>
+			The following is a list of reserved Hibernate keywords that will not trigger the addition of manifest
+			requirements
+    		</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">assigned</code></li><li><code class="literal">big_decimal</code></li><li><code class="literal">big_integer</code></li><li><code class="literal">binary</code></li><li><code class="literal">blob</code></li><li><code class="literal">boolean</code></li><li><code class="literal">byte</code></li><li><code class="literal">calendar</code></li><li><code class="literal">calendar_date</code></li><li><code class="literal">character</code></li><li><code class="literal">class</code></li><li><code class="literal">clob</code></li><li><code class="literal">currency</code></li><li><code class="literal">date</code></li><li><code class="literal">double</code></li><li><code class="literal">float</code></li><li><code class="literal">foreign</code></li><li><code class="literal">guid</code></li><li><code class="literal">hilo</code></li><li><code class="literal">identity</code></li><li><code class="literal">imm_binary</code></li><li><code class="literal">imm_calendar</code></li><li><code class="literal">imm_calendar_date</code></li><li><code class="literal">imm_date</code></li><li><code class="literal">imm_serializable</code></li><li><code class="literal">imm_time</code></li><li><code class="literal">imm_timestamp</code></li><li><code class="literal">increment</code></li><li><code class="literal">integer</code></li><li><code class="literal">locale</code></li><li><code class="literal">long</code></li><li><code class="literal">native</code></li><li><code class="literal">select</code></li><li><code class="literal">seqhilo</code></li><li><code class="literal">sequence</code></li><li><code class="literal">sequence-identity</code></li><li><code class="literal">serializable</code></li><li><code class="literal">short</code></li><li><code class="literal">string</code></li><li><code class="literal">text</code></li><li><code class="literal">time</code></li><li><code class="literal">timestamp</code></li><li><code class="literal">timezone</code></li><li><code class="literal">true_false</code></li><li><code class="literal">uuid</code></li><li><code class="literal">yes_no</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.jsp"></a>7.9&nbsp;JSP File Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for the JSP files. If it detects this file, it scans the file for a number of values that contain
+		class names.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1963"></a>7.9.1&nbsp;JSP Values</h3></div></div></div><p>
+			Using Regular expression syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">&lt;%@ page.*import=\"(.*?)\".*%&gt;</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.log4j"></a>7.10&nbsp;Log4J Configuration Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for Log4J configuration files. If it detects this file type, it scans the file for a
+		number of values that contain class names.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1978"></a>7.10.1&nbsp;Log4J Configuration Values</h3></div></div></div><p>
+			Using XPath syntax, the following is a list of values searched for type names
+			</p><div class="itemizedlist"><ul type="disc"><li><code class="literal">//appender/@class</code></li><li><code class="literal">//layout/@class</code></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="detecting.staticresources"></a>7.11&nbsp;Static Resource Detection Criteria</h2></div></div></div><p>
+		Bundlor scans for any static resource and exports that package.
+	</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="warning"></a>8.&nbsp;Detecting Manifest Issues</h2></div></div></div><p>
+		Bundlor's second function is to scan an existing manifest and identify any potential issues with it.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.importversionrange"></a>8.1&nbsp;Import Version Range Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that all entries in the <code class="literal">Import-Package</code> header have a sensible version range
+		declared. This ensures that there are no version ranges that are reversed (<code class="literal">[2, 1)</code>), and no
+		version ranges that are empty (<code class="literal">[1, 1)</code>).
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.exportimport"></a>8.2&nbsp;Import of Exported Packages Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that the manifest does not import any package that it exports. This behavior is usually
+		indicative of a package split between two bundles.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.signedjar"></a>8.3&nbsp;Signed JAR Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that the manifest does not contain headers indicating that it is from a signed JAR. Running
+		Bundlor against a signed JAR will render that JAR invalid as the manifest will have changed from when it was
+		signed.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.versionedimports"></a>8.4&nbsp;Versioned Imports Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that all entries in the <code class="literal">Import-Package</code> header have a version range declared.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.versionedexports"></a>8.5&nbsp;Versioned Exports Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that all entries in the <code class="literal">Export-Package</code> header have a version declared.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.bundlesymbolicname"></a>8.6&nbsp;<code class="literal">Bundle-SymbolicName</code> Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that the manifest contains a <code class="literal">Bundle-SymbolicName</code> header.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="warning.manifestversion"></a>8.7&nbsp;<code class="literal">Manifest-Version</code> Warning Criteria</h2></div></div></div><p>
+		Bundlor checks that the manifest contains a <code class="literal">Bundle-ManifestVersion</code> header with a value of
+		<code class="literal">2</code>.
+	</p></div></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--></body></html>

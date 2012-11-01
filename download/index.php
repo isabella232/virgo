@@ -84,13 +84,13 @@
 			unless otherwise specified.
 		</p>
 
-		<h4><a href="#">1.1.1.RELEASE</a></h4>
+		<h4><a href="#">1.1.2.RELEASE</a></h4>
 		<div>
 			<ul>
-			    <li><a href='http://www.eclipse.org/virgo/download/release-notes/bundlor/1.1.1.RELEASE.php' target='_self'>View Release Notes</a></li>
-				<li>Update site - 'http://download.eclipse.org/virgo/release/BNDLR/1.1.1.RELEASE/updatesite'</li>
-				<li><strong>Virgo Bundlor</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/BNDLR/1.1.1.RELEASE/bundlor-1.1.1.RELEASE.zip' target='_self'>Download</a></li>
-			    <li><strong>Bundlor User Guide</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/BNDLR/1.1.1.RELEASE/user-guide.zip'>Download</a> | <a href='http://www.eclipse.org/virgo/documentation/' target='_self'>Browse</a></li>
+			    <li><a href='http://www.eclipse.org/virgo/download/release-notes/bundlor/1.1.2.RELEASE.php' target='_self'>View Release Notes</a></li>
+				<li>Update site - 'http://download.eclipse.org/virgo/release/BNDLR/1.1.2.RELEASE/updatesite'</li>
+				<li><strong>Virgo Bundlor</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/BNDLR/1.1.2.RELEASE/bundlor-1.1.2.RELEASE.zip' target='_self'>Download</a></li>
+			    <li><strong>Bundlor User Guide</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/BNDLR/1.1.2.RELEASE/user-guide.zip'>Download</a> | <a href='http://www.eclipse.org/virgo/documentation/' target='_self'>Browse</a></li>
 			</ul>
 		</div>
 	</div>
