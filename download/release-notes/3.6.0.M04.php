@@ -32,13 +32,13 @@
 
 <p>
 This is the fourth milestone of the <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Sky</a> (3.6.0) release of Virgo.
-It contains numerous fixes to the new web admin console, enabled support of EJBs and other enterprise APIs in Virgo Nano Full, and other bug fixes and enhancements.
+It contains numerous fixes to the new web admin console, enables support of EJBs and other enterprise APIs in Virgo Nano Full, and implements other bug fixes and enhancements.
 </p>
 
 <p>A full list of bugs and enhancements included in this milestone is available
 	<a href="https://bugs.eclipse.org/bugs/buglist.cgi?list_id=3678427&classification=RT&query_format=advanced&bug_status=CLOSED&product=Virgo&target_milestone=3.6.0.M04" target="_self">here</a>.</p>
 
-<p>Note there is a limitation that Virgo Nano Full's controlled shutdown is not working in this milestone. (See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=395148" target="_self">bug 395148</a>)</p>
+<p>Note there is a limitation that Virgo Nano Full's controlled shutdown is not working in this milestone (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=395148" target="_self">bug 395148</a>).</p>
 </div>
 
 
