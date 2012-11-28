@@ -32,7 +32,9 @@
 
 <p>
 This is the fourth milestone of the <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Sky</a> (3.6.0) release of Virgo.
-It contains numerous fixes to the new web admin console, enables support of EJBs and other enterprise APIs in Virgo Nano Full, and implements other bug fixes and enhancements.
+It contains numerous fixes to the new web admin console, enables support of EJBs and other enterprise APIs in Virgo Nano Full,
+introduces support for Spring framework 3.2.x,
+and implements other bug fixes and enhancements.
 </p>
 
 <p>A full list of bugs and enhancements included in this milestone is available
