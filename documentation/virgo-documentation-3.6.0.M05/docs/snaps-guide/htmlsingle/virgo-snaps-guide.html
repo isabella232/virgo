@@ -1,0 +1,256 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Virgo Snaps User Guide</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Virgo Snaps User Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Christopher</span> <span class="surname">Frost</span></h3></div></div></div><div><div class="mediaobject" align="right"><img src="images/virgo-logo-small.png" align="right"></div></div><div><span class="productname">Virgo Snaps<br></span></div><div><p class="releaseinfo">3.6.0.M05</p></div></div><div><div><div class="legalnotice"><a name="d0e22"></a><p>
+				Copyright &copy; 2011 VMware Inc.
+			</p></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#introduction-concepts">1.1. Concepts</a></span></dt><dt><span class="section"><a href="#introduction-prereqs">1.2. Prerequisites</a></span></dt></dl></dd><dt><span class="chapter"><a href="#installation">2. Installing Virgo Snaps</a></span></dt><dd><dl><dt><span class="section"><a href="#installation-zip">2.1. Installing from the Zip Download</a></span></dt><dt><span class="section"><a href="#installation-post">2.2. Verifying it's working</a></span></dt></dl></dd><dt><span class="chapter"><a href="#using-snaps">3. Using Virgo Snaps in your application</a></span></dt><dd><dl><dt><span class="section"><a href="#using-snaps-configuring-the-host">3.1. Configuring the Host</a></span></dt><dt><span class="section"><a href="#using-snaps-configuring-a-snap">3.2. Configuring a Snap</a></span></dt><dt><span class="section"><a href="#using-snaps-taglibs">3.3. Using the Snaps taglibs</a></span></dt><dt><span class="section"><a href="#using-snaps-host-prefix">3.4. Referencing Resources</a></span></dt></dl></dd><dt><span class="chapter"><a href="#sample-application">4. A Sample Application</a></span></dt><dd><dl><dt><span class="section"><a href="#sample-application-structure">4.1. Structure of the sample application</a></span></dt><dt><span class="section"><a href="#sample-application-host">4.2. The Host bundle</a></span></dt><dt><span class="section"><a href="#sample-application-new-content">4.3. Adding New Content</a></span></dt><dt><span class="section"><a href="#sample-application-dynamic-styling">4.4. Re-styling</a></span></dt></dl></dd><dt><span class="chapter"><a href="#further-reading">5. Further Reading</a></span></dt><dt><span class="chapter"><a href="#known-issues">6. Known Issues</a></span></dt><dd><dl><dt><span class="section"><a href="#known-issues-jetty-restriction">6.1. Virgo Jetty Server Restriction</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="introduction"></a>1.&nbsp;Introduction</h2></div></div></div><p>
+		This Guide covers Virgo Snaps and assumes you are already familiar with OSGi and Virgo. See <a class="link" href="#further-reading" title="5.&nbsp;Further Reading">here</a>.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="introduction-concepts"></a>1.1&nbsp;Concepts</h2></div></div></div><p>
+			Using Virgo Snaps, or VS for short, you can construct a web application from multiple OSGi 
+			bundles, each of which serves up content for a distinct sub-portion of your application's URL space. VS 
+			applications are arranged in a parent/child structure, with each application having at most one top-level parent, and zero or more 
+			children/grand children and so on. Parents are referred to as the hosts, children as snaps.
+		</p><p>
+			<img src="images/snapsAndHosts.png">
+		</p><p>
+			Here you see that any <code class="literal">HTTP</code> requests for '/app' will be dealt with by the host bundle while '/app/orders' 
+			and '/app/billing' will be dealt with by their respective snaps bundles. Each host/snap can use completely different web technologies 
+			to deal with the requests, VS places no restrictions on your choices. The developer decides how to split 
+			the application up and how closely to couple the host and various snaps. VS has been designed to be as 
+			un-invasive as possible while still making it easy to share information between the host and its snaps.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="introduction-prereqs"></a>1.2&nbsp;Prerequisites</h2></div></div></div><p>
+			VS requires Virgo Tomcat Server and Java SE 6 or later to be installed. Java is available from 
+			<a class="ulink" href="http://www.java.com/" target="_top">http://www.java.com/</a> and elsewhere. Virgo Tomcat Server is available from 
+			<a class="ulink" href="http://www.eclipse.org/virgo/download/" target="_top">here</a>.
+		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="installation"></a>2.&nbsp;Installing Virgo Snaps</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation-zip"></a>2.1&nbsp;Installing from the Zip Download</h2></div></div></div><p>
+			VS is distributed as a Zip file. This can be downloaded from 
+			<a class="ulink" href="http://www.eclipse.org/virgo/download/" target="_top">here</a>.
+		</p><p>
+			Once the Zip file is unpacked you will find several things inside, including a copy of this documentation in the 
+			<code class="literal">docs</code> folder. The layout is shown below.
+		</p><p>
+			</p><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="425"><tr><td align="center"><img src="images/snapsZipFile.png" align="middle" width="425"></td></tr></table><p>
+		</p><p>
+			Take the bundles and plan in the <code class="literal">dist</code> folder and place them in either the <code class="literal">/repository/usr</code> 
+			or <code class="literal">/repository/ext</code> folder of your Virgo install. Later you need the bundles in the <code class="literal">sample</code> 
+			folder. If you wish to view the source for VS or its sample, then these are in the <code class="literal">src</code> 
+			folder.
+		</p><p>
+			In order to start the Snaps system as a part of your Virgo Tomcat Server, the Snaps plan needs to be referenced 
+			from the <code class="literal">initialArtifacts</code> property. This is located in the config file at 
+			<code class="literal">${SERVER_HOME}/config/org.eclipse.virgo.kernel.userregion.properties</code>. The property should be 
+			extended like this.
+		</p><pre class="screen">initialArtifacts=repository:plan/org.eclipse.virgo.kernel.userregion.springdm, 
+		repository:plan/org.eclipse.virgo.web.tomcat, 
+		<span class="emphasis"><em>repository:plan/org.eclipse.virgo.snaps</em></span></pre><p>
+			Now you are ready to check that Snaps is working.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation-post"></a>2.2&nbsp;Verifying it's working</h2></div></div></div><p>
+			The sample application in the Zip file demonstrates all of the features of Snaps. You will cover this application in 
+			detail later, but for now install it to verify that you have a working Snaps install. Start the server up and check 
+			the output it produces contains the following:
+		</p><pre class="screen">&lt;DE0004I&gt; Starting plan 'org.eclipse.virgo.snaps' version '3.0.0'. 
+&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.api' version '3.6.0.M05'. 
+&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.api' version '3.6.0.M05'. 
+&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.core' version '3.6.0.M05'. 
+&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.core' version '3.6.0.M05'. 
+&lt;DE0005I&gt; Started plan 'org.eclipse.virgo.snaps' version '3.0.0'.</pre><p>
+			Open up the Virgo Admin Console by navigating to <code class="literal">http://localhost:8080/admin</code> and then go 
+			to the artifacts tab to deploy some new bundles. The first bundle to deploy is located at 
+			<code class="literal">/sample/org.eclipse.virgo.snaps.sample.animal-3.6.0.M05.jar</code>, select it in the browser and 
+			upload. In the terminal window you started the Virgo Tomcat Server in you should see the usual messages about the 
+			bundle starting and this message:
+		</p><pre class="screen">&lt;SN0000I&gt; Host created for path '/animal-menu-bar'</pre><p>
+			This shows that the host has been registered and is ready for Snaps to attach to it. To view the application take 
+			your browser to <code class="literal">http://localhost:8080/animal-menu-bar/</code>. You should be presented with a green looking 
+			page that has a menu bar with two links on it. One will take you to the page you are currently on while the other goes 
+			back to the admin page.
+		</p><p>
+			This is all very nice, but it's time to deploy another snap that will dynamicaly add some extra content to the app. The next bundle
+			to deploy is located at <code class="literal">/sample/org.eclipse.virgo.snaps.sample.dog-3.6.0.M05.jar</code>. Deploy it the same way 
+			as the last one using the admin console and check the messages to verify it has been bound to the host:
+		</p><pre class="screen">&lt;SN0010I&gt; Snap bound to path '/animal-menu-bar/dog' </pre><p>
+			In your browser, go back to the application and refresh the page and a new menu item should now be present. If you click it a new 
+			page will load with content from the newly installed snap. In this case a picture of a dog.
+		</p><p>	
+			<img src="images/sampleDog.png">
+		</p><p>
+			You have now verified that your install is working and can continue on to learn how Snaps works and how you can use it to break up 
+			your web applications.
+		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="using-snaps"></a>3.&nbsp;Using Virgo Snaps in your application</h2></div></div></div><p>
+		Every snap or host should also be a regular WAB (Web Application Bundle), all you have to do is add some additional 
+		configuration to benefit from VS.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-snaps-configuring-the-host"></a>3.1&nbsp;Configuring the Host</h2></div></div></div><p>
+			In the WAB that is to act as a host to Snaps bundles, all that needs to be added is a filter in the hosts '
+			<code class="literal">web.xml</code>'. This filter can be mapped to any sub path that you want forwarded to registered 
+			snaps. It is important to note the extra <code class="literal">dispatcher</code> declarations in the <code class="literal">filter-mapping</code>. 
+			Without these internal lookups, resources like JSPs won't get passed to the appropriate snap when needed.
+		</p><pre class="programlisting">
+&lt;filter&gt;
+    &lt;filter-name&gt;host-filter-name&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.eclipse.virgo.snaps.core.SnapHostFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;host-filter-name&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;dispatcher&gt;INCLUDE&lt;/dispatcher&gt;
+    &lt;dispatcher&gt;FORWARD&lt;/dispatcher&gt;
+    &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
+&lt;/filter-mapping&gt;
+		</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-snaps-configuring-a-snap"></a>3.2&nbsp;Configuring a Snap</h2></div></div></div><p>
+			A snap is a normal WAB with the addition of two extra manifest headers. The first <code class="literal">Snap-Host</code> is used 
+			to resolve the WAB you want to act as a host for this snap. The second <code class="literal">Snap-ContextPath</code> gives the 
+			path the snap will answer to. In order to reach the snap a request must be made for the host's context path, plus any 
+			path in the host's Snaps filter followed by the path given with the <code class="literal">Snap-ContextPath</code> header.
+		</p><pre class="programlisting">
+Snap-Host: org.eclipse.virgo.snaps.sample.animal;version="${version:[=.=.=, =.+1)}"
+Snap-ContextPath: /dog
+		</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-snaps-taglibs"></a>3.3&nbsp;Using the Snaps taglibs</h2></div></div></div><p>
+			There is a tag library available that makes information about the Snaps environment available to the host from within a 
+			JSP page. The prefix and URI to declare are <code class="code">&lt;%@ taglib prefix="snaps" uri="http://www.eclipse.org/virgo/snaps" 
+			%&gt;</code>. You can now access an array of all the Snaps currently registered with the host. Each snap in the array
+			has two values, the first is the context path the Snap is registered with, as given in the snaps manifest header. The 
+			second is an array of properties, if any, given in a property file in the snap. The file must be in the <code class="literal">META-INF
+			</code> directory and have a name of <code class="literal">snap.properties</code>. The following code snippet shows all of these 
+			in use to produce links to each of the installed snaps.
+		</p><pre class="programlisting">
+&lt;snaps:snaps var="snaps"&gt;
+    &lt;c:forEach var="snap" items="${snaps}"&gt;
+        &lt;a href="&lt;c:url value="${snap.contextPath}${snap.properties['link.path']}"/&gt;"&gt;
+                     ${snap.properties['link.text']}&lt;/a&gt;
+    &lt;/c:forEach&gt;
+&lt;/snaps:snaps&gt;
+		</pre><p>
+			The first line uses the Snaps tag library to place the array of snaps into the <code class="code">snaps</code> variable. Then a 
+			<code class="code">forEach</code> loop goes through each snap. The content of the <code class="code">forEach</code> loop is the really interesting 
+			bit. The first variable <code class="code">${snap.contextPath}</code> returns the context path of the snap. The two lookups are for 
+			properties <code class="code">${snap.properties['something']}</code>. They rely on the snap having the properties file in place with 
+			<code class="literal">link.path</code> and <code class="literal">link.text</code> defined in it. This shows the flexibility you have for defining 
+			your own contract between the host and its snaps. In this case each snap can contribute extra information about how links in 
+			a menu should be constructed.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-snaps-host-prefix"></a>3.4&nbsp;Referencing Resources</h2></div></div></div><p>
+			If the snap needs to lookup any resources, this can be done in the normal way and if the resource cannot be found in the snap, 
+			then the host will be checked. Remember that a host and all its snaps use a single <code class="literal">ServletContext</code>. As the 
+			snap is always checked first it can hide resources at the same path in its host. So if you want to look up a resource in the 
+			snaps host that exists in the snap simply prefix the path with <code class="code">host:</code>. This will then cause the Snaps system to 
+			bypass the snap and look only in its host for the requested resource. If it is not found in its host the snap will NOT be 
+			checked, the lookup will return with nothing.
+			</p><pre class="programlisting">
+request.getServletContext().getResource("host:/WEB-INF/sample.properties");
+			</pre><p>
+			</p><p>
+				This line of Java code gets the ServletContext from the HttpRequest object and then tries to get a resource from the host, 
+				bypassing the snap.
+			</p><p>
+		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="sample-application"></a>4.&nbsp;A Sample Application</h2></div></div></div><p>
+		The Virgo Snaps Zip file comes with a sample application that you may have already deployed to verify 
+		your VS install. In this chapter you will look at it in more detail to see how an 
+		application can be composed and see all the Snaps features in action.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sample-application-structure"></a>4.1&nbsp;Structure of the sample application</h2></div></div></div><p>
+			The application is very simple, it consists of just a front end, composed of four bundles, a host with 
+			three Snaps.
+		</p><p>
+			<img src="images/sampleApp.png">
+		</p><p>
+			The host and three snaps show their <code class="literal">Snap-ContextPath</code>s. The Cat and Dog snaps both 
+			contribute content while the final snap just contributes styling information in the form of <code class="literal">css</code> 
+			files. The following sections look at each of these in detail.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sample-application-host"></a>4.2&nbsp;The Host bundle</h2></div></div></div><p>
+			This bundle is very simple with no Java code. It defines the Snaps filter in its <code class="literal">web.xml</code> 
+			just as you have seen in the <a class="link" href="#using-snaps-configuring-the-host" title="3.1&nbsp;Configuring the Host">Using Snaps</a> section. The 
+			menu bar uses the taglibs support to render links for each registered Snap.  
+		</p><pre class="programlisting">
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="&lt;c:url value="/"/&gt;"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;snaps:snaps var="snaps"&gt;
+        &lt;c:forEach var="snap" items="${snaps}"&gt;
+            &lt;c:if test="${snap.contextPath ne '/styles'}"&gt;
+                &lt;li&gt;&lt;a href="&lt;c:url value="${snap.contextPath}${snap.properties['link.path']}"/&gt;"&gt;
+                    ${snap.properties['link.text']}&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/c:if&gt;
+        &lt;/c:forEach&gt;
+    &lt;/snaps:snaps&gt;
+&lt;/ul&gt;
+		</pre><p>
+			This is very similar to an example you have already seen. It puts the links in a list and adds a link at the 
+			beginning to return to the host. The properties it is referencing are located in the snaps themselves at 
+			<code class="literal">/META-INF/snap.properties</code>.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sample-application-new-content"></a>4.3&nbsp;Adding New Content</h2></div></div></div><p>
+			If you now deploy both the Dog and Cat snaps, two new items will appear on the menu bar, each providing content 
+			from their respective snaps.
+		</p><p>
+			<img src="images/sampleCat.png">
+		</p><p>
+			If you look at the Cat page you will see it is also displaying some properties. The Cat Snap is a little more 
+			complex, it has it's own <code class="literal">DispatcherServlet</code> defined in its <code class="literal">web.xml</code> and a 
+			controller defined using annotations. If you look at the controller code you will see where these two properties 
+			come from.
+		</p><pre class="programlisting">
+@Controller
+public class CatController {
+
+    @RequestMapping("/meow")
+    public ModelAndView cat(HttpServletRequest request) throws IOException {
+        URL host = request.getServletContext().getResource("host:/WEB-INF/sample.properties");
+        Properties host_props = new Properties();
+        if(host != null){
+            host_props.load(host.openStream());
+        }
+        URL snap = request.getServletContext().getResource("/WEB-INF/sample.properties");
+        Properties snap_props = new Properties();
+        if(snap != null){
+            snap_props.load(snap.openStream());
+        }
+        return new ModelAndView("index").addObject("host", host_props.getProperty("some.property"))
+                    .addObject("snap", snap_props.getProperty("some.property"));
+    }
+}
+		</pre><p>
+			There are two properties files called <code class="literal">sample.properties</code> located at the same path within both 
+			the Cat snap and the host. Each contains a property called <code class="literal">some.property</code> but with distinct 
+			value. Looking at the code above you can see the <code class="code">host:</code> prefix being used to ensure the first lookup
+			only looks in the host and skips the snap. These values are then placed in the Model for the JSP page to render.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sample-application-dynamic-styling"></a>4.4&nbsp;Re-styling</h2></div></div></div><p>
+			Finally the Blue styling snap shows how Snaps can be used in other ways. Deploying this will cause all requests 
+			to <code class="literal">/styles</code> to be redirected and the application will change in appearance but not content. All 
+			this happens without re-deploying the host bundle, although you may need to do a full refresh to clear your browser's 
+			cache.
+		</p><p>
+			<img src="images/sampleBlue.png">
+		</p>
+		This is the same page as before, being rendered by the host and the Cat snap, but with the style information now coming
+		from the Blue snap.
+	</div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="further-reading"></a>5.&nbsp;Further Reading</h2></div></div></div><p>
+		The User and Programmer Guides provide a lot of information about using and developing applications for the Virgo Server.
+	</p><p>
+		<a class="ulink" href="http://www.eclipse.org/virgo/documentation/" target="_top">
+			Virgo Documentation page
+		</a>
+	</p><p>
+		<a class="ulink" href="../../virgo-programmer-guide/html/index.html" target="_top">
+			Virgo Tomcat Server Programmer Guide
+		</a>
+	</p><p>
+		<a class="ulink" href="../../virgo-user-guide/html/index.html" target="_top">
+			Virgo Tomcat Server User Guide
+		</a>
+	</p><p>
+		<a class="ulink" href="http://www.slideshare.net/cgfrost/eclipsecon2011-virgo-snaps" target="_top">
+			Slides from a presentation at EclipseCon 2011 about Virgo Snaps.
+		</a>
+	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="known-issues"></a>6.&nbsp;Known Issues</h2></div></div></div><p>
+		This section describes known issues that you might run into, along with corresponding workarounds.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="known-issues-jetty-restriction"></a>6.1&nbsp;Virgo Jetty Server Restriction</h2></div></div></div><p>
+			Virgo Snaps is not supported on the Virgo Jetty Server, please use with the Virgo Tomcat Server.
+		</p></div></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--></body></html>
