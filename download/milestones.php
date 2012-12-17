@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Downloads";
 	$pageAuthor		= "Glyn Normington";
 		
-	$virgoVersions = array("3.6.0.M05");
+	$virgoVersions = array("3.6.0.RC1");
 	ob_start();
 ?>
 

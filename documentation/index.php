@@ -25,7 +25,7 @@
 	
 	$currentVersion = "3.5.0.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
-	$milestone = "3.6.0.M05";
+	$milestone = "3.6.0.RC1";
 	$toolingMilestone = "3.5.0.M04";
 	ob_start();
 ?>
