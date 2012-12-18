@@ -65,11 +65,11 @@
 </p>
 <p>
 	The following table shows the APIs supported and the components that provide them.
-	<table cellpadding="10">
+	<table cellspacing="20">
     <tr>
-        <th>Specification</th>
-        <th>Packages</th>
-        <th>Component</th>
+        <th><b>Specification</b></th>
+        <th><b>Packages</b></th>
+        <th><b>Component</b></th>
     </tr>
     <tr>
     	<td>JavaServer Faces (JSF) 2 </td>
