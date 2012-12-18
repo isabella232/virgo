@@ -42,15 +42,13 @@
 
 <h4>Acknowledgements</h4>
 
-<p>The Virgo committers would like to thank the following people for their contributions:
-<ul>
-    <li>Alex Antonov - for a bundlor fix</li>
-    <li>David Normington - for the initial implementation of the web admin console wiring panel</li>
-    <li>Polina Genova - for the bulk deployment feature of the Nano deployer</li>
-</ul>
-</p>
-
 <p>
+	The Virgo committers would like to thank the following people for their contributions:
+	<ul>
+   		<li>Alex Antonov - for a bundlor fix</li>
+    	<li>David Normington - for the initial implementation of the web admin console wiring panel</li>
+    	<li>Polina Genova - for the bulk deployment feature of the Nano deployer</li>
+</ul>
 	We are also grateful for contributions in the form of bug reports, forum posts, and blogs
 	which were provided by individuals too numerous to mention.
 </p>
