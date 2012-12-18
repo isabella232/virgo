@@ -156,19 +156,19 @@
 	<li>All Virgo distributions' p2 profiles published with a custom Java Server Profile such that the p2 resolution exactly matches the runtime content</li>
 	<li>Work directory paths shortened to alleviate Windows filesystem limitations.</li>
 	<li>Bundles and WAR files may be deployed in packed form to shorten work directory paths further.
-		See the <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.0.M01/docs/virgo-user-guide/html/ch13s06.html">User Guide</a> for
+		See the <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.0.RELEASE/docs/virgo-user-guide/html/ch13s06.html">User Guide</a> for
 		the kernel configuration property deployer.unpackBundles.
 	</li>
-	<li>New 'tee' system stream capture mode - that prints both system outs and errs in the logs and on the default system output</li>
-	<li>Support for nested web context path in Nano Web - this allows users to install a war with web context path of the form 'my/war/application'</li>
+	<li>New 'tee' system stream capture mode - prints both system output and error streams in the logs and on the default system output</li>
+	<li>Support for nested web context paths in Nano Web - allows users to install WARs with web context paths of the form 'my/war/application'</li>
 	<li>Support for Spring framework 3.2.x</li>
 	<li>Fragments may attach to multiple hosts for closer conformance to the OSGi specifications</li>
-	<li>Logging configuration may be changed without restart Virgo, via the web admin console or JMX</li>
+	<li>Logging configuration may be changed without restarting Virgo, via the web admin console or JMX</li>
 </ul>
 
 <h4>Migration to 3.6.0</h4>
 <p>
-There are infrastructural changes in this Virgo release which are thoroughly described in our <a href="http://wiki.eclipse.org/Virgo/Community/Migrating_from_3.5.x_to_3.6.0">migration notes</a>. 
+Users migrating from earlier releases should consult the <a href="http://wiki.eclipse.org/Virgo/Community#Migration_Notes">migration notes</a>. 
 </p>
 
 <h4>Version Upgrades</h4>
