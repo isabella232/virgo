@@ -124,7 +124,7 @@
 	Below are samples of the various panels - click on a panel to see it at full size in a separate window.
 	Each panel is displayed only on Virgo runtimes that support it, which essentially means that
 	certain panels are not available on Nano and Nano Web.
-	<img src="images/webadmin/map.jpg" usemap="#map" width="50%" height="50%">
+	<img src="images/webadmin/map.jpg" usemap="#map" width="1901" height="577">
 	<map id="map" name="map">
 	<area shape="rect" alt="Web Admin Console overview" title="" coords="2,6,310,142" href="images/webadmin/overview.png" target="_blank" />
 	<area shape="rect" alt="Web Admin Console artifacts" title="" coords="314,6,622,142" href="images/webadmin/artifacts.png" target="_blank" />
