@@ -62,7 +62,7 @@
 	This dramatically lowers the barrier to adoption of Virgo for a large class of existing enterprise Java applications.
 </p>
 <p>
-	The following table shows the APIs supported and the components that provide them.
+	The following table shows the new APIs and the components that provide them.
 	<table cellspacing="30">
     <tr>
         <th><b>Specification</b></th>
