@@ -32,7 +32,7 @@
 
 <p>
 	The <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Sky</a> (3.6.0) release of Virgo
-	supports Java EE Web Profile applications in Virgo Nano Web,
+	adds support for Java Enterprise APIs in Virgo Nano Web,
 	introduces a rewritten and extended web administration console into all Virgo runtimes, and support Java 7.
 </p>
 
@@ -55,10 +55,10 @@
 	which were provided by individuals too numerous to mention.
 </p>
 
-<h4>Java EE Web Profile Support</h4>
+<h4>Java Enterprise API Support</h4>
 
 <p>
-	Several open source Java EE API implementations are integrated into Nano Web to support applications written to the Java EE Web Profile.
+	Several open source Java Enterprise API implementations are integrated into Nano Web to support applications written to those APIs.
 </p>
 <p>
 	This dramatically lowers the barrier to adoption of Virgo for a large class of existing enterprise Java applications.
