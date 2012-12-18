@@ -65,7 +65,7 @@
 </p>
 <p>
 	The following table shows the APIs supported and the components that provide them.
-	<table>
+	<table border="1">
     <tr>
         <td>Specification</td>
         <td>Packages</td>
@@ -172,15 +172,15 @@ There are infrastructural changes in this Virgo release which are thoroughly des
 </p>
 
 <h4>Version Upgrades</h4>
-<img src="http://www.eclipse.org/jetty/images/jetty-logo-80x22.png" alt="Jetty logo"/>
-<img src="images/equinox-osgi.png" alt="Equinox" />
-<li>Equinox is upgraded to its Juno SR1 version</li>
-<p>Gemini Web is upgraded to 2.2.0 (embedded Apache Tomcat is upgraded to 7.0.32 with WebSocket support)</p>
-<p>Gemini Blueprint is upgraded to 1.0.2</p>
-<p>Spring framework is upgraded to 3.1.0</p>
-<p>Apache Felix Gogo is updated to version 0.10.0.</p>
-<p>Logback is updated to version 1.0.7.</p>
-<p>SLF4J is updated to version 1.7.2</p>
+<ul>
+	<li>Equinox is upgraded to its Juno SR1 version</li>
+	<li>Gemini Web is upgraded to 2.2.0 (embedded Apache Tomcat is upgraded to 7.0.32 with WebSocket support)</li>
+	<li>Gemini Blueprint is upgraded to 1.0.2</li>
+	<li>Spring framework is upgraded to 3.1.0</li>
+	<li>Apache Felix Gogo is updated to version 0.10.0.</li>
+	<li>Logback is updated to version 1.0.7.</li>
+	<li>SLF4J is updated to version 1.7.2</li>
+</ul>
 
 <h4>Enhancements and Fixes</h4>
 <p>A full list of bugs and enhancements included in this release is available
