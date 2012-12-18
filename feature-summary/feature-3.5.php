@@ -19,7 +19,7 @@
  *******************************************************************************/
 
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "Virgo - Feature Summary";
+	$pageTitle 		= "Virgo - 3.5.x Feature Summary";
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, feature, features";
 	$pageAuthor		= "Chris Frost";
 		
@@ -27,9 +27,9 @@
 ?>
 	
 	<div id="midcolumn">
-		<h2>Feature Summary</h2>
+		<h2>Virgo 3.5.x Feature Summary</h2>
 		<p>
-			Virgo provides a number of <a href="http://www.eclipse.org/virgo/deliverables/">deliverables</a>, each providing a particular mix of features. The table below outlines the features in each Virgo 3.6.x deliverable.
+			Virgo provides a number of <a href="http://www.eclipse.org/virgo/deliverables/">deliverables</a>, each providing a particular mix of features. The table below outlines the features in each deliverable.
 		</p>
 	
 		<table id="packaging">
@@ -37,7 +37,7 @@
 			<tr>
 				<th></th>
 				<th class="packaging-content zebra"><a href="http://www.eclipse.org/virgo/deliverables#nano-deliverable">Nano</a></th>
-				<th class="packaging-content"><a href="http://www.eclipse.org/virgo/deliverables#nano-full-deliverable">Nano Web</a></th>
+				<th class="packaging-content"><a href="http://www.eclipse.org/virgo/deliverables#nano-full-deliverable">Nano "Web"</a></th>
 				<th class="packaging-content zebra"><a href="http://www.eclipse.org/virgo/deliverables#kernel-deliverable">Kernel</a></th>
 				<th class="packaging-content"><a href="http://www.eclipse.org/virgo/deliverables#jetty-server-deliverable">Jetty Server</a></th>
 				<th class="packaging-content zebra"><a href="http://www.eclipse.org/virgo/deliverables#tomcat-server-deliverable">Server for Apache Tomcat</a></th>
@@ -75,55 +75,6 @@
 				<td class="packaging-content"></td>
 				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
 			</tr>
-			<tr><th align=left colspan=6>APIs</th></tr>
-			<tr>
-				<td>Spring framework</td>
-				<td class="packaging-content zebra"></td>
-				<td class="packaging-content"></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-			</tr>
-			<tr>
-				<td>OSGi Blueprint Service</td>
-				<td class="packaging-content zebra"></td>
-				<td class="packaging-content"></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-			</tr>
-			<tr>
-				<td>OSGi Declarative Services</td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-			</tr>
-			<tr>
-				<td>OSGi JMX Management</td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-			</tr>
-			<tr>
-				<td>OSGi Log Service</td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-			</tr>
-			<tr>
-				<td>Java Enterprise APIs</td>
-				<td class="packaging-content zebra"></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"></td>
-				<td class="packaging-content"></td>
-				<td class="packaging-content zebra"></td>
-			</tr>
 			<tr>
 				<td><a href="http://www.eclipse.org/virgo/deliverables#snaps-deliverable">Snaps</a></td>
 				<td class="packaging-content zebra"></td>
@@ -151,9 +102,9 @@
 			</tr>
 			<tr>
 				<td>Web Admin Console</td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
-				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
+				<td class="packaging-content zebra"></td>
+				<td class="packaging-content"></td>
+				<td class="packaging-content zebra"></td>
 				<td class="packaging-content"><img src="../images/tick.png" alt="yes"/></td>
 				<td class="packaging-content zebra"><img src="../images/tick.png" alt="yes"/></td>
 			</tr>
@@ -273,7 +224,6 @@
 				</td></tr>
 			</tbody>
 		</table>
-		See the <a href="feature-3.5.php">previous feature summary</a> for Virgo 3.5.x.
 	</div>
 
 <?
