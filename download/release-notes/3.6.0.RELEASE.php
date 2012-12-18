@@ -65,7 +65,7 @@
 </p>
 <p>
 	The following table shows the APIs supported and the components that provide them.
-	<table cellspacing="20">
+	<table cellspacing="30">
     <tr>
         <th><b>Specification</b></th>
         <th><b>Packages</b></th>
@@ -74,7 +74,7 @@
     <tr>
     	<td>JavaServer Faces (JSF) 2 </td>
         <td>javax.faces.*</td>
-        <td></td>
+        <td>Mojarra</td>
     </tr>
     <tr>
     	<td>Servlet 3 and Java Server Pages</td>
@@ -83,7 +83,7 @@
     </tr>
     <tr>
         <td>Contexts and Dependency Injection (CDI)</td>    	
-        <td>javax.enterprise.context<br/>javax.enterprise.inject</td>
+        <td>javax.enterprise.context.*<br/>javax.enterprise.inject.*</td>
         <td>OpenWebBeans</td>
     </tr>
     <tr>
@@ -94,17 +94,17 @@
     <tr>
     	<td>Bean Validation</td>
         <td>javax.validation</td>
-        <td></td>
+        <td>Apache BVal</td>
     </tr>
     <tr>
     	<td>Java Persistence API (JPA) 2</td>
         <td>javax.persistence.*</td>
-        <td></td>
+        <td>EclipseLink</td>
     </tr>
     <tr>
     	<td>Java Transaction API (JPA)</td>
         <td>javax.transaction.*</td>
-        <td></td>
+        <td>JOTM</td>
     </tr>
   	</table>
 
