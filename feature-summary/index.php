@@ -273,7 +273,7 @@
 				</td></tr>
 			</tbody>
 		</table>
-		See the <a href="feature-3.5.php">previous feature summary</a> for Virgo 3.5.x.
+		See also the <a href="feature-3.5.php">Virgo 3.5.x feature summary</a> if you are interested in that version.
 	</div>
 
 <?
