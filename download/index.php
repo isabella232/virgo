@@ -44,12 +44,12 @@
 		<h4><a href="#">3.6.0.RELEASE</a></h4>
 		<div>
 			<ul>
-				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.6.0.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=224873">Download approved IP log</a>)</li>
-				<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VTS/3.6.0.RELEASE/virgo-tomcat-server-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
-				<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VJS/3.6.0.RELEASE/virgo-jetty-server-3.6.0.RELEASE.zip' target='_self'>Download</a> </li>
-				<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VN/3.6.0.RELEASE/virgo-nano-full-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
-				<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VK/3.6.0.RELEASE/virgo-kernel-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
-				<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VN/3.6.0.RELEASE/virgo-nano-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.6.0.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=224873">Approved IP log</a>)</li>
+				<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.0.RELEASE/virgo-tomcat-server-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.0.RELEASE/virgo-jetty-server-3.6.0.RELEASE.zip' target='_self'>Download</a> </li>
+				<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.0.RELEASE/virgo-nano-full-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.0.RELEASE/virgo-kernel-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.0.RELEASE/virgo-nano-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
 				<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VS/3.6.0.RELEASE/snaps-3.6.0.RELEASE.zip' target='_self'>Download</a></li>
 				<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VD/3.6.0.RELEASE/virgo-documentation-3.6.0.RELEASE.zip'>Download</a> | <a href='http://www.eclipse.org/virgo/documentation/' target='_self'>Browse</a></li>
 				<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.6.0.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.6.0.RELEASE</a></li>
@@ -59,7 +59,7 @@
 		<h4><a href="#">3.5.0.RELEASE</a></h4>
 		<div>
 			<ul>
-				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.5.0.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=218093">Download approved IP log</a>)</li>
+				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.5.0.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=218093">Approved IP log</a>)</li>
 				<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VTS/3.5.0.RELEASE/virgo-tomcat-server-3.5.0.RELEASE.zip' target='_self'>Download</a></li>
 				<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VJS/3.5.0.RELEASE/virgo-jetty-server-3.5.0.RELEASE.zip' target='_self'>Download</a> </li>
 				<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VN/3.5.0.RELEASE/virgo-nano-full-3.5.0.RELEASE.zip' target='_self'>Download</a></li>
@@ -74,7 +74,7 @@
 		<h4><a href="#">3.0.3.RELEASE</a></h4>
 		<div>
 			<ul>
-				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.0.3.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=200883">Download approved IP log</a>)</li>
+				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.0.3.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=200883">Approved IP log</a>)</li>
 				<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VTS/3.0.3.RELEASE/virgo-tomcat-server-3.0.3.RELEASE.zip' target='_self'>Download</a></li>
 				<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VJS/3.0.3.RELEASE/virgo-jetty-server-3.0.3.RELEASE.zip' target='_self'>Download</a> </li>
 				<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VK/3.0.3.RELEASE/virgo-kernel-3.0.3.RELEASE.zip' target='_self'>Download</a></li>
@@ -86,7 +86,7 @@
 		<h4><a href="#">2.1.1.RELEASE</a></h4>
 		<div>
 			<ul>
-				<li><a href='http://www.eclipse.org/virgo/download/release-notes/2.1.1.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=179880">Download approved IP log</a>)</li>
+				<li><a href='http://www.eclipse.org/virgo/download/release-notes/2.1.1.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=179880">Approved IP log</a>)</li>
 				<li><strong>Virgo Web Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VWS/2.1.1.RELEASE/virgo-web-server-2.1.1.RELEASE.zip' target='_self'>Download</a></li>
 				<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VK/2.1.1.RELEASE/virgo-kernel-2.1.1.RELEASE.zip' target='_self'>Download</a></li>
 			   	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VD/2.1.1.RELEASE/virgo-documentation-2.1.1.RELEASE.zip'>Download</a></li>
