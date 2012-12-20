@@ -40,7 +40,7 @@
 				
 				<li>Programmer Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-programmer-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-programmer-guide/htmlsingle/virgo-programmer-guide.html">HTML Single</a> )</li>
 				
-				<li>Snaps Guide ( <a href="bundlor-documentation-<?=$currentVersion ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
+				<li>Snaps Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
 			
 			    <li>Tooling Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
