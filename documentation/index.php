@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Documentation";
 	$pageAuthor		= "Christopher Frost";
 	
-	$currentVersion = "3.5.0.RELEASE";
+	$currentVersion = "3.6.0.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
 	$milestone = "3.6.0.RC1";
 	$toolingMilestone = "3.5.0.M04";
@@ -42,6 +42,8 @@
 				
 				<li>Snaps Guide ( <a href="bundlor-documentation-<?=$currentVersion ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
 			
+			    <li>Tooling Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
+
 			    <li>Bundlor User Guide ( <a href="bundlor-documentation-<?=$currentBundlorVersion ?>/docs/user-guide/html/index.html">HTML</a> | <a href="bundlor-documentation-<?=$currentBundlorVersion ?>/docs/user-guide/htmlsingle/user-guide.html">HTML Single</a> )</li>
 			
 			</ul>
@@ -52,6 +54,8 @@
 		<p>
 		    Users of earlier releases of Virgo, of SpringSource dm Server, or of the "slices" framework should refer to the <a href="http://wiki.eclipse.org/Virgo/Community#Migration_Notes">migration notes</a> on the wiki.
 		</p>
+
+		<!--
 		
  		<h2>Milestone Documentation</h2>
 		<p>
@@ -64,12 +68,12 @@
 				
 				<li>Snaps Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
 				
-				<!-- <li>Tooling Guide ( <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
-				-->
+				< -- <li>Tooling Guide ( <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
+				 - >
 				<li>Tooling Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
 			</ul>
-		</p> 
+		</p> -->
 
 	</div>
 
