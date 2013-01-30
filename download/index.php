@@ -33,12 +33,12 @@
 	</script>
 
 <div id="midcolumn">
-	<table cellspacing="0">
+	<table cellspacing="0" border="1">
 			<tr>
-				<td><p style="font-size:20px">
-					We'd really appreciate it if you could fill in the
+				<td align="center"><p style="font-size:20px" style="color:#191970>
+					We'd really appreciate it if you could fill in the<br />
 				 <a href="https://docs.google.com/spreadsheet/viewform?formkey=dC1JMXRCbzd4a2pVN285ZU5fRlJoM2c6MQ">Virgo community survey</a>
-				 before the deadline of 14 February 2013.</p>
+				 <br />before the deadline of 14 February 2013.</p>
 				</td>
 			</tr>
 		</table>
