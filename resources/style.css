@@ -13,6 +13,13 @@
 	width: 260px;
 }
 
+#survey {
+	text-align: center;
+	margin: 20px 0;
+	font-size: 20px;
+	width: 100%;
+	border: solid 1px;
+}
 
 h3 {
 	clear: both;
@@ -151,9 +158,6 @@ a strong {
 	visibility: hidden;
 }
 
-#headlines {
-}
-
 #headlines ul li {
 	margin: 0 0;
 	list-style-type: none;
@@ -174,7 +178,7 @@ a strong {
 
 #headlines div.item {
 	display: block;
-	}
+}
 	
 #screencast {
 	margin-bottom: 10px;
