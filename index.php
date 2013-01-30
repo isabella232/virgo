@@ -26,6 +26,15 @@
 	ob_start();
 ?>
 	<div id="midcolumn">
+		<table cellspacing="0">
+			<tr>
+				<td><p style="font-size:20px">
+					We'd really appreciate it if you could fill in the
+				 <a href="https://docs.google.com/spreadsheet/viewform?formkey=dC1JMXRCbzd4a2pVN285ZU5fRlJoM2c6MQ">Virgo community survey</a>
+				 before the deadline of 14 February 2013.</p>
+				</td>
+			</tr>
+		</table>
 		<div class="logo"><img src="/virgo/images/virgo-logo.png" alt="Virgo"/></div>
 		<p>
 			Virgo from EclipseRT is a completely module-based Java application server

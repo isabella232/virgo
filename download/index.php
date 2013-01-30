@@ -33,6 +33,15 @@
 	</script>
 
 <div id="midcolumn">
+	<table cellspacing="0">
+			<tr>
+				<td><p style="font-size:20px">
+					We'd really appreciate it if you could fill in the
+				 <a href="https://docs.google.com/spreadsheet/viewform?formkey=dC1JMXRCbzd4a2pVN285ZU5fRlJoM2c6MQ">Virgo community survey</a>
+				 before the deadline of 14 February 2013.</p>
+				</td>
+			</tr>
+		</table>
 	<h2>Virgo Releases</h2>
 	<p>
 		Sample applications can be found on the <a href="http://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are 
