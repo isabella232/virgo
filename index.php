@@ -27,11 +27,8 @@
 ?>
 	<div id="midcolumn">
 		
-		<p id='announcement'>
-			We'd really appreciate it if you could fill in the
-			<br /><a href="https://docs.google.com/spreadsheet/viewform?formkey=dC1JMXRCbzd4a2pVN285ZU5fRlJoM2c6MQ">Virgo community survey</a>
-			<br />before the deadline of 14 February 2013
-		</p>
+		<!-- <p id='announcement'>
+		</p> -->
 
 		<div class="logo"><img src="/virgo/images/virgo-logo.png" alt="Virgo"/></div>
 		<p>
