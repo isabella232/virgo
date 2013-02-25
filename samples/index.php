@@ -38,8 +38,23 @@
 		All downloads are provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a> 
 		unless otherwise specified. Information on unreleased samples can be found on the Virgo <a href="http://wiki.eclipse.org/Virgo/Samples">wiki</a>.
 	</p>
-	
+	<h2>Samples Collection</h2>
 		
+	<p>Previous samples including Greenpages have been updated and combined in to a single samples project for Virgo. Collectivly they show many features and ways of structuring your project.</p>
+
+	<div id='accordion'>
+		<h4><a href="#">3.0.0.RC1</a></h4>
+		<div>
+			<ul>
+				<li><a href="http://www.eclipse.org/downloads/download.php?file=/virgo/release/VSS/3.0.0.RC1/samples-3.0.0.RC1.zip" target="_self">Download</a></li>
+				<li>View the Greenpages documentation (<a href="http://www.eclipse.org/virgo/documentation/greenpages-documentation-3.0.0.RC1/docs/html/index.html" target="_self">HTML</a> |
+					 <a href="http://www.eclipse.org/virgo/documentation/greenpages-documentation-3.0.0.RC1/docs/htmlsingle/greenpages-guide.html" target="_self">HTML Single</a>)</li>
+				<li>A helpful guide to getting Greenpages working under Eclipse by Cene Lavrič: <a href="http://greenpagesvirgo.wordpress.com/">Greenpages, Eclipse and Virgo – orchestrated<a></li>
+			</ul>
+		</div>
+	</div>
+
+
 	<h2>Greenpages Sample</h2>
 	<br />
 	<div id='accordion'>
