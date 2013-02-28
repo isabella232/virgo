@@ -1,0 +1,28 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>3.4&nbsp;Referencing Resources</title><link rel="stylesheet" href="css/stylesheet.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="index.html" title="Virgo Snaps User Guide"><link rel="up" href="ch03.html" title="3.&nbsp;Using Virgo Snaps in your application"><link rel="prev" href="ch03s03.html" title="3.3&nbsp;Using the Snaps taglibs"><link rel="next" href="ch04.html" title="4.&nbsp;A Sample Application"><!--Begin Google Analytics code--><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-2728886-3");
+			pageTracker._setDomainName("none");
+			pageTracker._setAllowLinker(true);
+			pageTracker._trackPageview();
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3.4&nbsp;Referencing Resources</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03s03.html">Prev</a>&nbsp;</td><th width="60%" align="center">3.&nbsp;Using Virgo Snaps in your application</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-snaps-host-prefix"></a>3.4&nbsp;Referencing Resources</h2></div></div></div><p>
+			If the snap needs to lookup any resources, this can be done in the normal way and if the resource cannot be found in the snap, 
+			then the host will be checked. Remember that a host and all its snaps use a single <code class="literal">ServletContext</code>. As the 
+			snap is always checked first it can hide resources at the same path in its host. So if you want to look up a resource in the 
+			snaps host that exists in the snap simply prefix the path with <code class="code">host:</code>. This will then cause the Snaps system to 
+			bypass the snap and look only in its host for the requested resource. If it is not found in its host the snap will NOT be 
+			checked, the lookup will return with nothing.
+			</p><pre class="programlisting">
+request.getServletContext().getResource("host:/WEB-INF/sample.properties");
+			</pre><p>
+			</p><p>
+				This line of Java code gets the ServletContext from the HttpRequest object and then tries to get a resource from the host, 
+				bypassing the snap.
+			</p><p>
+		</p></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
+			_lf_cid = "LF_48be82fa";
+			_lf_remora();
+		</script><!--End LoopFuse code--><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03s03.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch03.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">3.3&nbsp;Using the Snaps taglibs&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;4.&nbsp;A Sample Application</td></tr></table></div></body></html>

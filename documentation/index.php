@@ -8,7 +8,7 @@
 	include($App->getProjectCommon());
 	
 /*******************************************************************************
- * Copyright (c) 2009 Eclipse Foundation and others.
+ * Copyright (c) 2009, 2013 Eclipse Foundation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Documentation";
 	$pageAuthor		= "Christopher Frost";
 	
-	$currentVersion = "3.6.0.RELEASE";
+	$currentVersion = "3.6.1.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
 	$milestone = "3.6.0.RC1";
 	$toolingMilestone = "3.5.0.M04";
