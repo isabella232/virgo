@@ -13,14 +13,14 @@
 			detail later, but for now install it to verify that you have a working Snaps install. Start the server up and check 
 			the output it produces contains the following:
 		</p><pre class="screen">&lt;DE0004I&gt; Starting plan 'org.eclipse.virgo.snaps' version '3.0.0'. 
-&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.api' version '3.6.0.RELEASE'. 
-&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.api' version '3.6.0.RELEASE'. 
-&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.core' version '3.6.0.RELEASE'. 
-&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.core' version '3.6.0.RELEASE'. 
+&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.api' version '3.6.1.RELEASE'. 
+&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.api' version '3.6.1.RELEASE'. 
+&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.core' version '3.6.1.RELEASE'. 
+&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.core' version '3.6.1.RELEASE'. 
 &lt;DE0005I&gt; Started plan 'org.eclipse.virgo.snaps' version '3.0.0'.</pre><p>
 			Open up the Virgo Admin Console by navigating to <code class="literal">http://localhost:8080/admin</code> and then go 
 			to the artifacts tab to deploy some new bundles. The first bundle to deploy is located at 
-			<code class="literal">/sample/org.eclipse.virgo.snaps.sample.animal-3.6.0.RELEASE.jar</code>, select it in the browser and 
+			<code class="literal">/sample/org.eclipse.virgo.snaps.sample.animal-3.6.1.RELEASE.jar</code>, select it in the browser and 
 			upload. In the terminal window you started the Virgo Tomcat Server in you should see the usual messages about the 
 			bundle starting and this message:
 		</p><pre class="screen">&lt;SN0000I&gt; Host created for path '/animal-menu-bar'</pre><p>
@@ -30,7 +30,7 @@
 			back to the admin page.
 		</p><p>
 			This is all very nice, but it's time to deploy another snap that will dynamicaly add some extra content to the app. The next bundle
-			to deploy is located at <code class="literal">/sample/org.eclipse.virgo.snaps.sample.dog-3.6.0.RELEASE.jar</code>. Deploy it the same way 
+			to deploy is located at <code class="literal">/sample/org.eclipse.virgo.snaps.sample.dog-3.6.1.RELEASE.jar</code>. Deploy it the same way 
 			as the last one using the admin console and check the messages to verify it has been bound to the host:
 		</p><pre class="screen">&lt;SN0010I&gt; Snap bound to path '/animal-menu-bar/dog' </pre><p>
 			In your browser, go back to the application and refresh the page and a new menu item should now be present. If you click it a new 

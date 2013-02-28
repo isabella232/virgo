@@ -8,7 +8,7 @@
 			pageTracker._setDomainName("none");
 			pageTracker._setAllowLinker(true);
 			pageTracker._trackPageview();
-		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Virgo Snaps User Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Christopher</span> <span class="surname">Frost</span></h3></div></div></div><div><div class="mediaobject" align="right"><img src="images/virgo-logo-small.png" align="right"></div></div><div><span class="productname">Virgo Snaps<br></span></div><div><p class="releaseinfo">3.6.0.RELEASE</p></div></div><div><div><div class="legalnotice"><a name="d0e22"></a><p>
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Virgo Snaps User Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Christopher</span> <span class="surname">Frost</span></h3></div></div></div><div><div class="mediaobject" align="right"><img src="images/virgo-logo-small.png" align="right"></div></div><div><span class="productname">Virgo Snaps<br></span></div><div><p class="releaseinfo">3.6.1.RELEASE</p></div></div><div><div><div class="legalnotice"><a name="d0e22"></a><p>
 				Copyright &copy; 2011 VMware Inc.
 			</p></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#introduction-concepts">1.1. Concepts</a></span></dt><dt><span class="section"><a href="#introduction-prereqs">1.2. Prerequisites</a></span></dt></dl></dd><dt><span class="chapter"><a href="#installation">2. Installing Virgo Snaps</a></span></dt><dd><dl><dt><span class="section"><a href="#installation-zip">2.1. Installing from the Zip Download</a></span></dt><dt><span class="section"><a href="#installation-post">2.2. Verifying it's working</a></span></dt></dl></dd><dt><span class="chapter"><a href="#using-snaps">3. Using Virgo Snaps in your application</a></span></dt><dd><dl><dt><span class="section"><a href="#using-snaps-configuring-the-host">3.1. Configuring the Host</a></span></dt><dt><span class="section"><a href="#using-snaps-configuring-a-snap">3.2. Configuring a Snap</a></span></dt><dt><span class="section"><a href="#using-snaps-taglibs">3.3. Using the Snaps taglibs</a></span></dt><dt><span class="section"><a href="#using-snaps-host-prefix">3.4. Referencing Resources</a></span></dt></dl></dd><dt><span class="chapter"><a href="#sample-application">4. A Sample Application</a></span></dt><dd><dl><dt><span class="section"><a href="#sample-application-structure">4.1. Structure of the sample application</a></span></dt><dt><span class="section"><a href="#sample-application-host">4.2. The Host bundle</a></span></dt><dt><span class="section"><a href="#sample-application-new-content">4.3. Adding New Content</a></span></dt><dt><span class="section"><a href="#sample-application-dynamic-styling">4.4. Re-styling</a></span></dt></dl></dd><dt><span class="chapter"><a href="#further-reading">5. Further Reading</a></span></dt><dt><span class="chapter"><a href="#known-issues">6. Known Issues</a></span></dt><dd><dl><dt><span class="section"><a href="#known-issues-jetty-restriction">6.1. Virgo Jetty Server Restriction</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="introduction"></a>1.&nbsp;Introduction</h2></div></div></div><p>
 		This Guide covers Virgo Snaps and assumes you are already familiar with OSGi and Virgo. See <a class="link" href="#further-reading" title="5.&nbsp;Further Reading">here</a>.
@@ -56,14 +56,14 @@
 			detail later, but for now install it to verify that you have a working Snaps install. Start the server up and check 
 			the output it produces contains the following:
 		</p><pre class="screen">&lt;DE0004I&gt; Starting plan 'org.eclipse.virgo.snaps' version '3.0.0'. 
-&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.api' version '3.6.0.RELEASE'. 
-&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.api' version '3.6.0.RELEASE'. 
-&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.core' version '3.6.0.RELEASE'. 
-&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.core' version '3.6.0.RELEASE'. 
+&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.api' version '3.6.1.RELEASE'. 
+&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.api' version '3.6.1.RELEASE'. 
+&lt;DE0004I&gt; Starting bundle 'org.eclipse.virgo.snaps.core' version '3.6.1.RELEASE'. 
+&lt;DE0005I&gt; Started bundle 'org.eclipse.virgo.snaps.core' version '3.6.1.RELEASE'. 
 &lt;DE0005I&gt; Started plan 'org.eclipse.virgo.snaps' version '3.0.0'.</pre><p>
 			Open up the Virgo Admin Console by navigating to <code class="literal">http://localhost:8080/admin</code> and then go 
 			to the artifacts tab to deploy some new bundles. The first bundle to deploy is located at 
-			<code class="literal">/sample/org.eclipse.virgo.snaps.sample.animal-3.6.0.RELEASE.jar</code>, select it in the browser and 
+			<code class="literal">/sample/org.eclipse.virgo.snaps.sample.animal-3.6.1.RELEASE.jar</code>, select it in the browser and 
 			upload. In the terminal window you started the Virgo Tomcat Server in you should see the usual messages about the 
 			bundle starting and this message:
 		</p><pre class="screen">&lt;SN0000I&gt; Host created for path '/animal-menu-bar'</pre><p>
@@ -73,7 +73,7 @@
 			back to the admin page.
 		</p><p>
 			This is all very nice, but it's time to deploy another snap that will dynamicaly add some extra content to the app. The next bundle
-			to deploy is located at <code class="literal">/sample/org.eclipse.virgo.snaps.sample.dog-3.6.0.RELEASE.jar</code>. Deploy it the same way 
+			to deploy is located at <code class="literal">/sample/org.eclipse.virgo.snaps.sample.dog-3.6.1.RELEASE.jar</code>. Deploy it the same way 
 			as the last one using the admin console and check the messages to verify it has been bound to the host:
 		</p><pre class="screen">&lt;SN0010I&gt; Snap bound to path '/animal-menu-bar/dog' </pre><p>
 			In your browser, go back to the application and refresh the page and a new menu item should now be present. If you click it a new 
