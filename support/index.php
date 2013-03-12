@@ -71,7 +71,15 @@
 			        This is a separate support offering and is not tied to any other Spring projects or offerings.
 			    </td> 
 				</tr> 
-			</table>
+			<tr>
+			<td width="80" align="centre" valign="bottom">
+				&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://eclipsesource.com/en/products/long-term-support/"><img border=0 src="/virgo/images/es-logo.png"></a>
+			</td>
+			<td>
+				<a href="http://eclipsesource.com/en/products/long-term-support/">EclipseSource</a>, a contributor to the Eclipse Virgo project, offers commercial support for Virgo.
+			</td>
+			</tr>
+		</table>
 	</div>
 
 <?
