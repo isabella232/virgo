@@ -27,19 +27,20 @@
 	# Break the navigation into sections
 	$Nav->addNavSeparator("Virgo Home", 	"/virgo");
 	$Nav->addCustomNav("About Virgo", 	    "http://www.eclipse.org/projects/project.php?id=rt.virgo",    	"_self", 3);
+	$Nav->addCustomNav("Background",	 	"/virgo/about",	    	"_self", 3);
+	$Nav->addCustomNav("Benefits",	 		"/virgo/benefits",    	"_self", 3);
+	$Nav->addCustomNav("Cloud",	 		    "/virgo/cloud",    	    "_self", 3);
+	$Nav->addCustomNav("Deliverables",	 	"/virgo/deliverables", "_self", 3);
+	$Nav->addCustomNav("Documentation", 	"/virgo/documentation", "_self", 3);
 	$Nav->addCustomNav("Download", 			"/virgo/download", 		"_self", 3);
+	$Nav->addCustomNav("FAQ",			 	"http://wiki.eclipse.org/Virgo/FAQ", "_self", 3);
+	$Nav->addCustomNav("Feature Summary", 	"/virgo/feature-summary", "_self", 3);
+	$Nav->addCustomNav("Getting Involved", 	"/virgo/contribute", 	"_self", 3);
 	$Nav->addCustomNav("License", 			"http://www.eclipse.org/legal/epl/notice.php", 		"_self", 3);
 	$Nav->addCustomNav("White Paper",	 	"http://git.eclipse.org/c/virgo/org.eclipse.virgo.documentation.git/plain/white-paper/virgo-white-paper.pdf", "_self", 3);
-	$Nav->addCustomNav("Benefits",	 		"/virgo/benefits",    	"_self", 3);
-	$Nav->addCustomNav("Documentation", 	"/virgo/documentation", "_self", 3);
-	$Nav->addCustomNav("Feature Summary", 	"/virgo/feature-summary", "_self", 3);
-	$Nav->addCustomNav("Deliverables",	 	"/virgo/deliverables", "_self", 3);
 	$Nav->addCustomNav("Samples", 	        "/virgo/samples", "_self", 3);
-	$Nav->addCustomNav("Tooling",		 	"http://wiki.eclipse.org/Virgo/Tooling", "_self", 3);
-	$Nav->addCustomNav("FAQ",			 	"http://wiki.eclipse.org/Virgo/FAQ", "_self", 3);
 	$Nav->addCustomNav("Support", 			"/virgo/support", 		"_self", 3);
-	$Nav->addCustomNav("Getting Involved", 	"/virgo/contribute", 	"_self", 3);
-	$Nav->addCustomNav("Background",	 	"/virgo/about",	    	"_self", 3);
+	$Nav->addCustomNav("Tooling",		 	"http://wiki.eclipse.org/Virgo/Tooling", "_self", 3);
 
 	# Define keywords, author and title here, or in each PHP page specifically
 	# $pageKeywords	= "eclipse, OSGi, virgo";
