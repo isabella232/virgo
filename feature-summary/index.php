@@ -29,7 +29,11 @@
 	<div id="midcolumn">
 		<h2>Feature Summary</h2>
 		<p>
-			Virgo provides a number of <a href="http://www.eclipse.org/virgo/deliverables/">deliverables</a>, each providing a particular mix of features. The table below outlines the features in each Virgo 3.6.x deliverable.
+			Virgo provides a number of <a href="http://www.eclipse.org/virgo/deliverables/">deliverables</a>,
+			each providing a particular mix of features. The table below outlines the features in each Virgo 3.6.x
+			deliverable. If you are interested in which versions of components shipped in each release of Virgo,
+			please refer to the table under <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Virgo
+			Release Branding</a>.
 		</p>
 	
 		<table id="packaging">
