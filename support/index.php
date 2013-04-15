@@ -60,17 +60,7 @@
 		
 		<h2>Commercial Support for Virgo</h2>
 		<table border="0"> 
-        		<tr height="10" colspan="2"></tr> 
-        		<tr> 
-        		<td width="80" align="centre" valign="bottom"> 
-        			&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://s9.springsource.com/services/enterprisesupport"><img border=0 src="/virgo/images/spring09_logo.png"></a> 
-        		</td> 
-		        <td> 
-			        <a href="http://s9.springsource.com/services/enterprisesupport">SpringSource</a> the originator of Virgo
-			        provides commercial support for Virgo (and for SpringSource dm Server) at the Basic and Production levels.
-			        This is a separate support offering and is not tied to any other Spring projects or offerings.
-			    </td> 
-				</tr> 
+        	<tr height="10" colspan="2"></tr> 
 			<tr>
 			<td width="80" align="centre" valign="bottom">
 				&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://eclipsesource.com/en/products/long-term-support/"><img border=0 src="/virgo/images/es-logo.png"></a>

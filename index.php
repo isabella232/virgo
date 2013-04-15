@@ -121,12 +121,11 @@
 				<!-- About Virgo link in navigator should suffice <li><a href="http://www.eclipse.org/projects/project_summary.php?projectid=rt.virgo">Information about Virgo</a></li> -->
 				<li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced;order=Importance;classification=RT;product=Virgo">Bugzilla</a></li>
 			    <li><a href="https://hudson.eclipse.org/hudson/view/Virgo/">Hudson CI</a></li>
-			    <li><a href="http://www.eclipse.org/virgo/agile">Agile Project Management</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/profiling">Profiling</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/analysis">Static Analysis</a></li>
 			    <li>Search:
 			    	<ul>
-			    		<li><a href="http://virgo-opengrok.springsource.org/" title="Enter 'virgo' in File Path to avoid dm Server hits">OpenGrok</a> of Virgo master</li>
+			    		<li><a href="http://virgo-opengrok.springsource.org/" title="This index is provided by VMware and may be withdrawn at any time.">OpenGrok</a> of Virgo master</li>
 			    		<li><a href="http://grepcode.com/">GrepCode</a> of Virgo 2.1.0</li>
 			    	</ul>
 			    </li>
