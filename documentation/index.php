@@ -67,8 +67,6 @@
 				
 				<li>Snaps Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
 				
-				< -- <li>Tooling Guide ( <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$toolingMilestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
-				 - >
 				<li>Tooling Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
 			</ul>
