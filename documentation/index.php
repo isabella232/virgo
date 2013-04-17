@@ -25,7 +25,7 @@
 	
 	$currentVersion = "3.6.1.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
-	$milestone = "3.6.0.RC1";
+	$milestone = "3.7.0.M01";
 	$toolingMilestone = "3.5.0.M04";
 	ob_start();
 ?>
@@ -55,7 +55,6 @@
 		    Users of earlier releases of Virgo, of SpringSource dm Server, or of the "slices" framework should refer to the <a href="http://wiki.eclipse.org/Virgo/Community#Migration_Notes">migration notes</a> on the wiki.
 		</p>
 
-		<!--
 		
  		<h2>Milestone Documentation</h2>
 		<p>
@@ -73,7 +72,7 @@
 				<li>Tooling Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
 			</ul>
-		</p> -->
+		</p>
 
 	</div>
 
