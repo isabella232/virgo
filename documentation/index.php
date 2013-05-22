@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Documentation";
 	$pageAuthor		= "Christopher Frost";
 	
-	$currentVersion = "3.6.1.RELEASE";
+	$currentVersion = "3.6.2.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
 	$milestone = "3.7.0.M01";
 	$toolingMilestone = "3.5.0.M04";
