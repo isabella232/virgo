@@ -48,7 +48,7 @@
 		<h4><a href="#">3.6.2.RELEASE</a></h4>
 		<div>
 			<ul>
-				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.6.2.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=224873">Approved IP log</a>)</li>
+				<li><a href='http://www.eclipse.org/virgo/download/release-notes/3.6.2.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="release-notes/3.6.2_approved_ip_log.html">Approved IP log</a>)</li>
 				<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.2.RELEASE/virgo-tomcat-server-3.6.2.RELEASE.zip' target='_self'>Download</a></li>
 				<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.2.RELEASE/virgo-jetty-server-3.6.2.RELEASE.zip' target='_self'>Download</a> </li>
 				<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.6.2.RELEASE/virgo-nano-full-3.6.2.RELEASE.zip' target='_self'>Download</a></li>
