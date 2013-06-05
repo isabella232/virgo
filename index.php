@@ -136,7 +136,7 @@
 		<div class="sideitem">
 			<h6>Blogs</h6>
 			<ul>
-			    <li><a href="http://www.codewax.org">Chris Frost</a></li>
+			    <li><a href="http://codersbrew.net">Chris Frost</a></li>
 			    <li><a href="http://eclipsesource.com/blogs/2010/10/28/running-rap-on-virgo/">Florian Waibel</a></li>
 			    <li><a href="http://devshards.blogspot.it/search/label/Virgo">GianMaria Romanato</a></li>
 				<li><a href="http://underlap.blogspot.com">Glyn Normington</a></li>
