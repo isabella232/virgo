@@ -137,7 +137,7 @@
 			<h6>Blogs</h6>
 			<ul>
 			    <li><a href="http://codersbrew.net">Chris Frost</a></li>
-			    <li><a href="http://eclipsesource.com/blogs/author/fwaibel/">Florian Waibel</a></li>
+			    <li><a href="http://eclipsesource.com/blogs/author/fwaibel/">Florian Waibel</a> (lead)</li>
 			    <li><a href="http://devshards.blogspot.it/search/label/Virgo">GianMaria Romanato</a></li>
 				<li><a href="http://underlap.blogspot.com">Glyn Normington</a></li>
 				<li><a href="http://eclipsedriven.blogspot.com/2011/06/how-to-create-felix-gogo-commands-with.html">Hendy Irawan</a></li>
@@ -198,7 +198,7 @@
 				  }
 				}).render().start();
 			</script>
-			<br/><font size=-1>Follow: <a href="http://twitter.com/glynnormington">Glyn Normington</a> (lead)
+			<br/><font size=-1>Follow: <a href="http://twitter.com/glynnormington">Glyn Normington</a>
 			<br/>Follow: <a href="http://twitter.com/cgfrost">Christopher Frost</a></font>
 		</div>
 		<!-- div class="sideitem">
