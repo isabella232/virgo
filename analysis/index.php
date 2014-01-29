@@ -20,7 +20,7 @@
 
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Virgo - Static Analysis";
-	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, History, origin, origins, about";
+	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, History, origin, origins, about, Structure101";
 	$pageAuthor		= "Glyn Normington";
 		
 	ob_start();
@@ -28,11 +28,17 @@
 	
 	<div id="midcolumn">
 		<h2>Structure101</h2>
-		<p>
-			We use the excellent <a href="http://www.headwaysoftware.com/products/structure101/java/index.php">Structure101 for Java</a> to
-			analyse, and remind ourselves of, Virgo code structure.
-		</p>
-
+		<table border="0"> 
+			<tr height="10" colspan="2"></tr> 
+			<tr>
+				<td width="80" align="centre" valign="bottom">
+					&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://structure101.com/"><img border=0 src="http://structure101.com/images/s101_170.png"></a>
+				</td>
+				<td>
+					We use the excellent <a href="http://structure101.com/">Structure101 for Java</a> to analyse, and remind ourselves of, Virgo code structure.
+				</td>
+			</tr>
+		</table>
 	</div>
 
 <?
