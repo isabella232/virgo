@@ -39,6 +39,10 @@
 				</td>
 			</tr>
 		</table>
+		<blockquote>
+			"A quick scan shows you are already in pretty code shape with just a few stray dependencies to address - if only all software was built like that! :)" (Paul Hickey from Structure101)
+		</blockquote>
+
 	</div>
 
 <?
