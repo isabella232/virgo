@@ -39,7 +39,7 @@
 		Users are encouraged to use <a href="http://www.eclipse.org/virgo/download">releases</a> or
 		<a href="http://www.eclipse.org/virgo/download/milestones.php">milestones</a> wherever possible.
 		But if a more recent development build is required, for example to test a bug fix, then one of the
-		<a href="https://hudson.eclipse.org/hudson/view/Virgo/job/virgo.packaging.snapshot/ws/build-packaging/target/artifacts/">zip files</a>
+		<a href="https://hudson.eclipse.org/virgo/job/virgo.packaging.snapshot/ws/build-packaging/target/artifacts/">zip files</a>
 		produced by the Hudson packaging job may be downloaded.
 	</p>
 	<p>
