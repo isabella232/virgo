@@ -43,6 +43,25 @@
 			"A quick scan shows you are already in pretty code shape with just a few stray dependencies to address - if only all software was built like that! :)" (Paul Hickey from Structure101)
 		</blockquote>
 
+		<h2>Coverty</h2>
+		<table border="0"> 
+			<tr height="10" colspan="2"></tr> 
+			<tr>
+				<td width="80" align="centre" valign="bottom">
+					&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.coverity.com/"><img border=0 src="http://www.coverity.com/wp-content/themes/coverity/images/logo.png"></a>
+				</td>
+				<td>
+					We listen to our code.
+				</td>
+				<td>
+					<a href="https://scan.coverity.com/projects/1911">
+					  <img alt="Coverity Scan Build Status for util repository"
+					       src="https://scan.coverity.com/projects/1911/badge.svg"/>
+					</a>
+				</td>
+				<td>Coverity Scan Build Status for util repository</td>
+			</tr>
+		</table>
 	</div>
 
 <?
