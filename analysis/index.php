@@ -53,6 +53,8 @@
 				<td>
 					We listen to our code.
 				</td>
+			</tr>
+			<tr>
 				<td>
 					<a href="https://scan.coverity.com/projects/1911">
 					  <img alt="Coverity Scan Build Status for util repository"
