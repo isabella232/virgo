@@ -32,8 +32,8 @@
 
 <p>This is the <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Sky</a> (3.6.3) release of Virgo</p>
 <p>
-The release updates the version of Apache Tomcat. This version supports JSR-356 Java WebSocket 1.0 implementation. Note: Use of the JSR-356 requires Java 7.
-The release also includes several bug fixes.
+The release updates the version of Apache Tomcat. This version of Apache Tomcat supports JSR-356 Java WebSocket 1.0 implementation. Note: Use of the JSR-356 requires Java 7.
+<br>The release also includes several bug fixes.
 </p>
 
 
