@@ -19,8 +19,8 @@
  *******************************************************************************/
 
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "Virgo - Release Downloads";
-	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Downloads";
+	$pageTitle 		= "Virgo - Samples";
+	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Samples";
 	$pageAuthor		= "Christopher Frost";
 
 	ob_start();
