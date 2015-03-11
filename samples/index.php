@@ -54,6 +54,13 @@
 		</div>
 	</div>
 
+	<h2>Recipes Collection</h2>
+	<p>
+		This recipe(s) are inspired by the Spring Guides. The following recipe(s) for Virgo are available:
+		<ul>
+			<li>Virgo recipe for 'Uploading Files' ( <a href="guide-uploading-files/README.html">HTML</a> )</li>
+		</ul>
+	</p>
 
 	<h2>Greenpages Sample</h2>
 	<br />
