@@ -118,7 +118,7 @@
 				<li><a href="https://dev.eclipse.org/mailman/listinfo/virgo-dev">Developer Mailing List</a></li>
 				<li><a href="http://wiki.eclipse.org/Virgo">Wiki</a></li>
 				<li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced;order=Importance;classification=RT;product=Virgo">Bugzilla</a></li>
-			    <li><a href="https://hudson.eclipse.org/hudson/view/Virgo/">Hudson CI</a></li>
+			    <li><a href="https://hudson.eclipse.org/virgo/">Hudson CI</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/profiling">Profiling</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/analysis">Static Analysis</a></li>
 			    <li>Search:
