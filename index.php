@@ -114,11 +114,9 @@
 		<div class="sideitem">
 			<h6>Quick Links</h6>
 			<ul>
-			    <!-- No longer used? <li><a href="irc://irc.freenode.net/virgo">#virgo IRC channel</a></li> -->
 				<li><a href="http://www.eclipse.org/forums/index.php?t=thread&frm_id=159">Community Forum</a></li> 
 				<li><a href="https://dev.eclipse.org/mailman/listinfo/virgo-dev">Developer Mailing List</a></li>
 				<li><a href="http://wiki.eclipse.org/Virgo">Wiki</a></li>
-				<!-- About Virgo link in navigator should suffice <li><a href="http://www.eclipse.org/projects/project_summary.php?projectid=rt.virgo">Information about Virgo</a></li> -->
 				<li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced;order=Importance;classification=RT;product=Virgo">Bugzilla</a></li>
 			    <li><a href="https://hudson.eclipse.org/hudson/view/Virgo/">Hudson CI</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/profiling">Profiling</a></li>
