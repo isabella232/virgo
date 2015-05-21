@@ -56,9 +56,9 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="https://scan.coverity.com/projects/1911">
-					  <img alt="Coverity Scan Build Status for util repository"
-					       src="https://scan.coverity.com/projects/1911/badge.svg"/>
+					<a href="https://scan.coverity.com/projects/5096">
+					  <img alt="Coverity Scan Build Status"
+					       src="https://scan.coverity.com/projects/5096/badge.svg"/>
 					</a>
 				</td>
 				<td>Coverity Scan Build Status for util repository</td>
