@@ -20,10 +20,10 @@
 
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Virgo - Development Builds";
-	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Development, Builds";
+	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Development, Builds, Downloads";
 	$pageAuthor		= "Glyn Normington";
 		
-	$virgoVersions = array("3.6.0.M02");
+	$virgoVersions = array("nightly-snapshot");
 	ob_start();
 ?>
 
@@ -51,6 +51,27 @@
 	    	<li>Obviously these builds must never be used in production.</li>
 	    </ul> 
 	</p>
+
+	<div id='accordion'>
+		<?
+		$tomcat = true;
+		$snaps = true;
+			echo "<h4><a href='#'>3.7.0 ";
+			echo "Development Builds</a></h4>";
+
+			echo "<div>";
+			echo "	<ul>";
+			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/tomcat-server/build/distributions/virgo-tomcat-server-lastest.zip' target='_self'>Download</a></li>";
+	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/jetty-server/build/distributions/virgo-jetty-server-latest.zip' target='_self'>Download</a> </li>";
+			echo "		<li><strong>Virgo Kernel</strong> - <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/kernel/build/distributions/virgo-kernel-latest.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano</strong> - <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/nano/build/distributions/virgo-nano-latest.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano Web</strong> - <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/nano/build/distributions/virgo-nano-full-latest.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano RAP</strong> - <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/nano/build/distributions/virgo-nano-rap-latest.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/snapshots/3.7/' target='_self'>http://download.eclipse.org/virgo/snapshots/3.7/</a></li>";
+			echo "	</ul>";
+			echo "</div>";
+		?>
+
 </div>
 
 <?

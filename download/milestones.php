@@ -20,7 +20,7 @@
 
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Virgo - Milestone Downloads";
-	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Downloads";
+	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Milestones, Builds, Downloads";
 	$pageAuthor		= "Glyn Normington";
 		
 	$virgoVersions = array("3.7.0.M01");
