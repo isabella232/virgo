@@ -61,7 +61,7 @@
 
 			echo "<div>";
 			echo "	<ul>";
-			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/tomcat-server/build/distributions/virgo-tomcat-server-lastest.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/tomcat-server/build/distributions/virgo-tomcat-server-latest.zip' target='_self'>Download</a></li>";
 	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/jetty-server/build/distributions/virgo-jetty-server-latest.zip' target='_self'>Download</a> </li>";
 			echo "		<li><strong>Virgo Kernel</strong> - <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/kernel/build/distributions/virgo-kernel-latest.zip' target='_self'>Download</a></li>";
 			echo "		<li><strong>Virgo Nano</strong> - <a href='https://hudson.eclipse.org/virgo/view/3.7.0-SNAPSHOT/job/gradle-build/lastSuccessfulBuild/artifact/packaging/nano/build/distributions/virgo-nano-latest.zip' target='_self'>Download</a></li>";
