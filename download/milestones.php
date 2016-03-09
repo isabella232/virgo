@@ -73,9 +73,9 @@
 			echo "<div>";
 			echo "	<ul>";
 			echo "		<li><a href='http://www.eclipse.org/virgo/download/release-notes/$version.php' target='_self'>View Release Notes</a></li>";
-			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VTS/$version/virgo-tomcat-server-$version.zip' target='_self'>Download</a></li>";
-	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VJS/$version/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
-			echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VK/$version/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VTS/virgo-tomcat-server-$version.zip' target='_self'>Download</a></li>";
+	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VJS/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
+			echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VK/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
 			if($nano){
 			echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-nano-$version.zip' target='_self'>Download</a></li>";
 			echo "		<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
