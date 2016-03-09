@@ -35,7 +35,7 @@ This is the second milestone of the <a href="http://wiki.eclipse.org/Virgo/Futur
 It contains the following upgrades/changes:
 <ul>
     <li>Spring Framework 4.2.1.RELEASE</li>
-    <li>Switch to Gradle Build</li>
+    <li>Switch to Gradle Build and Java 7</li>
 </ul>
 </p>
 
