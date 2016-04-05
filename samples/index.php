@@ -61,6 +61,7 @@
 		<div>
 			<ul>
 				<li>Virgo recipe for 'Uploading Files' ( <a href="guide-uploading-files/README.html">HTML</a> )</li>
+				<li>Virgo recipe for 'REST Services' ( <a href="guide-rest-service/README.html">HTML</a> )</li>
 			</ul>
 		</div>
 	</div>
