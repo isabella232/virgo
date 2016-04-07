@@ -121,12 +121,6 @@
 			    <li><a href="https://hudson.eclipse.org/virgo/">Hudson CI</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/profiling">Profiling</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/analysis">Static Analysis</a></li>
-			    <li>Search:
-			    	<ul>
-			    		<li><a href="http://virgo-opengrok.springsource.org/" title="This index is provided by VMware and may be withdrawn at any time.">OpenGrok</a> of Virgo master</li>
-			    		<li><a href="http://grepcode.com/">GrepCode</a> of Virgo 2.1.0</li>
-			    	</ul>
-			    </li>
 			    <li><a href="https://www.ohloh.net/p/eclipse_virgo">ohloh</a></li>
 			    <li><a href="http://www.eclipse.org/virgo/documentation/design/">Design Documents</a></li>
 			</ul>
