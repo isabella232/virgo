@@ -149,8 +149,9 @@
 		<div class="sideitem">
 			<h6>Presentations</h6>
 			<ul>
-				<li><a href="http://live.eclipse.org/node/937">Virgo Webinar, 31 August 2010</a></li>
-				<li><a href="http://git.eclipse.org/c/virgo/org.eclipse.virgo.documentation.git/plain/presentations/EclipseCon%20USA%202014/Virgo%20Tutorial.pdf">Virgo Tutorial, EclipseCon NA 2014</a></li>
+				<li><a href="http://git.eclipse.org/c/virgo/org.eclipse.virgo.documentation.git/plain/presentations/EclipseCon%20USA%202016/GameOfLife%20Tutorial.pdf">Virgo Game-of-Life Tutorial, EclipseCon NA 2016</a></li>
+                <li><a href="http://git.eclipse.org/c/virgo/org.eclipse.virgo.documentation.git/plain/presentations/EclipseCon%20USA%202014/Virgo%20Tutorial.pdf">Virgo Greenpages Tutorial, EclipseCon NA 2014</a></li>
+                <li><a href="http://live.eclipse.org/node/937">Virgo Webinar, 31 August 2010</a></li>
 			</ul>
 		</div>
 		<div class="sideitem">
