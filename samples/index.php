@@ -60,6 +60,7 @@
 		<h4><a href="#">latest</a></h4>
 		<div>
 			<ul>
+				<li>Virgo recipe for 'Create a Custom Virgo Runtime with Dockerizor' ( <a href="recipe-custom-runtime/recipe-custom-runtime.html">HTML</a> )</li>
 				<li>Virgo recipe for 'Uploading Files' ( <a href="guide-uploading-files/README.html">HTML</a> )</li>
 				<li>Virgo recipe for 'REST Services' ( <a href="guide-rest-service/README.html">HTML</a> )</li>
 				<li>Virgo recipe for 'Serving Web Content with Spring MVC' ( <a href="recipe-serving-web-content/recipe-serving-web-content.html">HTML</a> )</li>
