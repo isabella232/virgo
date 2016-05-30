@@ -65,6 +65,7 @@
 				<li>Virgo recipe for 'REST Services' ( <a href="guide-rest-service/README.html">HTML</a> )</li>
 				<li>Virgo recipe for 'Serving Web Content with Spring MVC' ( <a href="recipe-serving-web-content/recipe-serving-web-content.html">HTML</a> )</li>
 				<li>Virgo recipe for 'Accessing Data with MongoDB' ( <a href="recipe-accessing-data-mongodb/recipe-accessing-data-mongodb.html">HTML</a> )</li>
+				<li>Virgo recipe for 'Messaging with RabbitMQ' ( <a href="recipe-messaging-with-rabbitmq/recipe-accessing-data-mongodb.html">HTML</a> )</li>
 			</ul>
 		</div>
 	</div>
