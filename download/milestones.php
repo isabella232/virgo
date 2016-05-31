@@ -52,11 +52,26 @@
         $update = true;
 		foreach ($virgoVersions as $version){
 			echo "<h4><a href='#'>$version";
-			if($version == '3.7.0.M02' || $version == '3.7.0.M03'){
-				$nano = false;
+			if($version == '3.7.0.M03'){
+				$nano = true;
+				$nanoRap = true;
 				$snaps = false;
 				$documentation = false;
 				$update = false;
+			}
+			if($version == '3.7.0.M02'){
+				$nano = false;
+				$nanoRap = false;
+				$snaps = false;
+				$documentation = false;
+				$update = false;
+			}
+			if($version == '3.7.0.M01'){
+				$nano = true;
+				$nanoRap = false;
+				$snaps = true;
+				$documentation = true;
+				$update = true;
 			}
 			if ($first) {
 				echo " - Latest</a></h4>";
@@ -71,8 +86,11 @@
 	    	echo "		<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VJS/virgo-jetty-server-$version.zip' target='_self'>Download</a> </li>";
 			echo "		<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VK/virgo-kernel-$version.zip' target='_self'>Download</a></li>";
 			if($nano){
-			echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-nano-$version.zip' target='_self'>Download</a></li>";
-			echo "		<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VP/$version/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VN/virgo-nano-$version.zip' target='_self'>Download</a></li>";
+			echo "		<li><strong>Virgo Nano Web</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VNF/virgo-nano-full-$version.zip' target='_self'>Download</a></li>";
+            }
+			if($nanoRap){
+			echo "		<li><strong>Virgo RAP Server</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VNR/$version/virgo-nano-rap-$version.zip' target='_self'>Download</a></li>";
             }
 			if($snaps){
 			     echo "		<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VS/$version/snaps-$version.zip' target='_self'>Download</a></li>";
