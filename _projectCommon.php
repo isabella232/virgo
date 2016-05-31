@@ -55,17 +55,20 @@
 	# $Menu->addMenuItem("Documentation", "/project/documentation.php", "_self");
 	# $Menu->addMenuItem("Support", "/project/support.php", "_self");
 	# $Menu->addMenuItem("Developers", "/project/developers", "_self");
-	
+
 	# To define additional CSS or other pre-body headers
+	$App->AddExtraHtmlHeader('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">');
 	$App->AddExtraHtmlHeader('<link media="screen" rel="stylesheet" type="text/css" href="/virgo/resources/local.css"/>');
-	
-	$App->AddExtraHtmlHeader('<script type="text/javascript" src="/virgo/resources/jquery-1.7.2.min.js"></script>');
-	$App->AddExtraHtmlHeader('<script type="text/javascript" src="/virgo/resources/jquery-ui-1.8.18.min.js"></script>');
-	
-	
+
+	$App->AddExtraJsFooter('<script src="//code.jquery.com/jquery-1.10.2.js"></script>');
+	$App->AddExtraJsFooter('<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
+
+	$App->AddExtraJsFooter('<script>$(function() {$( "#accordion" ).accordion();});</script>');
+	$App->AddExtraJsFooter('<script>$(function() {$( "#accordion2" ).accordion();});</script>');
+
 	# To enable occasional Eclipse Foundation Promotion banners on your pages (EclipseCon, etc)
 	$App->Promotion = TRUE;
-	
+
 	# If you have Google Analytics code, use it here
 	$App->SetGoogleAnalyticsTrackingCode("UA-15496793-1");
 ?>

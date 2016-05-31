@@ -26,12 +26,6 @@
 	ob_start();
 ?>
 
-	<script>
-		$(function() {
-			$( "#accordion" ).accordion({ collapsible: true, header: 'h4', autoHeight: false });
-		});
-	</script>
-
 <div id="midcolumn">
 		
 		<!-- <p id='announcement'>
@@ -96,7 +90,9 @@
 			   	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VD/2.1.1.RELEASE/virgo-documentation-2.1.1.RELEASE.zip'>Download</a></li>
 			</ul>
 		</div>
+	</div>
 
+	<div>
 		<h2>Virgo Bundlor Releases</h2>
 		<p>
 			All downloads are provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a> 

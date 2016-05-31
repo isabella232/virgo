@@ -27,12 +27,6 @@
 	ob_start();
 ?>
 
-	<script>
-		$(function() {
-			$( "#accordion" ).accordion({ collapsible: true, header: 'h4', autoHeight: false });
-		});
-	</script>
-
 <div id="midcolumn">
 	<h2>Milestone Downloads</h2>
 	<p>
@@ -94,6 +88,7 @@
 			$first = false;
 		}
 		?>
+	</div>
 	
 	    	<h3>Development Builds</h3>
 	        	<p>
@@ -109,6 +104,8 @@
 	        <p>
 	            Note that Bundlor milestones are available from the aggregated tooling update site: http://download.eclipse.org/virgo/milestone/tooling/
 	        </p>
+
+	<div id='accordion2'>
 	    <?
 	    $bundlorVersions = array("1.1.0.M05", "1.1.0.M04", "1.1.0.M03", "1.1.0.M02", "1.1.0.M01");
 	    $first = true;
