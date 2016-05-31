@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Milestones, Builds, Downloads";
 	$pageAuthor		= "Glyn Normington";
 		
-	$virgoVersions = array("3.7.0.M02", "3.7.0.M01");
+	$virgoVersions = array("3.7.0.M03", "3.7.0.M02", "3.7.0.M01");
 	ob_start();
 ?>
 
@@ -58,7 +58,7 @@
         $update = true;
 		foreach ($virgoVersions as $version){
 			echo "<h4><a href='#'>$version";
-			if($version == '3.7.0.M02'){
+			if($version == '3.7.0.M02' || $version == '3.7.0.M03'){
 				$nano = false;
 				$snaps = false;
 				$documentation = false;
