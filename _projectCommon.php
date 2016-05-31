@@ -26,8 +26,8 @@
 	
 	# Break the navigation into sections
 	$Nav->addNavSeparator("Virgo Home", 	"/virgo");
-	$Nav->addCustomNav("About Virgo", 	    "http://www.eclipse.org/projects/project.php?id=rt.virgo",    	"_self", 3);
-	$Nav->addCustomNav("Background",	 	"/virgo/about",	    	"_self", 3);
+	$Nav->addCustomNav("About Virgo",	 	"/virgo/about",	    	"_self", 3);
+	$Nav->addCustomNav("Background", 	    "http://www.eclipse.org/projects/project.php?id=rt.virgo",    	"_self", 3);
 	$Nav->addCustomNav("Benefits",	 		"/virgo/benefits",    	"_self", 3);
 	$Nav->addCustomNav("Cloud",	 		    "/virgo/cloud",    	    "_self", 3);
 	$Nav->addCustomNav("Deliverables",	 	"/virgo/deliverables", "_self", 3);
