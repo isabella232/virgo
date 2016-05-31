@@ -44,10 +44,10 @@ It contains the following upgrades/changes:
 <p>
 This milestone is accompanied by several new Virgo recipes available from the sample page:
 <ul>
-	<li>Virgo recipe for 'Create a Custom Virgo Runtime with Dockerizor' ( <a href="../samples/recipe-custom-runtime/recipe-custom-runtime.html">HTML</a> )</li>
-	<li>Virgo recipe for 'Serving Web Content with Spring MVC' ( <a href="../samples/recipe-serving-web-content/recipe-serving-web-content.html">HTML</a> )</li>
-	<li>Virgo recipe for 'Accessing Data with MongoDB' ( <a href="../samples/recipe-accessing-data-mongodb/recipe-accessing-data-mongodb.html">HTML</a> )</li>
-	<li>Virgo recipe for 'Messaging with RabbitMQ' ( <a href="../samples/recipe-messaging-rabbitmq/recipe-messaging-rabbitmq.html">HTML</a> )</li>
+	<li>Virgo recipe for 'Create a Custom Virgo Runtime with Dockerizor' ( <a href="/virgo/samples/recipe-custom-runtime/recipe-custom-runtime.html">HTML</a> )</li>
+	<li>Virgo recipe for 'Serving Web Content with Spring MVC' ( <a href="/virgo/samples/recipe-serving-web-content/recipe-serving-web-content.html">HTML</a> )</li>
+	<li>Virgo recipe for 'Accessing Data with MongoDB' ( <a href="/virgo/samples/recipe-accessing-data-mongodb/recipe-accessing-data-mongodb.html">HTML</a> )</li>
+	<li>Virgo recipe for 'Messaging with RabbitMQ' ( <a href="/virgo/samples/recipe-messaging-rabbitmq/recipe-messaging-rabbitmq.html">HTML</a> )</li>
 </ul>
 
 </p>
