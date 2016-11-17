@@ -37,7 +37,7 @@
 		
 		<h3 id="nano-full-deliverable">Virgo Nano "Full"</h3>
 		
-		Virgo Nano "Full" builds on Virgo Nano and embeds Gemini Web to provide Tomcat-based servlet
+		Virgo Nano "Full" builds on Virgo Nano and embeds Gemini Web to provide Apache Tomcat-based servlet
 		support.  Bundles, including Web Application Bundles, can be provisioned at runtime using p2.
 		
 		<h3 id="kernel-deliverable">Virgo Kernel</h3>
@@ -58,13 +58,13 @@
 		
 		<h3 id="jetty-server-deliverable">Virgo Jetty Server</h3>
 		
-		Virgo Jetty Server is similar to Virgo Tomcat Server but embeds the Jetty servlet container instead
-		of the embedded Tomcat servlet container.
+		Virgo Jetty Server is similar to Virgo Server for Apache Tomcat but embeds the Jetty servlet container instead
+		of the embedded Apache Tomcat servlet container.
 		
 		<h3 id="snaps-deliverable">Virgo Snaps</h3>
 		
 		The Virgo snaps framework may be used to cleanly modularise the web bundles of an application.
-		Currently, snaps only runs on Virgo Tomcat Server.
+		Currently, snaps only runs on Virgo Server for Apache Tomcat.
 	</div>
 
 <?
