@@ -162,7 +162,7 @@ The GreenPages sample has been updated to work with Virgo Tomcat Server 3.0.
 </p>
 <p>
 The document "Creating an Application with Virgo" has being replaced with a "Guide to the GreenPages Sample" which is provided with the sample
-and is also available <a href="http://www.eclipse.org/virgo/documentation/greenpages-documentation-2.4.0.RELEASE/docs/htmlsingle/greenpages-guide.html">online</a>.
+and is also available as part of the distribution.
 </p>
 
 <h4>Migrating from Earlier Releases</h4>
