@@ -26,8 +26,8 @@
 			the application up and how closely to couple the host and various snaps. VS has been designed to be as 
 			un-invasive as possible while still making it easy to share information between the host and its snaps.
 		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="introduction-prereqs"></a>1.2&nbsp;Prerequisites</h2></div></div></div><p>
-			VS requires Virgo Tomcat Server and Java SE 6 or later to be installed. Java is available from 
-			<a class="ulink" href="http://www.java.com/" target="_top">http://www.java.com/</a> and elsewhere. Virgo Tomcat Server is available from 
+			VS requires Virgo Server for Apache Tomcat and Java SE 6 or later to be installed. Java is available from 
+			<a class="ulink" href="http://www.java.com/" target="_top">http://www.java.com/</a> and elsewhere. Virgo Server for Apache Tomcat is available from 
 			<a class="ulink" href="http://www.eclipse.org/virgo/download/" target="_top">here</a>.
 		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="installation"></a>2.&nbsp;Installing Virgo Snaps</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation-zip"></a>2.1&nbsp;Installing from the Zip Download</h2></div></div></div><p>
 			VS is distributed as a Zip file. This can be downloaded from 
@@ -43,7 +43,7 @@
 			folder. If you wish to view the source for VS or its sample, then these are in the <code class="literal">src</code> 
 			folder.
 		</p><p>
-			In order to start the Snaps system as a part of your Virgo Tomcat Server, the Snaps plan needs to be referenced 
+			In order to start the Snaps system as a part of your Virgo Server for Apache Tomcat, the Snaps plan needs to be referenced 
 			from the <code class="literal">initialArtifacts</code> property. This is located in the config file at 
 			<code class="literal">${SERVER_HOME}/config/org.eclipse.virgo.kernel.userregion.properties</code>. The property should be 
 			extended like this.
@@ -64,7 +64,7 @@
 			Open up the Virgo Admin Console by navigating to <code class="literal">http://localhost:8080/admin</code> and then go 
 			to the artifacts tab to deploy some new bundles. The first bundle to deploy is located at 
 			<code class="literal">/sample/org.eclipse.virgo.snaps.sample.animal-3.7.0.BUILD-20130416153544.jar</code>, select it in the browser and 
-			upload. In the terminal window you started the Virgo Tomcat Server in you should see the usual messages about the 
+			upload. In the terminal window you started the Virgo Server for Apache Tomcat in you should see the usual messages about the 
 			bundle starting and this message:
 		</p><pre class="screen">&lt;SN0000I&gt; Host created for path '/animal-menu-bar'</pre><p>
 			This shows that the host has been registered and is ready for Snaps to attach to it. To view the application take 
@@ -236,11 +236,11 @@ public class CatController {
 		</a>
 	</p><p>
 		<a class="ulink" href="../../virgo-programmer-guide/html/index.html" target="_top">
-			Virgo Tomcat Server Programmer Guide
+			Virgo Server for Apache Tomcat Programmer Guide
 		</a>
 	</p><p>
 		<a class="ulink" href="../../virgo-user-guide/html/index.html" target="_top">
-			Virgo Tomcat Server User Guide
+			Virgo Server for Apache Tomcat User Guide
 		</a>
 	</p><p>
 		<a class="ulink" href="http://www.slideshare.net/cgfrost/eclipsecon2011-virgo-snaps" target="_top">
@@ -249,7 +249,7 @@ public class CatController {
 	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="known-issues"></a>6.&nbsp;Known Issues</h2></div></div></div><p>
 		This section describes known issues that you might run into, along with corresponding workarounds.
 	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="known-issues-jetty-restriction"></a>6.1&nbsp;Virgo Jetty Server Restriction</h2></div></div></div><p>
-			Virgo Snaps is not supported on the Virgo Jetty Server, please use with the Virgo Tomcat Server.
+			Virgo Snaps is not supported on the Virgo Jetty Server, please use with the Virgo Server for Apache Tomcat.
 		</p></div></div></div><!--Begin LoopFuse code--><script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript"></script><script type="text/javascript">
 			_lf_cid = "LF_48be82fa";
 			_lf_remora();
