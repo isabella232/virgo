@@ -69,8 +69,7 @@
 		<div>
 			<ul>
 				<li><a href="http://www.eclipse.org/downloads/download.php?file=/virgo/release/VWSS/2.5.0.RELEASE/greenpages-2.5.0.RELEASE.zip" target="_self">Download</a></li>
-				<li>View the documentation (<a href="http://www.eclipse.org/virgo/documentation/greenpages-documentation-2.5.0.RELEASE/docs/html/index.html" target="_self">HTML</a> |
-					 <a href="http://www.eclipse.org/virgo/documentation/greenpages-documentation-2.5.0.RELEASE/docs/htmlsingle/greenpages-guide.html" target="_self">HTML Single</a>)</li>
+				<li>The documentation is part of the distribution.</li>
 				<li>A helpful guide to getting Greenpages working under Eclipse by Cene Lavrič: <a href="http://greenpagesvirgo.wordpress.com/" target="_self">Greenpages, Eclipse and Virgo – orchestrated</a> </li>
 			</ul>
 		</div>
