@@ -44,7 +44,7 @@
 		</p>
 		<p>
 			For example, the core of the runtime is the Virgo kernel which is built on the relatively tiny Virgo Nano runtime.
-			Virgo Tomcat Server is constructed by configuring a web layer, an admin console, and some other utilities on top of the kernel.
+			Virgo Server for Apache Tomcat is constructed by configuring a web layer, an admin console, and some other utilities on top of the kernel.
 			Similarly the Virgo Jetty Server is constructed by configuring a collection of Jetty bundles, the admin console, and other utilities on top of the kernel.
 		</p>
 		<p>
@@ -93,7 +93,7 @@
 			Beans can be published as OSGi services and can consume OSGi services, both with minimal effort.
 		</p>
 		<p>
-			The embedded form of Tomcat is used as a servlet engine in Virgo Tomcat Server's web support and is configured and managed just like standard Tomcat.
+			The embedded form of Apache Tomcat is used as a servlet engine in Virgo Server for Apache Tomcat web support and is configured and managed just like standard Apache Tomcat.
 			Similarly, Jetty is the servlet engine in Virgo Jetty Server.
 		</p>
 

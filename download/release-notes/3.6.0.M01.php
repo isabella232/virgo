@@ -50,7 +50,7 @@ The milestone also adds a number of enhancements such as:
 	<li>All Virgo distributions' p2 profiles are now published with a custom Java Server Profile, with that the p2 resolution exactly matches the runtime content</li>
 	<li>Work directory paths have been shortened to alleviate Windows filesystem limitations.</li>
 	<li>Bundles and WAR files may be deployed in packed form to shorten work directory paths further.
-		See the <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.0.M01/docs/virgo-user-guide/html/ch13s06.html">User Guide</a> for
+		See the <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.4.RELEASE/docs/virgo-user-guide/html/ch13s06.html">User Guide</a> for
 		the kernel configuration property deployer.unpackBundles</li>
 </ul>
 </p>

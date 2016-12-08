@@ -97,7 +97,8 @@ It is ideal for cloud and other use cases with stringent resource consumption an
 <h4>p2 Support</h4>
 <p>
 Virgo now supports initial provisioning via p2 director for all Virgo flavours. 
-How to initial provision a Virgo instance is described well in Virgo's User Guide, available <a href="http://www.eclipse.org/virgo/documentation/virgo-documentation-3.5.0.RELEASE/docs/virgo-user-guide/htmlsingle/virgo-user-guide.html#kernel-installation-updatesite">here</a>. 
+How to initial provision a Virgo instance is described well in Virgo's User Guide (5.3 Installing from an update site),
+available <a href="http://www.eclipse.org/downloads/download.php?file=/virgo/release/VD/3.5.0.RELEASE/virgo-documentation-3.5.0.RELEASE.zip">here</a>. 
 This also means Virgo now also has a common p2 repository for all Virgo distributions that can be found on our download page.
 </p>
 <p>
