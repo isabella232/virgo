@@ -8,13 +8,25 @@
 			pageTracker._setDomainName("none");
 			pageTracker._setAllowLinker(true);
 			pageTracker._trackPageview();
-		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Virgo Tools Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Ramnivas</span> <span class="surname">Laddad</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Colin</span> <span class="surname">Yates</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Sam</span> <span class="surname">Brannen</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Rob</span> <span class="surname">Harrop</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Christian</span> <span class="surname">Dupuis</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Andy</span> <span class="surname">Wilkinson</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Glyn</span> <span class="surname">Normington</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Steve</span> <span class="surname">Powell</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Christopher</span> <span class="surname">Frost</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Miles</span> <span class="surname">Parker</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Leo</span> <span class="surname">Dos Santos</span></h3></div></div></div><div><div class="mediaobject" align="right"><img src="images/virgo-logo-small.png" align="right"></div></div><div><span class="productname">Virgo<br></span></div><div><p class="releaseinfo">3.7.0.M01</p></div></div><div><div><div class="legalnotice"><a name="d0e72"></a><p>Copyright &copy; 2012 VMware Inc.</p></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#introduction">1. Tooling</a></span></dt><dt><span class="chapter"><a href="#What.27s_New">2. What's New</a></span></dt><dd><dl><dt><span class="section"><a href="#1.0.0_Release">2.1. 1.0.0 Release</a></span></dt><dt><span class="section"><a href="#1.0.0_M4">2.2. 1.0.0 M4</a></span></dt></dl></dd><dt><span class="chapter"><a href="#running">3. Running a Virgo Runtime Environment</a></span></dt><dt><span class="chapter"><a href="#server-perspective-views">4. Server Perspective and Views</a></span></dt><dd><dl><dt><span class="section"><a href="#server-perspective">4.1. Virgo Perspective</a></span></dt><dt><span class="section"><a href="#views">4.2. Views</a></span></dt><dt><span class="section"><a href="#views-projects">4.3. Virgo Server Projects</a></span></dt></dl></dd><dt><span class="chapter"><a href="#server-editor">5. Server Editor</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e408">5.1. Overview Page</a></span></dt><dt><span class="section"><a href="#d0e422">5.2. Repository Page</a></span></dt><dt><span class="section"><a href="#d0e437">5.3. Bundle Overview Page</a></span></dt><dt><span class="section"><a href="#d0e450">5.4. Bundle Dependency Graph Page</a></span></dt><dt><span class="section"><a href="#d0e463">5.5. Server Console Page</a></span></dt></dl></dd><dt><span class="chapter"><a href="#developing">6. Developing OSGi Bundles</a></span></dt><dd><dl><dt><span class="section"><a href="#tooling-developing-resolving-bundle-dependencies">6.1. Resolving Bundle Dependencies</a></span></dt><dt><span class="section"><a href="#tooling-developing-editing-manifest-mf">6.2. Editing the Manifest</a></span></dt></dl></dd><dt><span class="chapter"><a href="#pars">7. Developing PARs</a></span></dt><dt><span class="chapter"><a href="#deploying">8. Deploying Applications</a></span></dt><dt><span class="chapter"><a href="#d0e650">9. Installation and Release Notes</a></span></dt><dd><dl><dt><span class="section"><a href="#Features">9.1. Features</a></span></dt><dt><span class="section"><a href="#Installation">9.2. Installation</a></span></dt><dt><span class="section"><a href="#Known_Issues">9.3. Known Issues</a></span></dt><dt><span class="section"><a href="#Migration">9.4. Migration</a></span></dt><dt><span class="section"><a href="#Maven_plugin">9.5. Maven plugin</a></span></dt><dt><span class="section"><a href="#Importing_Virgo_Projects_into_Eclipse">9.6. Importing Virgo Projects into Eclipse</a></span></dt><dt><span class="section"><a href="#FAQ">9.7. FAQ</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="introduction"></a>1.&nbsp;Tooling</h2></div></div></div><p>Virgo Tools support the Virgo runtime with tools for managing servers, server runtimes, and bundles. The IDE
+		</script><!--End Google Analytics code--></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Virgo Tools Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Ramnivas</span> <span class="surname">Laddad</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Colin</span> <span class="surname">Yates</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Sam</span> <span class="surname">Brannen</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Rob</span> <span class="surname">Harrop</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Christian</span> <span class="surname">Dupuis</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Andy</span> <span class="surname">Wilkinson</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Glyn</span> <span class="surname">Normington</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Steve</span> <span class="surname">Powell</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Christopher</span> <span class="surname">Frost</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Miles</span> <span class="surname">Parker</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Leo</span> <span class="surname">Dos Santos</span></h3></div><div class="author"><h3 class="author"><span class="firstname">GianMaria</span> <span class="surname">Romanato</span></h3></div></div></div><div><div class="mediaobject" align="right"><img src="images/virgo-logo-small.png" align="right"></div></div><div><span class="productname">Virgo<br></span></div><div><p class="releaseinfo">3.7.0.BUILD-20161031211612</p></div></div><div><div><div class="legalnotice"><a name="d0e77"></a><p>Copyright &copy; 2012 VMware Inc.</p><p>Copyright &copy; 2016 GianMaria Romanato</p></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#introduction">1. Tooling</a></span></dt><dt><span class="chapter"><a href="#What.27s_New">2. What's New</a></span></dt><dd><dl><dt><span class="section"><a href="#1.5.0_Release">2.1. 1.5.0 Release</a></span></dt><dt><span class="section"><a href="#1.0.0_Release">2.2. 1.0.0 Release</a></span></dt><dt><span class="section"><a href="#1.0.0_M4">2.3. 1.0.0 M4</a></span></dt></dl></dd><dt><span class="chapter"><a href="#running">3. Running a Virgo Runtime Environment</a></span></dt><dt><span class="chapter"><a href="#server-perspective-views">4. Server Perspective and Views</a></span></dt><dd><dl><dt><span class="section"><a href="#server-perspective">4.1. Virgo Perspective</a></span></dt><dt><span class="section"><a href="#views">4.2. Views</a></span></dt><dt><span class="section"><a href="#views-projects">4.3. Virgo Server Projects</a></span></dt></dl></dd><dt><span class="chapter"><a href="#server-editor">5. Server Editor</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e455">5.1. Overview Page</a></span></dt><dt><span class="section"><a href="#d0e511">5.2. Repository Page</a></span></dt><dt><span class="section"><a href="#d0e526">5.3. Bundle Overview Page</a></span></dt><dt><span class="section"><a href="#d0e539">5.4. Bundle Dependency Graph Page</a></span></dt><dt><span class="section"><a href="#d0e552">5.5. Server Console Page</a></span></dt></dl></dd><dt><span class="chapter"><a href="#developing">6. Developing OSGi Bundles</a></span></dt><dd><dl><dt><span class="section"><a href="#tooling-developing-resolving-bundle-dependencies">6.1. Resolving Bundle Dependencies</a></span></dt><dt><span class="section"><a href="#tooling-developing-editing-manifest-mf">6.2. Editing the Manifest</a></span></dt></dl></dd><dt><span class="chapter"><a href="#developing_with_PDE">7. Developing OSGi Bundles using Plug-in Development Environment
+		(PDE)
+	</a></span></dt><dd><dl><dt><span class="section"><a href="#pde_dependencies">7.1. Resolving Bundle Dependencies</a></span></dt><dt><span class="section"><a href="#runtime-wizard">7.2. Server Runtime Wizard</a></span></dt><dt><span class="section"><a href="#pde-projects">7.3. PDE Bundle projects</a></span></dt><dt><span class="section"><a href="#resource-publishing">7.4. Publishing</a></span></dt><dt><span class="section"><a href="#pde-migration-actions">7.5. Migration actions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#plans">8. Developing Plans</a></span></dt><dd><dl><dt><span class="section"><a href="#planBenefits">8.1. Benefit of using Plan files</a></span></dt><dt><span class="section"><a href="#planPublishing">8.2. Discovery of Plan files in the workspace</a></span></dt></dl></dd><dt><span class="chapter"><a href="#pars">9. Developing PARs</a></span></dt><dt><span class="chapter"><a href="#deploying">10. Deploying Applications</a></span></dt><dt><span class="chapter"><a href="#d0e1053">11. Installation and Release Notes</a></span></dt><dd><dl><dt><span class="section"><a href="#Features">11.1. Features</a></span></dt><dt><span class="section"><a href="#Installation">11.2. Installation</a></span></dt><dt><span class="section"><a href="#Known_Issues">11.3. Known Issues</a></span></dt><dt><span class="section"><a href="#Maven_plugin">11.4. Maven plugin</a></span></dt><dt><span class="section"><a href="#Importing_Virgo_Projects_into_Eclipse">11.5. Importing Virgo Projects into Eclipse</a></span></dt><dt><span class="section"><a href="#FAQ">11.6. FAQ</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="introduction"></a>1.&nbsp;Tooling</h2></div></div></div><p>Virgo Tools support the Virgo runtime with tools for managing servers, server runtimes, and bundles. The IDE
 		tools build on top of the Eclipse Web Tools Project (WTP) and collaborate with other Eclipse technologies such as the
 		Eclipse Libra project.
 	</p><p>Among other things, the Virgo Tools support the creation of new OSGi bundle and PAR projects within Eclipse, and
 		the conversion of existing projects into OSGi bundle projects. Projects can then be deployed and debugged on a running
 		Virgo Runtime from within Eclipse.
-	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="What.27s_New"></a>2.&nbsp;What's New</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="1.0.0_Release"></a>2.1&nbsp;1.0.0 Release</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="UI"></a>UI</h3></div></div></div><p>We've added more views and other tools for working with Virgo Runtime instances. See the expanded Tooling
+	</p><p>Besides its OSGi bundle projects, starting from version 1.5 Virgo Tools support usage of Plug-in Development
+		Environment (Eclipse PDE) for developing projects that can be deployed and debugged on a running Virgo Runtime from within Eclipse.
+	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="What.27s_New"></a>2.&nbsp;What's New</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="1.5.0_Release"></a>2.1&nbsp;1.5.0 Release</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="UI_15"></a>UI</h3></div></div></div><p>Starting from version 1.5 it is possible to develop for the Virgo Runtime
+			using the Eclipse Plug-in Development Environment (PDE). See the Tooling Guide for more information on this new feature.
+			</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="Wizards"></a>Wizards</h4></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="Server_Runtime_Wizard"></a>Server Runtime Wizard</h5></div></div></div><p>The Server Runtime Wizard can now optionally assist the user in setting up a PDE Target Platform definition whose content reflects the
+						Virgo Runtime repository configuration.
+					</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="PDE_Project_Wizard"></a>PDE Project Wizard</h5></div></div></div><p>A new project wizard allows creating PDE Plug-in projects that are also Virgo Runtime projects and can be deployed on a Virgo Server
+					</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="Plan_Project_Wizard"></a>Plan Project Wizard</h5></div></div></div><p>A new project wizard allows creating Plan projects in the workspace. Plan projects permit to deploy a plan to the Virgo Runtime within Eclipse
+						and can be seen as a possibly more convenient alternative to adding individual bundles to the Virgo Runtime and defining their activation order
+						via the Server Editor.
+					</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="Server_Editor"></a>Server Editor</h4></div></div></div><p>The Server Editor has been improved to:</p><div class="itemizedlist"><ul type="disc"><li><p>provide proper support for PDE Target Platform definitions</p></li><li><p>allow multi-selection in the 'Artefact Deployment Order' section.</p></li></ul></div></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="1.0.0_Release"></a>2.2&nbsp;1.0.0 Release</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="UI"></a>UI</h3></div></div></div><p>We've added more views and other tools for working with Virgo Runtime instances. See the expanded Tooling
 				Guide for more information on these new features.
 			</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="Views"></a>Views</h4></div></div></div><p>In addition to the new Repository View, we've added:</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="Properties_View"></a>Properties View</h5></div></div></div><p>The properties view allows you to directly access all of those Virgo Runtime properties that are buried away
 						in one file or another.
@@ -29,7 +41,7 @@
 					Hierarchy and Open Type tools.
 				</p><p>
 					</p><div class="mediaobject"><img src="images/views-open-type-dialog.png"></div><p>
-				</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Quality"></a>Quality</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>We've addressed a number of significant bugs for the final release.</p></li><li><p>Clarified UI.</p></li><li><p>Improved documentation.</p></li></ul></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="1.0.0_M4"></a>2.2&nbsp;1.0.0 M4</h2></div></div></div><p>We've made extensive changes throughout Virgo, focusing on quality and migration, but with a few new features
+				</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Quality"></a>Quality</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>We've addressed a number of significant bugs for the final release.</p></li><li><p>Clarified UI.</p></li><li><p>Improved documentation.</p></li></ul></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="1.0.0_M4"></a>2.3&nbsp;1.0.0 M4</h2></div></div></div><p>We've made extensive changes throughout Virgo, focusing on quality and migration, but with a few new features
 			as well.
 		</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Improved_Server_Support"></a>Improved Server Support</h3></div></div></div><p>Virgo now supports almost all versions and types of Virgo installs, including older versions of Virgo and
 				Tomcat, Jetty and Kernel installations. Best of all, you can now define servers using a single Server Runtime and
@@ -171,15 +183,33 @@
 		</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="server-editor"></a>5.&nbsp;Server Editor</h2></div></div></div><p>After successful configuration of an instance of the Virgo Runtime Environment in Eclipse you can use the server
 		editor to configure and explore many different aspects of the Virgo Runtime instance. To open a server editor double-click
 		a Virgo Runtime instance in the Servers view.
-	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e408"></a>5.1&nbsp;Overview Page</h2></div></div></div><p>The server overview page is the first page of the editor. Please note that opening of the Editor may take a few
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e455"></a>5.1&nbsp;Overview Page</h2></div></div></div><p>The server overview page is the first page of the editor. Please note that opening of the Editor may take a few
 			seconds as the contents of the local repository needs to be indexed before opening.
 		</p><p>
 			<img src="images/editor-overview-page.png">
 		</p><p>
-			See the
+		     The overview page contains several sections. Some of them are inherited by the Web Tools Platform while other
+		     are contributed specifically by the Virgo Tools.
+		    </p><div class="itemizedlist"><ul type="disc"><li>The <span class="emphasis"><em>Target Platform</em></span> section has been introduced in release 1.5 and provides shortcuts
+			 	for editing or reloading the PDE Target Platform associated to the current Virgo Runtime Environment. 
+			 	</li><li>The <span class="emphasis"><em>Redeploy Behavior</em></span> section allows the user to specify files that should be copied
+			 	into the server without redeploying the bundle. This is typically used to speed up publishing operations for static files. 
+			 	</li><li>The <span class="emphasis"><em>Publishing</em></span> section allows the user to select when changed resources should be published
+			 	to the running server. 
+			 	</li><li>The <span class="emphasis"><em>Timeouts</em></span> section allows the user to configure the server startup and shutdown timeout.
+			 	</li><li>The <span class="emphasis"><em>Deployer Control</em></span> section allows the user to configure the parameters of the JMX communication
+				between the Virgo Tools and the Virgo Runtime Environment.
+			 	</li><li>The <span class="emphasis"><em>Artefact Deployment Order</em></span> section allows the user to configure the activation order of the artefacts
+			 	deployed into the Virgo Runtime Environment. Multi-selection is supported.
+			 	</li><li>The <span class="emphasis"><em>Server Startup Configuration</em></span> section allows the user to configure statup parameters of 
+			 	the Virgo Runtime Environment. The <span class="emphasis"><em>-clean</em></span> options if checked forces the cleaning of the Virgo Runtime Environment
+			 	temporary folders at every startup. 
+			 	</li></ul></div><p>
+		</p><p>
+			See the 
 			<span class="emphasis"><em>Web Tools Platform Guide</em></span>
-			for more information on what the various configuration options do.
-		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e422"></a>5.2&nbsp;Repository Page</h2></div></div></div><p>The Repository Browser allows you to see what bundles and libraries are available on the @product.instance and
+			for more information on the other configuration sections.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e511"></a>5.2&nbsp;Repository Page</h2></div></div></div><p>The Repository Browser allows you to see what bundles and libraries are available on the @product.instance and
 			to very easily install bundles and libraries from the remote Enterprise Bundle Repository. To view resources
 			installed on the Server select the "Repository" tab in the server editor.
 		</p><p>
@@ -195,7 +225,7 @@
 			sources are visually marked. You can very easily download missing source JARs by using the "Install Sources" button.
 			Note that these bundles may or may not be actually "installed" on the Virgo Runtime in the sense that
 			they are known to it -- they may simply exist in the respective directories.
-		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e437"></a>5.3&nbsp;Bundle Overview Page</h2></div></div></div><p>To view and control resources actually installed on the Server select the "Bundle Overview" tab in the server
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e526"></a>5.3&nbsp;Bundle Overview Page</h2></div></div></div><p>To view and control resources actually installed on the Server select the "Bundle Overview" tab in the server
 			editor.
 		</p><p>
 			<img src="images/editor-bundle-overview-page.png">
@@ -205,7 +235,7 @@
 			section.
 		</p><p>Click the "Show dependency graph for bundle" link to bring up the Bundle Dependency Graph page focused on the
 			selected bundle. See the next section.
-		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e450"></a>5.4&nbsp;Bundle Dependency Graph Page</h2></div></div></div><p>The "Bundle Dependency Graph" tab takes you to a page where you can visualize the complex relationships between
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e539"></a>5.4&nbsp;Bundle Dependency Graph Page</h2></div></div></div><p>The "Bundle Dependency Graph" tab takes you to a page where you can visualize the complex relationships between
 			bundles.
 		</p><p>
 			<img src="images/editor-graph-page.png">
@@ -215,7 +245,7 @@
 			the bundles that those bundles are then dependent on.
 		</p><p>Use the search text area in the editor header to select the source bundles for the graph. Wild cards are
 			supported. Click the refresh button to update the bundle graph.
-		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e463"></a>5.5&nbsp;Server Console Page</h2></div></div></div><p>The "Server Console" tab takes you to an interactive console for exploring and managing the state of a running
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e552"></a>5.5&nbsp;Server Console Page</h2></div></div></div><p>The "Server Console" tab takes you to an interactive console for exploring and managing the state of a running
 			server. (This console is different from the "Console View", which displays the log output of running server
 			instances.) Enter text in the "Command" text area and click the "Execute" button or press RETURN to execute the
 			command.
@@ -292,7 +322,209 @@
 			<img src="images/tooling-manifest-form-ui-editor.png">
 		</p><p> The Dependencies tab of the Bundle Manifest Editor enables the user to easily download and install bundles and
 			libraries from the SpringSource Enterprise Bundle Repository by using the "Download..." buttons next to the "Import Bundle" and "Import Library"
-			sections. </p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="pars"></a>7.&nbsp;Developing PARs</h2></div></div></div><p>In Virgo, applications consisting of multiple bundles can be packaged as a PAR.
+			sections. </p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="developing_with_PDE"></a>7.&nbsp;Developing OSGi Bundles using Plug-in Development Environment
+		(PDE)
+	</h2></div></div></div>
+	This chapter assumes that the user is already familiar with the Plug-in Development Environment (PDE). Should this not be the case
+	it is recommended to read first the PDE documentation or one of the many tutorials available online.
+	<div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="pde_dependencies"></a>7.1&nbsp;Resolving Bundle Dependencies</h2></div></div></div><p>
+			Starting from release 1.5.0 the Tools support developing OSGi
+			Bundles using the widely popular Eclipse Plug-in Development
+			Environment (PDE).
+		</p><p>
+			While working with OSGi bundles, one of the most important
+			aspects is defining the required dependencies in the MANIFEST.MF file. 
+			When used in conjunction with the PDE, the Virgo Tools address this problem
+			by leveraging on the PDE tooling and in particular on the PDE Target Platform Definition.
+			A Target Platform Definition defines the bundles which your workspace will be built against.
+		</p><p>
+			At runtime however, a PDE Target Platform won't be available and
+			dependency resolution will always occur against the bundle
+			repositories configured for the Virgo Runtime Environment. The Tools
+			try to bridge runtime and development by providing a Server
+			wizard that creates a new PDE Target Platform Definition that
+			matches the Server repository configuration,
+			as defined in
+			<code class="code">org.eclipse.virgo.repository.properties</code>
+			.
+		</p><p>
+			The Virgo Runtime Environment supports watched, external and remote
+			repositories. Watched and external repositories correspond to
+			file system folders, while a remote repository is a remote Virgo
+			instance that can serve its repository content to other Virgo instances 
+			for the purpose of dependency resolution. The PDE Target Platform allows its content
+			to be specified only as file system folders or P2 Update sites. As such, when the Tools create a
+			PDE Target Platform Definition from the runtime repository configuration only watched and 
+			external repositories are considered.
+		</p><p>
+			Developers should properly setup a local Virgo Runtime Environment so that its bundle repositories
+			contain their application dependencies. Then they should use the Tools to setup a PDE Target Platform
+			so that their workspace projects are built and resolved against the same bundles that will be available
+			at runtime.			 
+		</p><p>
+		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">
+			Note that when using the Tools together with PDE to develop for
+			Virgo it's not possible to use the MANIFEST.MF headers
+			<code class="code">Import-Bundle</code>
+			(not part of the standard OSGi specification but supported by
+			Virgo)
+			and <code class="code">Require-Bundle</code>
+			(part of the standard OSGi specification but not supported by Virgo).
+			Developers will have to declare all of their external dependencies
+			using the
+			<code class="code">Import-Package</code>
+			header only.
+		</td></tr></table></div><p>			
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="runtime-wizard"></a>7.2&nbsp;Server Runtime Wizard</h2></div></div></div><p>
+			After installing the Virgo Tools in Eclipse it is possible
+			to create a new Server.
+			A Server can be created from the global <span class="emphasis"><em>New</em></span> dialog, by selecting the
+			<span class="emphasis"><em>Virgo Runtime</em></span> item within the <span class="emphasis"><em>EclipseRT</em></span> category.
+			Alternatively, users can right click over the <span class="emphasis"><em>Servers</em></span> view (easily accessible from
+			the <span class="emphasis"><em>Virgo</em></span> perspective or via <span class="emphasis"><em>New -&gt; Show View -&gt; Other</em></span>) and select <span class="emphasis"><em>New</em></span> to
+			open the same wizard.
+		</p><p>
+			<img src="images/new_server_wiz_1.png">			
+		</p><p>
+			In both cases the Server wizard will appear and will ask the user
+			to select a valid Virgo installation from the local file system.
+			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">
+			The first time a Server is created in a new workspace the wizard
+			will create both a Server instance and a Server Runtime. 
+			The former corresponds to the Server where the bundles in the workspace will be deployed,
+			the latter corresponds to the runtime definition of which the former will be an instance.
+			</td></tr></table></div><p>
+			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">
+			While it's in theory possible to create multiple runtimes and different Server instances
+			associated to them within a single workspace, only one PDE target platform can be active in a workspace at a time.			
+			As such when working with the Virgo Tools and PDE it is recommended to use one dedicated Eclipse workspace
+			for one Server runtime and one PDE Target Platform.</td></tr></table></div><p>			
+		</p><p>
+			<img src="images/new_server_wiz_2.png">
+		</p><p>
+			To manage bundle dependencies with PDE make sure to select the check-box in the next page of the wizard:
+		</p><p>
+			<img src="images/new_server_wiz_3.png">
+		</p><p>
+			The wizard will then parse the <code class="code">org.eclipse.virgo.repository.properties</code> file and show to the
+			user the folders that will be used for setting up the PDE Target Platform definition.
+		    In this page it's possible to include additional folders before pressing <span class="emphasis"><em>Finish</em></span>.
+			The folders visible in the picture above are the default content of an unchanged <code class="code">org.eclipse.virgo.repository.properties</code> file plus the server <span class="emphasis"><em>plugins</em></span> folder
+			contained in the server home directory. In reality the <span class="emphasis"><em>plugins</em></span> folder is not a bundle repository and is not listed in the <code class="code">org.eclipse.virgo.repository.properties</code> file.
+			It contains some core components of the Virgo Runtime Environment and gets included in the Target Platform definition
+			because at runtime the contained bundles are made available to the deployed applications for dependencies resolution.  
+		</p><p>			
+			Additional folders can be added (or removed if already present in the <code class="code">org.eclipse.virgo.repository.properties</code> file). When the <span class="emphasis"><em>Finish</em></span> button
+			is pressed the wizard will create a PDE Target Platform definition and will offer to modify <code class="code">org.eclipse.virgo.repository.properties</code> to reflect any change applied by the user.
+			The newly created Target Platform will be named after the Server runtime (usually "Virgo Runtime" if not changed by the user in the previous wizard page).		
+		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">		
+			Note that while it's safe to include additional folders, users should not remove the default folders unless they really know what they are doing.
+			</td></tr></table></div><p>
+		</p><p>
+			It is possible to double check the content of the newly created PDE Target Platform via the Target Platform preferences page in the
+			Preferences dialog (<span class="emphasis"><em>Window -&gt; Preferences</em></span>):
+		</p><p><img src="images/virgo_target_platform.png"></p><p>
+			The target platform name must match the Server runtime name ("Virgo Runtime" in this example) for the Virgo Tools to be able to correlate
+			the two. 
+			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">When a PDE Target platform exists for a Virgo Server instance and is named like the corresponding Virgo Runtime, the Server icon
+			is decorated in the <span class="emphasis"><em>Servers</em></span> view with a tiny plug-in icon in the top-left, as depicted below.</td></tr></table></div><p> 		
+		</p><p><img src="images/servers_and_editor.png"></p><p>
+		As visible in the above picture, the <span class="emphasis"><em>Server editor</em></span>, which is easily accessible by double-clicking over the Virgo Runtime Environment
+		in the <span class="emphasis"><em>Server</em></span> view, provides an new section titled <span class="emphasis"><em>Target Platform</em></span> which allows reloading the
+		content of the Target Platform definition associated to the current server (useful for example when new bundles are added to the repository)
+		and allows editing the content of the current Target Platform definition by recalling the same UI of the last page of the server creation wizard.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="pde-projects"></a>7.3&nbsp;PDE Bundle projects</h2></div></div></div><p>
+		Now that the Virgo Runtime Environment has been properly setup in the Eclipse workspace, including the corresponding PDE Target Platform definition,
+		it's finally possible to create new projects.
+	</p><p>The Virgo Tools require PDE Plug-in projects to be augmented with some additional features to be usable. As such, in order to create
+	a new project it is necessary to use the dedicated wizard named <span class="emphasis"><em>PDE Bundle project</em></span> located within the <span class="emphasis"><em>Virgo</em></span>
+	category:
+	</p><p><img src="images/pde_bundle_wiz.png"></p><p>
+		The above wizard is the standard PDE <span class="emphasis"><em>Plug-in project</em></span> wizard with some choices disabled or defaulted.
+		In addition to the usual pages it includes an extra page where the user can optionally specify a Web context root.
+		If a context root is specified the new project will be a Web Application bundle (WAB). If the context root is not specified
+		the new project will be a regular OSGi bundle. 
+		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">
+			The icon of Plug-in projects created for Virgo using the above wizard will be decorated with a tiny <span class="emphasis"><em>EclipseRT globe</em></span> in the top left.
+		</td></tr></table></div><p>
+		</p><p><img src="images/new_pde_bundle.png"></p><p>			
+	</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">
+		Once a <span class="emphasis"><em>PDE Bundle project</em></span> has been created as explained above, the developer can use the standard <span class="emphasis"><em>PDE Plug-in Editor</em></span>
+		and related tooling to work with the newly created project. Please refer to the official PDE documentation for further details.</td></tr></table></div><p> 
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="resource-publishing"></a>7.4&nbsp;Publishing</h2></div></div></div><p>
+		The Virgo Server Editor includes a section to select when publishing to the server runtime should take place.
+		The section offers three options: 
+		</p><table class="simplelist" border="0" summary="Simple list"><tr><td>immediate publish on resource change</td></tr><tr><td>publish after build</td></tr><tr><td>never publish automatically</td></tr></table><p>
+		Immediate publish means that a change to a file in a bundle project deployed on the Virgo Runtime Environment will be automatically published, triggering in most cases a
+		re-deploy of the bundle project, as soon as the file is saved.
+		Publish after build means that a change to one or more files will be automatically published, triggering in most cases a re-deploy, when the containing project
+		is built, either because workspace auto-build is enabled or because the user requested a workspace or project build.
+		Never publish automatically means that publishing will take place only on user request, via the "Publish" action on the Servers view.
+		</p><p>
+		While automatic publishing reduces the learning curve for beginners, it may also imply longer waits on large workspaces with many bundle projects deployed to a server, because
+		the re-deploy of a project also implies the re-deploy of all dependent projects.
+		On large workspaces it's recommend to turn off auto-publish and to manually publish bundles as needed. In fact, when the server is running in debug mode, 
+		if a source file is changed without altering the external "signature" of a class the Java Virtual Machine will be able to push the new byte-code to the server without requiring
+		a re-deploy of the containing bundle and dependencies. In such case the developer can simply save and build and the Java Virtual Machine will perform the hot-code replace.
+		When the source code change affects the "signature" of a class (such as a change in the signature of a method, a change in inheritance, the addition/removal of new properties of methods)
+		the Java Virtual Machine won't be able to perform the hot-code replace and in such case the user can manually invoke the publish action to trigger a re-deploy of the involved bundle. 		 
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="pde-migration-actions"></a>7.5&nbsp;Migration actions</h2></div></div></div><p>
+		Before the Virgo Tools provided support for PDE, some developers where using an unofficial Eclipse plug-in called  
+		<a class="ulink" href="http://github.com/giamma/PDE2Virgo" target="_top">PDE2Virgo</a>.
+		The Virgo Tools provide a migration action for migrating PDE2Virgo projects into <span class="emphasis"><em>PDE bundle projects</em></span>.
+		The migration action is accessible via <span class="emphasis"><em>Virgo</em></span> context menu and is labeled <span class="emphasis"><em>Migrate PDE2Virgo project</em></span>.
+		The action is visible when the selection contains only <span class="emphasis"><em>PDE2Virgo</em></span> projects and supports multiple selection.
+		</p><p>
+		A migration action is also provided for PDE users who want to migrate PDE <span class="emphasis"><em>Plug-in</em></span> projects to <span class="emphasis"><em>PDE bundle projects</em></span> to be
+		able to run their projects on a Virgo test environment integrated in Eclipse.  
+		The migration action is accessible via <span class="emphasis"><em>Virgo</em></span> context menu and is labeled <span class="emphasis"><em>Migrate Plug-in project</em></span>.
+		The action is visible when the selection contains only <span class="emphasis"><em>Plug-in</em></span> projects and supports multiple selection.
+		</p><p><img src="images/migrate_plugin.png"></p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="plans"></a>8.&nbsp;Developing Plans</h2></div></div></div><p>In Virgo, applications consisting of multiple bundles can be declared using one or more Plans.
+	</p><p>
+		To create a Plan project, right-click in the
+		<span class="emphasis"><em>Package Explorer</em></span>
+		and select
+		<span class="guimenu">New</span> &#8594; <span class="guimenuitem">Project&#8230;</span>
+		. In the dialog that opens select
+		<span class="guimenu">Virgo</span> &#8594; <span class="guimenuitem">Plan Project</span>
+		and press
+		<span class="emphasis"><em>Next</em></span>
+		:
+		</p><div class="mediaobject" align="center"><img src="images/new-plan-project.png" align="middle"></div><p>
+	</p><p>
+		In the New Plan Project dialog, enter a suitable name for the project, set the location to a suitable directory, and press
+		<span class="emphasis"><em>Next</em></span>
+	</p><p>
+		In the next wizard page, you can optionally specify a Plan name to also have a Plan file created for you by the wizard.
+	</p><p>
+		When creating additional Plan files, make sure you place them within the source folder. 
+		You can now add Plan files to the Virgo Runtime in Eclipse via the usual add/remove dialog or by means of drag and drop.
+	</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="planBenefits"></a>8.1&nbsp;Benefit of using Plan files</h2></div></div></div><p>
+		Plan projects and plan files can be used as an alternative to adding individual bundles to the test environment integrated in Eclipse.
+		The main benefits of using Plan files are:
+		</p><div class="itemizedlist"><ul type="disc"><li><p>
+					Plan files can be more easily shared with coworkers and/or committed to a source code repository
+				</p></li><li><p>
+					It may be more convenient to re-order the content of a Plan file using the Eclipse text editor than editing artefact ordering in the Server Editor
+				</p></li><li><p>				
+					Plan files can be composed of other plan files
+				</p></li><li><p>
+					Items in Plan files will be picked either from the workspace or from the configured bundle repositories
+				</p></li><li><p>
+					Using Plan files in the test environment is more representative of the production deployment
+				</p></li></ul></div><p>
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="planPublishing"></a>8.2&nbsp;Discovery of Plan files in the workspace</h2></div></div></div><p>
+		The Virgo Tools create Plan projects as special types of Java projects with an additional Virgo-specific nature.
+		Plan files must be created within the source folder(s) of Plan projects.
+	</p><p>
+		When a Plan file refers to another Plan file, the Virgo Tools will look for the referred Plan file in the same project
+		of the top-level Plan and in all the Plan projects that are directly or indirectly reachable via the project's <span class="emphasis"><em>Java
+		Build Path</em></span>.
+		If more than one Plan with the same name is found in the project's <span class="emphasis"><em>Java Build Path</em></span>, the Virgo Tooling will 
+		pick the first found when following the <span class="emphasis"><em>Java Build Path</em></span> defined class-path order.
+		Note that the Plan is identified by the value of the <span class="emphasis"><em>name</em></span> attribute of the <span class="emphasis"><em>plan</em></span> element
+		inside the Plan XML document and not the by the file name.
+	</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="pars"></a>9.&nbsp;Developing PARs</h2></div></div></div><p>In Virgo, applications consisting of multiple bundles can be packaged as a PAR.
 	</p><p>
 		To create a PAR, right-click in the
 		<span class="emphasis"><em>Package Explorer</em></span>
@@ -302,8 +534,7 @@
 		<span class="guimenu">EclipseRT</span> &#8594; <span class="guimenuitem">PAR Project</span>
 		and press
 		<span class="emphasis"><em>Next</em></span>
-		:
-		</p><div class="mediaobject" align="center"><img src="images/new-par-project.png" align="middle"></div><p>
+		.
 	</p><p>
 		In the New PAR Project dialog, ensure the
 		<span class="emphasis"><em>Use default location</em></span>
@@ -327,7 +558,8 @@
 		. For example:
 		</p><div class="mediaobject" align="center"><img src="images/bundle-references.png" align="middle"></div><p>
 	</p><p>The PAR project is then created.
-	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="deploying"></a>8.&nbsp;Deploying Applications</h2></div></div></div><p>Currently the Tools support direct deployment of WTP Dynamic Web Projects, OSGi bundle and PAR projects to the
+	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="deploying"></a>10.&nbsp;Deploying Applications</h2></div></div></div><p>Currently the Tools support direct deployment of WTP Dynamic Web Projects, OSGi bundle projects,
+	PDE Bundle projects, PAR projects and Plan files (contained in Plan projects) to the
 		Virgo Runtime from directly within Eclipse.
 	</p><p>To deploy an application to the Virgo Runtime Environment just bring up the context menu on the configured
 		Virgo Runtime runtime in the Servers view and choose "Add or Remove Projects...". In the dialog, select
@@ -341,7 +573,7 @@
 		Virgo Runtime.
 	</p><p>The wait time between a change and the actual refresh can be configured in the configuration editor of the
 		runtime. To bring up that editor, double-click on the configured Virgo Runtime Environment instance in the Servers view.
-	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e650"></a>9.&nbsp;Installation and Release Notes</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Features"></a>9.1&nbsp;Features</h2></div></div></div><p>The Virgo Tooling/IDE concept concerns the whole Virgo tooling (that was available inside SpringSource Tool Suite) being put in a separate project. The tooling supports the following: </p><div class="itemizedlist"><ul type="disc"><li><p>Bundle projects </p></li><li><p>Par projects </p></li><li><p>Plan files/projects </p></li><li><p>Web Bundles </p></li><li><p>Deployment to a Virgo Server in the server view.</p></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Installation"></a>9.2&nbsp;Installation</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Install_Eclipse"></a>Install Eclipse</h3></div></div></div><p>If you're not installing into an existing Eclipse, you'll need one. </p><div class="itemizedlist"><ul type="disc"><li><p>Eclipse Indigo 3.7.x or Indigo based suite such as SpringSource Tool Suite 2.9.x</p></li><li><p>Eclipse Juno 3.8/4.2</p></li></ul></div><p>Eclipse JEE Indigo recommended.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Install_Virgo"></a>Install Virgo</h3></div></div></div><div class="orderedlist"><ol type="1"><li><p>Select 
+	</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1053"></a>11.&nbsp;Installation and Release Notes</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Features"></a>11.1&nbsp;Features</h2></div></div></div><p>The Virgo Tooling/IDE concept concerns the whole Virgo tooling (that was available inside SpringSource Tool Suite) being put in a separate project. The tooling supports the following: </p><div class="itemizedlist"><ul type="disc"><li><p>Bundle projects </p></li><li><p>Par projects </p></li><li><p>Plan files/projects </p></li><li><p>Web Bundles </p></li><li><p>New from release 1.5.0: PDE Plug-in projects (created via a dedicated Wizard)</p></li><li><p>Deployment to a Virgo Server in the server view.</p></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Installation"></a>11.2&nbsp;Installation</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Install_Eclipse"></a>Install Eclipse</h3></div></div></div><p>If you're not installing into an existing Eclipse, you'll need one. </p><p>Eclipse for Java EE developers is recommended.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Install_Virgo"></a>Install Virgo</h3></div></div></div><div class="orderedlist"><ol type="1"><li><p>Select 
 						<span class="italic">Help&gt;Install New Software..</span>
 					</p></li><li><p>Enter one of the Virgo update sites below.</p></li><li><p>Select "Virgo Tools" feature and click install.</p></li></ol></div><p>&lt;span style="color:#FF0000"&gt;&lt;b&gt;Note:&lt;/b&gt; Select &lt;i&gt;only&lt;/i&gt; Virgo Tooling. This is a composite site, and the other features are &lt;i&gt;not&lt;/i&gt; designed to work within the Eclipse IDE.&lt;/span&gt;</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Update_Sites"></a>Update Sites</h3></div></div></div><div class="variablelist"><dl><dt><span class="term">Milestone: &lt;code&gt;
 						<a class="ulink" href="http://download.eclipse.org/virgo/milestone/tooling&amp;lt;/code&amp;gt" target="_top">http://download.eclipse.org/virgo/milestone/tooling&amp;lt;/code&amp;gt</a>; (Recommended)
@@ -349,17 +581,8 @@
 						<a class="ulink" href="http://download.eclipse.org/virgo/snapshot/tooling&amp;lt;/code&amp;gt" target="_top">http://download.eclipse.org/virgo/snapshot/tooling&amp;lt;/code&amp;gt</a>; (Bleeding Edge)
 					</span></dt><dd></dd></dl></div><p>Many users will also want to install the M2E release at: &lt;code&gt;
 				<a class="ulink" href="http://download.eclipse.org/technology/m2e/releases&amp;lt;/code&amp;gt" target="_top">http://download.eclipse.org/technology/m2e/releases&amp;lt;/code&amp;gt</a>;. (You'll need this to run the greenpages examples.)
-			</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Known_Issues"></a>9.3&nbsp;Known Issues</h2></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>The Virgo tools currently do not support Eclipse 3.6 (Helios) and derived Spring Source products. 
-					<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=377236" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=377236</a>.
-				</p></li><li><p>An exception occurs when you click on an item in the Bundle Overview. This is a Libra issue that will be fixed when the next Libra build occurs. 
-					<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=377582" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=377582</a>.
-				</p></li><li><p>Manifest generation does not seem to be working properly. 
+			</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Known_Issues"></a>11.3&nbsp;Known Issues</h2></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>Manifest generation does not seem to be working properly. 
 					<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=379233" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=379233</a>
-				</p></li><li><p>The greenpages sample does not work. We're not yet sure if this is a tooling or runtime issue. 
-					<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=368781" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=368781</a> 
-				</p></li><li><p>If you have existing Virgo server defined you will see nasty exceptions. Just follow the instructions 
-					<a class="link" href="#Server_Versions" title="Server Versions">below</a> 
-					<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=379282" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=379282</a>
 				</p></li><li><p>Other significant bugs still exist. Please see these release train bugs for a current list, and please report any other issues you discover:</p><div class="itemizedlist"><ul type="circle"><li><p>368783: Server management UI bug train 
 							<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=368783" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=368783</a>
 						</p></li><li><p>368785: Server runtime support bug train 
@@ -368,78 +591,7 @@
 							<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=368782" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=368782</a>
 						</p></li><li><p>You can see all open bugs 
 							<a class="ulink" href="https://bugs.eclipse.org/bugs/buglist.cgi?list_id=1289794;query_format=advanced;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;component=tooling;product=Virgo" target="_top">here</a>.
-						</p></li></ul></div></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Migration"></a>9.4&nbsp;Migration</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="From_Pre_M2_to_M4"></a>From Pre M2 to M4</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="Server_Versions"></a>Server Versions</h4></div></div></div><p>The good news: We have done away with the need for managing multiple server versions. This also means that we won't have to support multiple WebTools Server Runtimes and Servers which will make adding new servers and variants much easier. See 
-					<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=373453" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=373453</a> for more details.
-				</p><p>The bad news: Any Server Runtimes that you already created for Virgo Server 3.5 will not work -- and you will see nasty exceptions if you try to use them. But since pre-M4 Virgo Tooling didn't work with Virgo Server 3.5 
-					<span class="italic">anyway</span>, this should be a moot issue for most people.
-				</p><p>What to do: If you have an existing (i.e., created using Virgo IDE installed before 10 March 2012) Virgo Server 3.5 Runtime defined, just delete it and replace it with a new Virgo Runtime in 
-					<span class="italic">Preferences:Server:Runtime Environments</span>. You'll see that the correct version is discovered automatically. Then, open any Servers that uses the old runtime and select the new one from the Runtime Environment popup menu.
-				</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="From_Spring_Source_and_Virgo_2.x_Tooling"></a>From Spring Source and Virgo 2.x Tooling</h3></div></div></div><p>Moving from the old tooling to the new requires some changes to your existing projects, these are documented here. </p><p>The Bundlor .settings file has a new name (
-				<span class="italic">com.springsource.server.ide.bundlor.core.prefs</span> -&amp;gt; 
-				<span class="italic">org.eclipse.virgo.ide.bundlor.core.prefs</span>) and the property keys in it have new names as well. Currently these just need to be changed manually (replace 
-				<span class="italic">com.springsource.server</span> by 
-				<span class="italic">org.eclipse.virgo</span>) 
-				<span class="bold"><strong>or use the project properties pane to create new settings and delete the old one.</strong></span> (recommended)
-			</p><p>The Bundle Dependencies classpath entry has a new name (
-				<span class="italic">com.springsource.server.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER</span> -&amp;gt; 
-				<span class="italic">org.eclipse.virgo.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER</span>). This can be changed manually (in the .classpath file) or in the Java Build Path section of the project properties. 
-			</p><p>The attributes used to mark folders as test folders have been renamed (
-				<span class="italic">com.springsource.server.ide.jdt.core.test.classpathentry</span> -&amp;gt; 
-				<span class="italic">org.eclipse.virgo.ide.jdt.core.test.classpathentry</span>). This can be changed manually (in the .classpath file). 
-			</p><p>The PAR and Bundle nature have been renamed (
-				<span class="italic">com.springsource.server.ide.facet.core.bundlenature</span> -&amp;gt; 
-				<span class="italic">org.eclipse.virgo.ide.facet.core.bundlenature</span> and (
-				<span class="italic">com.springsource.server.ide.facet.core.parnature</span> -&amp;gt; 
-				<span class="italic">org.eclipse.virgo.ide.facet.core.parnature</span>)). This can be changed manually (in the .project file). 
-			</p><p>The format and name of a PAR project changed. Rename 
-				<span class="italic">.settings/com.springsource.server.ide.runtime.core.par.xml</span> to 
-				<span class="italic">.settings/org.eclipse.virgo.ide.runtime.core.par.xml</span>. Inside the file rename occurences of 
-				<span class="italic">com.springsource.server</span> to 
-				<span class="italic">org.eclipse.virgo</span>. 
-			</p><p>
-				<span class="bold"><strong>Snapshot build change:</strong></span> We've made a change in our tooling that will require modifying the org.eclipse.virgo.ide.runtime.core.par.xml file so that it points to the correct par.ecore URI. Rename 
-				<span class="italic">xmlns:com.springsource.server.ide.par="
-					<a class="ulink" href="http:///com/springsource/server/ide/par.ecore&amp;quot" target="_top">http:///com/springsource/server/ide/par.ecore&amp;quot</a>;
-				</span> to 
-				<span class="italic">"xmlns:org.eclipse.virgo.ide.par="
-					<a class="ulink" href="http://eclipse.org/virgo/par.ecore&amp;quot" target="_top">http://eclipse.org/virgo/par.ecore&amp;quot</a>;
-				</span>
-			</p><p>Inside the WST settings file (
-				<span class="italic">.settings/org.eclipse.wst.common.project.facet.core.xml</span>) rename occurences of 
-				<span class="italic">com.springsource.server.bundle</span> to 
-				<span class="italic">org.eclipse.virgo.server.bundle</span> and occurences of 
-				<span class="italic">com.springsource.server.par</span> to 
-				<span class="italic">org.eclipse.virgo.server.par</span>. 
-			</p><p>Most/all of the conversion should be done by the following script (it has only see marginal testing, use at your own risk): 
-&lt;				pre&gt;#!/bin/sh</p><div class="orderedlist"><ol type="1"><li><p>NOTE1: Run this at your own risk&amp;nbsp;:)</p></li><li><p>NOTE2: I should quote more dots in sed expressions but I'm lazy.</p></li><li><p>TODO: Delete old com.springsource files after conversion</p></li></ol></div><p>if 
-				<a class="ulink" href="&amp;amp;nbsp;!" target="_top">-d &amp;quot;$1&amp;quot; </a>; then 
-			</p><div class="literallayout"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&amp;quot;Please&nbsp;point&nbsp;me&nbsp;at&nbsp;an&nbsp;eclipse&nbsp;project&amp;quot;&amp;amp;nbsp;;&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit&nbsp;1<br>
-</p></div><p>fi</p><div class="orderedlist"><ol type="1"><li><p>Bundlor settings</p></li></ol></div><p>f="$1/.settings/com.springsource.server.ide.bundlor.core.prefs"
-				[ -f "$f" ] &amp;amp;&amp;amp;  (</p><div class="literallayout"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&amp;quot;$1:&nbsp;Converting&nbsp;bundlor&nbsp;preferences&amp;quot;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed&nbsp;-e&nbsp;'s/com\.springsource\.server/org.eclipse.virgo/g'&nbsp;&amp;quot;$f&amp;quot;&nbsp;&amp;amp;gt;&nbsp;&amp;quot;$(echo&nbsp;$f&nbsp;|&nbsp;sed&nbsp;-e&nbsp;s/com.springsource.server/org.eclipse.virgo/)&amp;quot;<br>
-</p></div><p>)</p><div class="orderedlist"><ol type="1"><li><p>convert PAR</p></li></ol></div><p>f="$1/.settings/com.springsource.server.ide.runtime.core.par.xml"
-				[ -f "$f" ] &amp;amp;&amp;amp;  (</p><div class="literallayout"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&amp;quot;$1:&nbsp;Converting&nbsp;PAR&nbsp;project&nbsp;dependencies&amp;quot;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed&nbsp;-e&nbsp;'s/com\.springsource\.server/org.eclipse.virgo/g'&nbsp;&amp;quot;$f&amp;quot;&nbsp;&amp;amp;gt;&nbsp;&amp;quot;$(echo&nbsp;$f&nbsp;|&nbsp;sed&nbsp;-e&nbsp;s/com.springsource.server/org.eclipse.virgo/)&amp;quot;<br>
-</p></div><p>)</p><div class="orderedlist"><ol type="1"><li><p>Fix classpaths        </p></li></ol></div><p>f="$1/.classpath"
-				[ -f "$f" ] &amp;amp;&amp;amp; (</p><div class="literallayout"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&amp;quot;$1:&nbsp;Converting&nbsp;classpath&nbsp;containers&nbsp;and&nbsp;entries&amp;quot;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed&nbsp;-i&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;'s/com.springsource.server.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER/org.eclipse.virgo.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER/g'&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;'s/com.springsource.server.ide.jdt.core.test.classpathentry/org.eclipse.virgo.ide.jdt.core.test.classpathentry/g'&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;quot;$f&amp;quot;<br>
-</p></div><p>)</p><div class="orderedlist"><ol type="1"><li><p>Fix natures..</p></li></ol></div><p>f="$1/.project"
-				[ -f "$f" ] &amp;amp;&amp;amp; (</p><div class="literallayout"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&amp;quot;$1:&nbsp;Converting&nbsp;project&nbsp;natures&amp;quot;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed&nbsp;-i&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;'s/com.springsource.server.ide.facet.core.bundlenature/org.eclipse.virgo.ide.facet.core.bundlenature/g'&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;'s/com.springsource.server.ide.facet.core.parnature/org.eclipse.virgo.ide.facet.core.parnature/g'&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;quot;$f&amp;quot;<br>
-</p></div><p>)</p><div class="orderedlist"><ol type="1"><li><p>Fix the wst file, could also replace runtime name here</p></li></ol></div><p>f="$1/.settings/org.eclipse.wst.common.project.facet.core.xml"
-				[ -f "$f" ] &amp;amp;&amp;amp; (</p><div class="literallayout"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&amp;quot;$1:&nbsp;Converting&nbsp;org.eclipse.wst.common.project.facet.core.xml&amp;quot;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed&nbsp;-i&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;'s/com.springsource.server.bundle/org.eclipse.virgo.server.bundle/g'&nbsp;&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;'s/com.springsource.server.par/org.eclipse.virgo.server.par/g'&nbsp;&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;quot;$f&amp;quot;<br>
-</p></div><p>)</p><p>&lt;/pre&gt;</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Maven_plugin"></a>9.5&nbsp;Maven plugin</h2></div></div></div><p>To support the development of OSGi bundles for Eclipse Virgo with Maven a Maven plugin is available. This plugin is able to start/stop a local Eclipse Virgo instance. Moreover it is possible to deploy/undeploy/refresh bundles via Maven. </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Build"></a>Build</h3></div></div></div><p>In order to use the plugin one has to download the source code from 
+						</p></li></ul></div></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Maven_plugin"></a>11.4&nbsp;Maven plugin</h2></div></div></div><p>To support the development of OSGi bundles for Eclipse Virgo with Maven a Maven plugin is available. This plugin is able to start/stop a local Eclipse Virgo instance. Moreover it is possible to deploy/undeploy/refresh bundles via Maven. </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Build"></a>Build</h3></div></div></div><p>In order to use the plugin one has to download the source code from 
 				<a class="ulink" href="https://github.com/frieder/virgo-maven-plugin" target="_top">Github</a>&amp;nbsp;and build the binary manually. This can be easily done by executing the following Maven command in the root folder of the plugin where the pom.xml file is located. 
 &lt;				pre&gt;mvn clean install&lt;/pre&gt; 
 				Moreover to generate the documentation just execute the following Maven command (or take the one provided in the repository on Github). 
@@ -519,9 +671,9 @@
 				More examples can be found in the documentation. Following are some exemplary Maven commands.
 &lt;				pre&gt;mvn virgo:start &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;lt;-- will start a Virgo instance
 				mvn clean package virgo:deploy &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;-- will create an artifact and deploy it to Virgo&lt;/pre&gt; 
-			</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Importing_Virgo_Projects_into_Eclipse"></a>9.6&nbsp;Importing Virgo Projects into Eclipse</h2></div></div></div><p>See 
+			</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Importing_Virgo_Projects_into_Eclipse"></a>11.5&nbsp;Importing Virgo Projects into Eclipse</h2></div></div></div><p>See 
 			<a class="ulink" href="http://wiki.eclipse.org/Virgo/Committers#Eclipse_Setup" target="_top">Eclipse Setup</a> under the Committers tab.
-		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="FAQ"></a>9.7&nbsp;FAQ</h2></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="FAQ"></a>11.6&nbsp;FAQ</h2></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
 					<span class="bold"><strong>How do I turn on (or turn off) automatic Manifest generation? (Bundlor)</strong></span>
 				</p></li></ul></div><p>Bundlor is not used by default, you must create you own template file and then turn on incremental manifest generation. Right-click your Virgo project, select the Virgo subcategory from the context menu and select Enable (or Disable) Incremental Generation of MANIFEST.MF File. You can also modify this setting from the Overview page of the Bundle Manifest Editor, under the Bundle Actions section.</p><div class="itemizedlist"><ul type="disc"><li><p>
 					<span class="bold"><strong>Sometimes I'd like to automatically update my Manifest without having to turn on the automatic Manifest setting. How can I do this?</strong></span>
@@ -533,10 +685,6 @@
 					<span class="bold"><strong>My Virgo project is validating its dependencies against the wrong Virgo runtime! How do I manage server runtimes for my Virgo projects?</strong></span>
 				</p></li></ul></div><p>If you've deployed your Virgo projects to multiple Virgo runtimes the tools will associate the project with each runtime, but will only validate against one runtime. In order to manage which Virgo runtime your bundle dependencies are validated against, right-click on the project, select Properties and select the Targeted Runtimes category. From this dialog you can give priority to a particular Virgo runtime.</p><p>
 			<a class="ulink" href="/wiki/image:virgo-targeted-runtimes.png" target="_top">image:virgo-targeted-runtimes.png</a>
-		</p><div class="itemizedlist"><ul type="disc"><li><p>
-					<span class="bold"><strong>How do I deploy a Plan with the Virgo tools?</strong></span>
-				</p></li></ul></div><p>Deploying a Plan works much the same way as deploying a Bundle or PAR from the tools. Unfortunately, the tools only handle Plan deployment correctly when the Plan refers to items already in Virgo's watched repository directories. If you try to deploy a Plan that references a project in the Eclipse workspace, the tools will fail. One workaround is to copy your workspace bundle(s) into repository/usr or some other watched repository directory. A discussion of this bug and other workarounds is available at 
-			<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=379765" target="_top">https://bugs.eclipse.org/bugs/show_bug.cgi?id=379765</a>
 		</p><div class="itemizedlist"><ul type="disc"><li><p>
 					<span class="bold"><strong>How do I create a Web Application Bundle?</strong></span>
 				</p></li></ul></div><p>To create a web application bundle choose to create a normal bundle project, but on the Bundle Content panel select the additional property entitled "Web Application Bundle". On the Bundle Properties panel enter a suitable context path for the application as the Web-ContextPath.</p><div class="itemizedlist"><ul type="disc"><li><p>
@@ -553,10 +701,6 @@
 					<span class="bold"><strong>I want to install Virgo Tools. Should I install all of this neat looking stuff under Virgo Add-ons?</strong></span>
 				</p></li></ul></div><p>We really don't recommend doing so (see 
 			<a class="link" href="#Install_Virgo" title="Install Virgo">Install_Virgo</a>). Select only Virgo Tooling and Eclipse will take care of installing anything the tooling relies on.
-		</p><div class="itemizedlist"><ul type="disc"><li><p>
-					<span class="bold"><strong>Can I use the Virgo Tools with traditional PDE/Equinox Bundles?</strong></span>
-				</p></li></ul></div><p>Deploying PDE/Equinox Bundles to Virgo Web Server are not yet supported yet, although exporting the bundles (as Eclipse Plug-in JARs) and manually deploying to Virgo Web Server works. Please show your support on 
-			<a class="ulink" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=329198" target="_top">Bugzilla #329198</a>.
 		</p><p>
 			<a class="ulink" href="/wiki/Category:Virgo" target="_top">Category:Virgo</a> 
 			<a class="ulink" href="/wiki/Category:EclipseRT" target="_top">Category:EclipseRT</a>&lt;/rev&gt;&lt;/revisions&gt;&lt;/page&gt;&lt;/pages&gt;&lt;/query&gt;&lt;/api&gt;
