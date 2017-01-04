@@ -157,10 +157,11 @@
 		<div class="sideitem">
 			<h6>Virgo Powered</h6>
 			<ul>
-				<li><a href="http://ariane.echinopsii.net/">Ariane by Echinopsii</li>
+			    <li><a href="http://ariane.echinopsii.net/">Ariane by Echinopsii</a></li>
 			    <li><a href="http://blurryme.com/">BlurryMe App</a></li>
-			    <li><a href="http://www.eclipse.org/virgo/references/cmegroup.php">CME Group</li>
-			    <li><a href="http://bigblog.tportal.hr/btin#29857">Croatian Telecom</li>			    
+			    <li><a href="http://www.eclipse.org/virgo/references/cmegroup.php">CME Group</a></li>
+			    <li><a href="http://bigblog.tportal.hr/btin#29857">Croatian Telecom</a></li>
+			    <li><a href="http://www.geppetto.org">Geppetto - scientific visualization and simulation platform</a></li>
 			    <li><a href="http://underlap.blogspot.com/2011/10/how-infor-ion-uses-virgo.html">Infor ION</a></li>
 			    <li><a href="http://www.konekti.org/">Konekti Platform</a></li>
 			    <li><a href="http://www.infoq.com/news/2012/12/sap-netweaver-cloud">SAP NetWeaver Cloud</a></li>
