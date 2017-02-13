@@ -23,7 +23,7 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Milestones, Builds, Downloads";
 	$pageAuthor		= "Glyn Normington";
 
-	$virgoVersions = array("3.7.0.M04", "3.7.0.M03", "3.7.0.M02", "3.7.0.M01");
+	$virgoVersions = array("3.7.0.RC01", "3.7.0.M04", "3.7.0.M03", "3.7.0.M02", "3.7.0.M01");
 	ob_start();
 ?>
 
@@ -52,6 +52,14 @@
     $update = true;
 		foreach ($virgoVersions as $version){
 			echo "<h4><a href='#'>$version";
+			if($version == '3.7.0.RC01'){
+				$nano = true;
+				$nanoWeb = false;
+				$nanoRap = true;
+				$snaps = true;
+				$documentation = false;
+				$update = false;
+			}
 			if($version == '3.7.0.M04'){
 				$nano = true;
 				$nanoWeb = false;
@@ -106,7 +114,7 @@
 				echo "		<li><strong>Virgo RAP Server</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VNR/virgo-nano-rap-$version.zip' target='_self'>Download</a></li>";
       }
 			if($snaps){
-				echo "		<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VS/$version/snaps-$version.zip' target='_self'>Download</a></li>";
+				echo "		<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VS/snaps-$version.zip' target='_self'>Download</a></li>";
       }
 			if($documentation){
       	echo "    	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/VD/$version/virgo-documentation-$version.zip'>Download</a>";
