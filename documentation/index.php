@@ -67,7 +67,7 @@
 
 				<li>Programmer Guide ( <a href="virgo-documentation-<?=$virgoMilestone ?>/docs/virgo-programmer-guide/html5/virgo-programmer-guide.html">HTML</a> )</li>
 
-				<li>Snaps Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
+				<li>Snaps Guide ( <a href="virgo-documentation-<?=$virgoMilestone ?>/docs/snaps-guide/html5/virgo-snaps-guide.html">HTML</a> )</li>
 
 				<li>Tooling Guide ( <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$milestone ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
