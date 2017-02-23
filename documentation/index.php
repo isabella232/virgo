@@ -23,7 +23,9 @@
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Documentation";
 	$pageAuthor		= "Christopher Frost";
 
-	$currentVersion = "3.6.4.RELEASE";
+	$currentVersion = "3.7.0.RELEASE";
+	$currentSnapsVersion = "3.6.4.RELEASE";
+	$currentToolingVersion = "3.6.4.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
 	$milestone = "3.7.0.M01";
 	$virgoMilestone = "3.7.0.RC01";
@@ -34,16 +36,16 @@
 	<div id="midcolumn">
 		<h2>Documentation</h2>
 		<p>
-			The documentation for Virgo can be downloaded from <a href="http://www.eclipse.org/virgo/download/" target="_self">here</a> or it is browseable online below:
+			The documentation for Virgo is browseable online below:
 
 			<ul>
-				<li>User Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-user-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-user-guide/htmlsingle/virgo-user-guide.html">HTML Single</a> )</li>
+				<li>User Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-user-guide/html5/virgo-user-guide.html">HTML</a> )</li>
 
-				<li>Programmer Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-programmer-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-programmer-guide/htmlsingle/virgo-programmer-guide.html">HTML Single</a> )</li>
+				<li>Programmer Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-programmer-guide/html5/virgo-programmer-guide.html">HTML</a> )</li>
 
-				<li>Snaps Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
+				<li>Snaps Guide ( <a href="virgo-documentation-<?=$currentSnapsVersion ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentSnapsVersion ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
 
-				<li>Tooling Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
+				<li>Tooling Guide ( <a href="virgo-documentation-<?=$currentToolingVersion ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentToolingVersion ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
 				<li>Bundlor User Guide ( <a href="bundlor-documentation-<?=$currentBundlorVersion ?>/docs/user-guide/html/index.html">HTML</a> | <a href="bundlor-documentation-<?=$currentBundlorVersion ?>/docs/user-guide/htmlsingle/user-guide.html">HTML Single</a> )</li>
 			</ul>

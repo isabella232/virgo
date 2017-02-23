@@ -1,12 +1,12 @@
 <?php
-	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	
-	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	
-	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	
-	$App 	= new App();	
-	$Nav	= new Nav();	
-	$Menu 	= new Menu();		
+	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");
+	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php");
+	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php");
+	$App 	= new App();
+	$Nav	= new Nav();
+	$Menu 	= new Menu();
 	include($App->getProjectCommon());
-	
+
 /*******************************************************************************
  * Copyright (c) 2009, 2015 Eclipse Foundation and others.
  * All rights reserved. This program and the accompanying materials
@@ -15,10 +15,10 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors: Christopher Frost
- *    
+ *
  *******************************************************************************/
 
-	# Begin: page-specific settings.  Change these. 
+	# Begin: page-specific settings.  Change these.
 	$pageTitle 		= "Virgo - Release Downloads";
 	$pageKeywords	= "Eclipse, EclipseRT, Virgo, OSGi, Downloads";
 	$pageAuthor		= "Christopher Frost";
@@ -27,18 +27,31 @@
 ?>
 
 <div id="midcolumn">
-		
+
 		<!-- <p id='announcement'>
 		</p> -->
 
 	<h2>Virgo Releases</h2>
 	<p>
-		Sample applications can be found on the <a href="http://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are 
-		provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a> 
+		Sample applications can be found on the <a href="http://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are
+		provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a>
 		unless otherwise specified.
 	</p>
 
 	<div id='accordion'>
+		<h4><a href="#">3.7.0.RELEASE</a></h4>
+		<div>
+			<ul>
+				<li><a href='release-notes/3.7.0.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="release-notes/3.7.0_approved_ip_log.html">Approved IP log</a>)</li>
+				<li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.0.RELEASE/virgo-tomcat-server-3.7.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.0.RELEASE/virgo-jetty-server-3.7.0.RELEASE.zip' target='_self'>Download</a> </li>
+				<li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.0.RELEASE/virgo-kernel-3.7.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.0.RELEASE/virgo-nano-3.7.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VS/3.7.0.RELEASE/snaps-3.7.0.RELEASE.zip' target='_self'>Download</a></li>
+				<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.7.0.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.7.0.RELEASE</a></li>
+			</ul>
+		</div>
+
 		<h4><a href="#">3.6.4.RELEASE</a></h4>
 		<div>
 			<ul>
@@ -53,7 +66,7 @@
 				<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.6.4.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.6.4.RELEASE</a></li>
 			</ul>
 		</div>
-		
+
 		<h4><a href="#">3.5.0.RELEASE</a></h4>
 		<div>
 			<ul>
@@ -68,7 +81,7 @@
 				<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.5.0.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.5.0.RELEASE</a></li>
 			</ul>
 		</div>
-		
+
 		<h4><a href="#">3.0.3.RELEASE</a></h4>
 		<div>
 			<ul>
@@ -95,7 +108,7 @@
 	<div>
 		<h2>Virgo Bundlor Releases</h2>
 		<p>
-			All downloads are provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a> 
+			All downloads are provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a>
 			unless otherwise specified.
 		</p>
 
@@ -109,12 +122,12 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<h2>Development Milestones</h2>
 	<p>
-		Development milestones are available for <a href="http://www.eclipse.org/virgo/download/milestones.php">download</a>. 
+		Development milestones are available for <a href="http://www.eclipse.org/virgo/download/milestones.php">download</a>.
 	</p>
-	
+
 </div>
 
 <?
