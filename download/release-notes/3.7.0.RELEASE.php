@@ -30,9 +30,42 @@
 
 	<h3>3.7.0.RELEASE - Release Notes</h3>
 
+Finally - the <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Steel</a> (3.7.0) release of Virgo.
+
+Since lot's of people have been waiting for this release, some thanks are due.
+
+  <h4>Acknowledgements</h4>
+
+<p>
+Special thanks go to Violeta Georgieva for releasing Gemini Web 3.0.0 and
+to Olaf Otto and Dmitry Sklyut for releasing Gemini Blueprint 2.0.0 in time for Virgo 3.7.0.
+</p>
+
+Two new committers joined during this release and have made great contributions so far:
+
+<ul>
+  <li>Daniel Marthaler (ISPIN AG) - Bundlor overhaul</li>
+  <li>GianMaria Romanato (Finantix) - Virgo Tooling</li>
+</ul>
+
+The Virgo committers would also like to thank the following people for their contributions:
+
+<ul>
+  <li>Ahsen Jaffer</li>
+  <li>Daniel Kojic</li>
+	<li>Eduardo Fernández</li>
+	<li>Mathilde Ffrench</li>
+	<li>Polina Genova</li>
+	<li>Stefan Zugal</li>
+</ul>
+
+and all those users helping out in the forum or otherwise.
+
+
+<h4>Highlights</h4>
+
 	<p>
-	Finally - the <a href="http://wiki.eclipse.org/Virgo/Future#Release_Branding">Steel</a> (3.7.0) release of Virgo.
-	It contains the following upgrades/changes:
+	This release contains the following upgrades/changes:
 	<ul>
 		<li>Spring Framework 4.2.9.RELEASE</li>
 		<li>Gemini Blueprint 2.0.0.RELEASE</li>
