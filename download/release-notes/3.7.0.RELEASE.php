@@ -55,6 +55,7 @@ The Virgo committers would also like to thank the following people for their con
   <li>Daniel Kojic</li>
 	<li>Eduardo Fernández</li>
 	<li>Mathilde Ffrench</li>
+	<li>Matt Magoffin</li>
 	<li>Polina Genova</li>
 	<li>Stefan Zugal</li>
 </ul>
