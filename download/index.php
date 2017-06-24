@@ -39,7 +39,20 @@
 	</p>
 
 	<div id='accordion'>
-		<h4><a href="#">3.7.0.RELEASE</a></h4>
+        <h4><a href="#">3.7.1.RELEASE</a></h4>
+        <div>
+            <ul>
+                <li><a href='release-notes/3.7.1.RELEASE.php' target='_self'>View Release Notes</a></li>
+                <li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.1.RELEASE/virgo-tomcat-server-3.7.1.RELEASE.zip' target='_self'>Download</a></li>
+                <li><strong>Virgo Jetty Server</strong> -  <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.1.RELEASE/virgo-jetty-server-3.7.1.RELEASE.zip' target='_self'>Download</a> </li>
+                <li><strong>Virgo Kernel</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.1.RELEASE/virgo-kernel-3.7.1.RELEASE.zip' target='_self'>Download</a></li>
+                <li><strong>Virgo Nano</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.1.RELEASE/virgo-nano-3.7.1.RELEASE.zip' target='_self'>Download</a></li>
+                <li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VS/3.7.1.RELEASE/snaps-3.7.1.RELEASE.zip' target='_self'>Download</a></li>
+                <li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.7.1.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.7.1.RELEASE</a></li>
+            </ul>
+        </div>
+
+        <h4><a href="#">3.7.0.RELEASE</a></h4>
 		<div>
 			<ul>
 				<li><a href='release-notes/3.7.0.RELEASE.php' target='_self'>View Release Notes</a>. (<a href="release-notes/3.7.0_approved_ip_log.html">Approved IP log</a>)</li>
