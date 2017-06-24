@@ -24,7 +24,7 @@
 	$pageAuthor		= "Christopher Frost";
 
 	$currentVersion = "3.7.1.RELEASE";
-	$currentSnapsVersion = "3.6.4.RELEASE";
+	$currentSnapsVersion = "3.7.1.RELEASE";
 	$currentToolingVersion = "3.6.4.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
 	$milestone = "3.7.0.M01";
@@ -43,14 +43,16 @@
 
 				<li>Programmer Guide ( <a href="virgo-documentation-<?=$currentVersion ?>/docs/virgo-programmer-guide/html5/virgo-programmer-guide.html">HTML</a> )</li>
 
-				<li>Snaps Guide ( <a href="virgo-documentation-<?=$currentSnapsVersion ?>/docs/snaps-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentSnapsVersion ?>/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html">HTML Single</a> )</li>
+				<li>Snaps Guide ( <a href="virgo-documentation-<?=$currentSnapsVersion ?>/docs/snaps-guide/html5/virgo-snaps-guide.html">HTML</a></li>
 
 				<li>Tooling Guide ( <a href="virgo-documentation-<?=$currentToolingVersion ?>/docs/virgo-tooling-guide/html/index.html">HTML</a> | <a href="virgo-documentation-<?=$currentToolingVersion ?>/docs/virgo-tooling-guide/htmlsingle/virgo-tooling-guide.html">HTML Single</a> )</li>
 
 				<li>Bundlor User Guide ( <a href="bundlor-documentation-<?=$currentBundlorVersion ?>/docs/user-guide/html/index.html">HTML</a> | <a href="bundlor-documentation-<?=$currentBundlorVersion ?>/docs/user-guide/htmlsingle/user-guide.html">HTML Single</a> )</li>
 			</ul>
 		</p>
-		<p>
+
+        <!--
+        <p>
 			Some key Virgo concepts are covered on the <a href="http://wiki.eclipse.org/Virgo/Concepts">wiki</a> or, if you're here for the first time, you may simply wish to <a href="http://wiki.eclipse.org/Virgo/Community#Take_Virgo_for_a_spin">take Virgo for a spin</a>.
 		</p>
 		<p>
@@ -73,7 +75,7 @@
 
 			</ul>
 		</p>
-
+        -->
 	</div>
 
 <?php
