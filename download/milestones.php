@@ -27,6 +27,8 @@
 	ob_start();
 ?>
 
+<!--
+
 <div id="midcolumn">
 	<h2>Milestone Downloads</h2>
 	<p>
@@ -175,6 +177,8 @@
 		?>
 	</div>
 </div>
+
+-->
 
 <?
 	$html = ob_get_clean();

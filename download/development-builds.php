@@ -33,6 +33,8 @@
 		});
 	</script>
 
+    <!--
+
 <div id="midcolumn">
 	<h2>Development Builds</h2>
 	<p>
@@ -73,6 +75,8 @@
 		?>
 
 </div>
+
+-->
 
 <?
 	$html = ob_get_clean();

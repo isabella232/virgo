@@ -52,6 +52,8 @@
             </ul>
         </div>
 
+        <!--
+
         <h4><a href="#">3.7.0.RELEASE</a></h4>
 		<div>
 			<ul>
@@ -64,6 +66,8 @@
 				<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.7.0.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.7.0.RELEASE</a></li>
 			</ul>
 		</div>
+
+        -->
 
 		<h4><a href="#">3.6.4.RELEASE</a></h4>
 		<div>
@@ -79,6 +83,8 @@
 				<li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/updatesite/3.6.4.RELEASE' target='_self'>http://download.eclipse.org/virgo/updatesite/3.6.4.RELEASE</a></li>
 			</ul>
 		</div>
+
+        <!--
 
 		<h4><a href="#">3.5.0.RELEASE</a></h4>
 		<div>
@@ -116,6 +122,9 @@
 			   	<li><strong>Virgo Documentation</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VD/2.1.1.RELEASE/virgo-documentation-2.1.1.RELEASE.zip'>Download</a></li>
 			</ul>
 		</div>
+
+		-->
+
 	</div>
 
 	<div>
@@ -136,10 +145,14 @@
 		</div>
 	</div>
 
+    <!--
+
 	<h2>Development Milestones</h2>
 	<p>
 		Development milestones are available for <a href="http://www.eclipse.org/virgo/download/milestones.php">download</a>.
 	</p>
+
+	-->
 
 </div>
 
