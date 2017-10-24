@@ -25,7 +25,7 @@
 
 	$currentVersion = "3.7.2.RELEASE";
 	$currentSnapsVersion = "3.7.2.RELEASE";
-	$currentToolingVersion = "3.6.4.RELEASE";
+	$currentToolingVersion = "3.7.2.RELEASE";
 	$currentBundlorVersion = "1.1.2.RELEASE";
 	$milestone = "3.7.0.M01";
 	$virgoMilestone = "3.7.0.RC01";
