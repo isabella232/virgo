@@ -8,7 +8,7 @@
 	include($App->getProjectCommon());
 
 /*******************************************************************************
- * Copyright (c) 2017 Eclipse Foundation and others.
+ * Copyright (c) 2020 Eclipse Foundation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,16 +29,21 @@
 <div id="midcolumn">
     <h3>3.7.3.RELEASE - Release Notes</h3>
 	<p>
-	    This release updates the Java profile to Java 8 and contains the following updated libraries:
-	<ul>
-		<li>Gemini Web 3.0.5 (Tomcat 8.5.53)</li>
+	    This release updates the version of Apache Tomcat, updates the Java profile to Java 8 and updates several libraries.
+    </p>
+
+    <h4>Version Upgrades</h4>
+    <ul>
+        <li>Apache Tomcat is upgraded to 8.5.53</li>
+        <li>Spring Framework 4.3.27</li>
+        <li>Gemini Web is upgraded to 3.0.5</li>
 		<li>Gemini Blueprint 2.1.0.RELEASE</li>
-		<li>Spring Framework 4.3.27</li>
-        <li>Minor changes and bugfixing</li>
 	</ul>
 	</p>
 
 	<p>A list of bugs and enhancements is available <a href="https://bugs.eclipse.org/bugs/buglist.cgi?classification=RT&list_id=16592652&product=Virgo&query_format=advanced&target_milestone=3.7.3.RELEASE" target="_self">here</a>.</p>
+
+    <p>Take <a href='../../download/index.php' target='_self'>Virgo</a> for a spin.</p>
 
 </div>
 

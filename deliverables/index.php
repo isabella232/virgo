@@ -61,7 +61,7 @@
 		Virgo Jetty Server is similar to Virgo Server for Apache Tomcat but embeds the Jetty servlet container instead
 		of the embedded Apache Tomcat servlet container.
 
-		<h3 id="snaps-deliverable">Virgo Snaps</h3>
+		<h3 id="snaps-deliverable">Virgo Snaps (discontinued with 3.7.3)</h3>
 
 		The Virgo snaps framework may be used to cleanly modularise the web bundles of an application.
 		Currently, snaps only runs on Virgo Server for Apache Tomcat.

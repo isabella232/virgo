@@ -48,6 +48,12 @@
                 <!-- <li><strong>Virgo Snaps</strong> - <a href='http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.2.RELEASE/snaps-3.7.2.RELEASE.zip' target='_self'>Download</a></li> -->
                 <!-- <li><strong>Virgo Update Site</strong> - <a href='http://download.eclipse.org/virgo/release/updatesite/3.7.2.RELEASE' target='_self'>http://download.eclipse.org/virgo/release/updatesite/3.7.2.RELEASE</a></li> -->
             </ul>
+            <p>
+                <strong>Note:</strong> A defect has been reported against the last version of Gemini Web, the JSP Expression Language (EL) does not work see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=563105">Bug 563105</a>
+            </p>
+            <p>
+                Virgo Server 3.7.3 is affected by the Gemini Web defect listed above, therefore the team agrees (see <a href="https://www.eclipse.org/lists/virgo-dev/msg01912.html">meeting notes</a>) to publish a new Virgo release once a fixed Gemini Web version is available.
+            </p>
         </div>
 
         <h4><a href="#">3.7.2.RELEASE</a></h4>
