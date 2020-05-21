@@ -129,9 +129,9 @@
 			<h6>Blogs</h6>
 			<ul>
 			    <li><a href="http://codersbrew.net">Chris Frost</a></li>
-			    <li><a href="http://eclipsesource.com/blogs/author/fwaibel/">Florian Waibel</a> (lead)</li>
-			    <li><a href="http://devshards.blogspot.it/search/label/Virgo">GianMaria Romanato</a></li>
-				<li><a href="http://underlap.blogspot.com">Glyn Normington</a></li>
+			    <li><a href="https://devops.datenkollektiv.de/tag/virgo.html">Florian</a><a href="http://eclipsesource.com/blogs/author/fwaibel/">Waibel</a> (lead)</li>
+			    <li><a href="https://devshards.blogspot.it/search/label/Virgo">GianMaria Romanato</a></li>
+				<li><a href="https://underlap.blogspot.com">Glyn Normington</a></li>
 				<li><a href="http://eclipsedriven.blogspot.com/2011/06/how-to-create-felix-gogo-commands-with.html">Hendy Irawan</a></li>
 				<li><a href="http://hsiliev.blogspot.com/">Hristo Iliev</a></li>
 				<li><a href="http://www.redmonk.com/jgovernor/2008/02/05/osgi-and-the-rise-of-the-stackless-stack-just-in-time/">James Governor</a></li>
@@ -159,15 +159,15 @@
 			<ul>
 			    <li><a href="http://ariane.echinopsii.net/">Ariane by Echinopsii</a></li>
 			    <li><a href="http://blurryme.com/">BlurryMe App</a></li>
-			    <li><a href="http://www.eclipse.org/virgo/references/cmegroup.php">CME Group</a></li>
+			    <li><a href="https://www.eclipse.org/virgo/references/cmegroup.php">CME Group</a></li>
 			    <li><a href="http://bigblog.tportal.hr/btin#29857">Croatian Telecom</a></li>
 			    <li><a href="http://www.geppetto.org">Geppetto - scientific visualization and simulation platform</a></li>
-			    <li><a href="http://underlap.blogspot.com/2011/10/how-infor-ion-uses-virgo.html">Infor ION</a></li>
+			    <li><a href="https://underlap.blogspot.com/2011/10/how-infor-ion-uses-virgo.html">Infor ION</a></li>
 			    <li><a href="http://www.konekti.org/">Konekti Platform</a></li>
 			    <li><a href="http://www.intellimentsec.com">Policy Automation by Intelliment Security</a></li>
-			    <li><a href="http://www.infoq.com/news/2012/12/sap-netweaver-cloud">SAP NetWeaver Cloud</a></li>
-				<li><a href="http://github.com/PouzinSociety/tinos">TINOS research project</a></li>
-				<li><a href="http://underlap.blogspot.co.uk/2012/10/virgo-in-vsphere.html">VMware vSphere</a></li>
+			    <li><a href="https://www.infoq.com/news/2012/12/sap-netweaver-cloud">SAP NetWeaver Cloud</a></li>
+				<li><a href="https://github.com/PouzinSociety/tinos">TINOS research project</a></li>
+				<li><a href="https://underlap.blogspot.co.uk/2012/10/virgo-in-vsphere.html">VMware vSphere</a></li>
 			</ul>
 		</div>
 		<div class="sideitem">
@@ -196,8 +196,8 @@
 				  }
 				}).render().start();
 			</script>
-			<br/><font size=-1>Follow: <a href="http://twitter.com/glynnormington">Glyn Normington</a>
-			<br/>Follow: <a href="http://twitter.com/cgfrost">Christopher Frost</a></font>
+			<br/><font size=-1>Follow: <a href="https://twitter.com/glynnormington">Glyn Normington</a>
+			<br/>Follow: <a href="https://twitter.com/cgfrost">Christopher Frost</a></font>
 		</div>
 		<!-- div class="sideitem">
 			<h6>&lt;h6&gt; tag</h6>
