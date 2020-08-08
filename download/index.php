@@ -30,13 +30,25 @@
 
 	<h2>Virgo Releases</h2>
 	<p>
-		Sample applications can be found on the <a href="http://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are
+		Sample applications can be found on the <a href="https://www.eclipse.org/virgo/samples">Samples</a> page. All downloads are
 		provided under the terms and conditions of the <a href="/legal/epl/notice.php">Eclipse Foundation Software User Agreement</a>
 		unless otherwise specified.
 	</p>
 
 	<div id='accordion'>
-	<h4><a href="#">3.7.3.RELEASE</a></h4>
+        <h4><a href="#">3.7.4.RELEASE</a></h4>
+        <div>
+            <ul>
+                <li><a href='release-notes/3.7.4.RELEASE.php' target='_self'>View Release Notes</a></li>
+                <li><strong>Virgo Server for Apache Tomcat</strong> -  <a href='https://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.4.RELEASE/virgo-tomcat-server-3.7.4.RELEASE.zip' target='_self'>Download</a></li>
+                <li><strong>Virgo Jetty Server</strong> -  <a href='https://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.4.RELEASE/virgo-jetty-server-3.7.4.RELEASE.zip' target='_self'>Download</a> </li>
+                <li><strong>Virgo Kernel</strong> - <a href='https://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.4.RELEASE/virgo-kernel-3.7.4.RELEASE.zip' target='_self'>Download</a></li>
+                <!-- <li><strong>Virgo Nano</strong> - <a href='https://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.4.RELEASE/virgo-nano-3.7.4.RELEASE.zip' target='_self'>Download</a></li> -->
+                <!-- <li><strong>Virgo Nano Full</strong> - <a href='https://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/3.7.4.RELEASE/virgo-nano-full-3.7.4.RELEASE.zip' target='_self'>Download</a></li> -->
+            </ul>
+        </div>
+
+    	<h4><a href="#">3.7.3.RELEASE</a></h4>
         <div>
             <ul>
                 <li><a href='release-notes/3.7.3.RELEASE.php' target='_self'>View Release Notes</a></li>
